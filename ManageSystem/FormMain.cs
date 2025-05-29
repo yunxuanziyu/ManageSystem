@@ -23,7 +23,7 @@ namespace ManageSystem
         public FormMain(User user)
         {
             InitializeComponent();
-            this.Text = "欢迎你" + user.ChineseName + "登录管理系统";
+            this.Text = "欢迎你" + user.ChineseName + "  管理系统";
         }
 
         private void labelX_MouseEnter(object sender, EventArgs e)
