@@ -73,6 +73,16 @@ namespace ManageSystem.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap key {
+            get {
+                object obj = ResourceManager.GetObject("key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap LoginBack {
             get {
                 object obj = ResourceManager.GetObject("LoginBack", resourceCulture);
@@ -86,6 +96,16 @@ namespace ManageSystem.Properties {
         internal static System.Drawing.Bitmap loginLog {
             get {
                 object obj = ResourceManager.GetObject("loginLog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap myNormal {
+            get {
+                object obj = ResourceManager.GetObject("myNormal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

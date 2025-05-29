@@ -71,6 +71,12 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUserDetailInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserDetailInfo.Designer.cs">
+      <DependentUpon>FormUserDetailInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageForm\MessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,12 @@
     <Compile Include="DataManage\UCDataManage.Designer.cs">
       <DependentUpon>UCDataManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCUserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUserList.Designer.cs">
+      <DependentUpon>UCUserList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserManage\UCUserManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserDetailInfo.resx">
+      <DependentUpon>FormUserDetailInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageForm\MessageForm.resx">
       <DependentUpon>MessageForm.cs</DependentUpon>
@@ -125,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataManage\UCDataManage.resx">
       <DependentUpon>UCDataManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUserList.resx">
+      <DependentUpon>UCUserList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManage\UCUserManage.resx">
       <DependentUpon>UCUserManage.cs</DependentUpon>

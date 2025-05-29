@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ManageSystem.BusinessManage;
+using DevComponents.DotNetBar;
 
 namespace ManageSystem.UIDesign
 {
-    public partial class UCUserManage: UserControl
+    public partial class UCUserManage : UserControl
     {
         public UCUserManage()
         {
@@ -25,18 +26,17 @@ namespace ManageSystem.UIDesign
             return home;
         }
 
-        private void labelSelect_Click(object sender, EventArgs e)
+
+        private void labelX_MouseEnter(object sender, EventArgs e)
         {
-            
+            LabelX lbl = sender as LabelX;
+            lbl.BackColor = Color.White;
         }
 
-        private void buttonQuery_Click(object sender, EventArgs e)
+        private void labelXSet_MouseLeave(object sender, EventArgs e)
         {
-using (UserService userService = new UserService())
-            {
-                var lst = userService.GetUserList();
-                dataGridViewX1.DataSource = lst;
-            }
+            LabelX lbl = sender as LabelX;
+            lbl.BackColor = Color.Transparent;
         }
     }
 }

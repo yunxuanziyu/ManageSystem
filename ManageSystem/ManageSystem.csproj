@@ -128,6 +128,8 @@
     <None Include="Resources\2c64ad7810a918078090e0e04827eddf.jpg" />
     <None Include="Resources\LoginBack.jpg" />
     <None Include="Resources\loginLog.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\myNormal.png" />
     <Content Include="SystemMain.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
