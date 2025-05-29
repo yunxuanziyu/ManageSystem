@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FreeSql.DbContext</name>
+    </assembly>
+    <members>
+        <member name="P:FreeSql.DbContext.Orm">
+            <summary>
+            该对象 Select/Delete/Insert/Update/InsertOrUpdate 与 DbContext 事务保持一致，可省略传递 WithTransaction
+            </summary>
+        </member>
+        <member name="M:FreeSql.DbContext.Add``1(``0)">
+            <summary>
+            添加
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="data"></param>
+        </member>
+        <member name="M:FreeSql.DbContext.Update``1(``0)">
+            <summary>
+            更新
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="data"></param>
+        </member>
+        <member name="M:FreeSql.DbContext.Remove``1(``0)">
+            <summary>
+            删除
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="data"></param>
+        </member>
+        <member name="M:FreeSql.DbContext.AddOrUpdate``1(``0)">
+            <summary>
+            添加或更新
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="data"></param>
+        </member>
+        <member name="M:FreeSql.DbContext.Attach``1(``0)">
+            <summary>
+            附加实体，可用于不查询就更新或删除
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="data"></param>
+        </member>
+        <member name="M:FreeSql.DbContext.AttachOnlyPrimary``1(``0)">
+            <summary>
+            附加实体，并且只附加主键值，可用于不更新属性值为null或默认值的字段
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="data"></param>
+        </member>
+        <member name="M:FreeSql.DbContext.CompareState``1(``0)">
+            <summary>
+            比较实体，计算出值发生变化的属性，以及属性变化的前后值
+            </summary>
+            <param name="newdata">最新的实体对象，它将与附加实体的状态对比</param>
+            <returns>key: 属性名, value: [旧值, 新值]</returns>
+        </member>
+        <member name="P:FreeSql.DbContext.EntityChangeReport.ChangeInfo.BeforeObject">
+            <summary>
+            Type = Update 的时候，获取更新之前的对象
+            </summary>
+        </member>
+        <member name="P:FreeSql.DbContext.EntityChangeReport.ChangeInfo.EntityType">
+            <summary>
+            实体类型
+            </summary>
+        </member>
+        <member name="P:FreeSql.DbContext.EntityChangeReport.Report">
+            <summary>
+            实体变化记录
+            </summary>
+        </member>
+        <member name="P:FreeSql.DbContext.EntityChangeReport.OnChange">
+            <summary>
+            实体变化事件
+            </summary>
+        </member>
+        <member name="M:FreeSql.DbContext.FlushCommand">
+            <summary>
+            刷新队列中的命令
+            </summary>
+        </member>
+        <member name="M:FreeSql.DbContextErrorStrings.AddFreeDbContextError_CheckConstruction(System.Object)">
+            <summary>
+            AddFreeDbContext 发生错误，请检查 {dbContextTypeName} 的构造参数都已正确注入
+            </summary>
+        </member>
+        <member name="M:FreeSql.DbContextErrorStrings.CannotAdd_AlreadyExistsInStateManagement(System.Object)">
+            <summary>
+            不可添加，已存在于状态管理：{entityString}
+            </summary>
+        </member>
+        <member name="M:FreeSql.DbContextErrorStrings.CannotAdd_EntityHasNo_PrimaryKey(System.Object)">
+            <summary>
+            不可添加，实体没有主键：{entityString}
+            </summary>
+        </member>
+        <member name="M:FreeSql.DbContextErrorStrings.CannotAdd
