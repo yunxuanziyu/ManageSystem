@@ -39,6 +39,8 @@ namespace ManageSystem.BasicCommonBase
         // 加密
         public static string AESEncrypt(string plainText)
         {
+            if (string.IsNullOrEmpty(plainText))
+                return string.Empty;
             using (Aes aes = Aes.Create())
             {
                 aes.Key = HexStringToBytes(KEY);
@@ -63,6 +65,8 @@ namespace ManageSystem.BasicCommonBase
         // 解密
         public static string AESDecrypt(string cipherText)
         {
+            if(string.IsNullOrEmpty(cipherText))
+                return string.Empty;
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
 
             using (Aes aes = Aes.Create())

@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelUserList = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelBody = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             this.labelUserList.TabIndex = 20;
             this.labelUserList.Text = "用户列表";
             this.labelUserList.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.labelUserList.Click += new System.EventHandler(this.labelUserList_Click);
             this.labelUserList.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelUserList.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
@@ -75,20 +76,20 @@
             this.line1.Text = "line1";
             this.line1.VerticalLine = true;
             // 
-            // panel2
+            // panelBody
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(124, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(667, 479);
-            this.panel2.TabIndex = 22;
+            this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBody.Location = new System.Drawing.Point(124, 0);
+            this.panelBody.Name = "panelBody";
+            this.panelBody.Padding = new System.Windows.Forms.Padding(5);
+            this.panelBody.Size = new System.Drawing.Size(667, 479);
+            this.panelBody.TabIndex = 22;
             // 
             // UCUserManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelBody);
             this.Controls.Add(this.line1);
             this.Controls.Add(this.panel1);
             this.Name = "UCUserManage";
@@ -103,6 +104,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.LabelX labelUserList;
         private DevComponents.DotNetBar.Controls.Line line1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelBody;
     }
 }

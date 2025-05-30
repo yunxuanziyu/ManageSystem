@@ -38,5 +38,11 @@ namespace ManageSystem.UIDesign
             LabelX lbl = sender as LabelX;
             lbl.BackColor = Color.Transparent;
         }
+
+        private void labelUserList_Click(object sender, EventArgs e)
+        {
+            panelBody.Controls.Clear();
+            panelBody.Controls.Add(UCUserList.Instance);
+        }
     }
 }

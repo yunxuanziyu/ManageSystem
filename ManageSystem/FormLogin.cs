@@ -49,7 +49,7 @@ namespace ManageSystem
                 bool Remreber = checkBoxRememberPwd.Checked;
                 GlobalVariable.LoginUser = user;
                 XmlLocalSetting.WriteXml<LoginInfo>(new LoginInfo() { UserName = username, Password = Remreber? passwordEncrypt : "", Remreber = Remreber }, "LoginInfo");
-                using (ServiceLog serviceLog = new ServiceLog())
+                using (LogService serviceLog = new LogService())
                 {
                     _ = serviceLog.AddLog(new Log() { Content = user.ChineseName + "登录系统", OperaTime = DateTime.Now, Operator = user.Name });
                 }
@@ -94,7 +94,7 @@ namespace ManageSystem
                 key.Close();
             }
             LoginInfo info = XmlLocalSetting.ReadXml<LoginInfo>("LoginInfo");
-            if (info != null)
+            if (info != null && info is LoginInfo)
             {
                 textBoxUserName.Text = info.UserName;
                 checkBoxRememberPwd.Checked = info.Remreber;
@@ -106,6 +106,16 @@ namespace ManageSystem
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormRegistered.Instance.Show();
+        }
+
+        private void FormLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Escape)
+            {
+                FormDataSource form = new FormDataSource();
+                form.Show();
+                e.Handled = true;
+            }
         }
     }
 }

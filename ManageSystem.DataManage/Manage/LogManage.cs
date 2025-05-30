@@ -7,18 +7,26 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.DataManage
 {
-    public class LogManage
+    public class LogManage: BaseManage
     {
+        readonly IFreeSql _freeSql;
+        public LogManage(IFreeSql freeSql = null)
+        {
+            if (freeSql == null)
+                _freeSql = DBHelper.freeSql;
+            else
+                _freeSql = freeSql;
+        }
         public async Task<List<Log>> GetLogs()
         {
-            return await DBHelper.freeSql.Select<Log>().ToListAsync();
+            return await _freeSql.Select<Log>().ToListAsync();
         }
 
         public async Task<bool> AddLog(Log log)
         {
             try
             {
-                await DBHelper.freeSql.Insert(log).ExecuteAffrowsAsync();
+                await _freeSql.Insert(log).ExecuteAffrowsAsync();
                 return true;
             }
             catch (Exception ex)

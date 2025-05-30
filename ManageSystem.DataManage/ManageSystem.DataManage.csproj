@@ -49,6 +49,10 @@
     <Reference Include="FreeSql.Provider.Sqlite, Version=3.5.206.0, Culture=neutral, PublicKeyToken=5800863e689c9dd8, processorArchitecture=MSIL">
       <HintPath>..\packages\FreeSql.Provider.Sqlite.3.5.206\lib\net45\FreeSql.Provider.Sqlite.dll</HintPath>
     </Reference>
+    <Reference Include="ManageSystem.BasicCommonBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SystemRunDLL\ManageSystem.BasicCommonBase.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -80,12 +84,16 @@
   <ItemGroup>
     <Compile Include="ContextBase.cs" />
     <Compile Include="DBHelper.cs" />
-    <Compile Include="LogManage.cs" />
+    <Compile Include="Manage\BaseManage.cs" />
+    <Compile Include="Manage\DeptManage.cs" />
+    <Compile Include="Manage\LogManage.cs" />
+    <Compile Include="Model\DataSourceModel.cs" />
+    <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\ModelBase.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserManage.cs" />
+    <Compile Include="Manage\UserManage.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

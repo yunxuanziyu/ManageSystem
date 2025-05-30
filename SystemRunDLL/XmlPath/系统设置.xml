@@ -1,6 +1,9 @@
-<?xml version="1.0"?>
-<LoginInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <UserName>aaa</UserName>
-  <Remreber>true</Remreber>
-  <Password>tEHhtdpUvw0481/AhWui1A==</Password>
-</LoginInfo>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+  <SqliteDataSource>
+    <NodeValue>{"DataSourceName":"SqliteDataSource","IP":"C:\\Users\\84025\\Desktop\\C#\\DB.db","Port":0,"DataSourceType":3,"ConnectionString":null,"UserName":"","Password":""}</NodeValue>
+  </SqliteDataSource>
+  <LoginInfo>
+    <NodeValue>{"UserName":"aaa","Remreber":true,"Password":"tEHhtdpUvw0481/AhWui1A=="}</NodeValue>
+  </LoginInfo>
+</Root>

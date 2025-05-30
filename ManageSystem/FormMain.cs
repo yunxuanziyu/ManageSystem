@@ -38,11 +38,6 @@ namespace ManageSystem
             lbl.BackColor = Color.Transparent;
         }
 
-        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void labelFirstPage_Click(object sender, EventArgs e)
         {
             LoadUCPage(UCHome.Instance());
@@ -77,6 +72,16 @@ namespace ManageSystem
         private void labelXDataManage_Click(object sender, EventArgs e)
         {
             LoadUCPage(UCDataManage.Instance());
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageYesNo.ShowMessage("确定要退出系统吗？") == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
+            }
+            Application.Exit();
         }
     }
 }

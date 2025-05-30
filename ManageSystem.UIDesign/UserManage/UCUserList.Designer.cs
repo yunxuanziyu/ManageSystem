@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxDeptList = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.buttonQuery = new DevComponents.DotNetBar.ButtonX();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -41,6 +42,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.comboBoxDeptList);
             this.panel3.Controls.Add(this.buttonQuery);
             this.panel3.Controls.Add(this.textBoxX1);
             this.panel3.Controls.Add(this.labelX1);
@@ -50,6 +52,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(184, 507);
             this.panel3.TabIndex = 5;
+            // 
+            // comboBoxDeptList
+            // 
+            this.comboBoxDeptList.DisplayMember = "Text";
+            this.comboBoxDeptList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxDeptList.FormattingEnabled = true;
+            this.comboBoxDeptList.ItemHeight = 15;
+            this.comboBoxDeptList.Location = new System.Drawing.Point(14, 103);
+            this.comboBoxDeptList.Name = "comboBoxDeptList";
+            this.comboBoxDeptList.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxDeptList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxDeptList.TabIndex = 7;
             // 
             // buttonQuery
             // 
@@ -89,7 +103,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(53, 23);
             this.labelX1.TabIndex = 2;
-            this.labelX1.Text = "labelX1";
+            this.labelX1.Text = "姓名";
             // 
             // labelX2
             // 
@@ -102,19 +116,19 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(53, 23);
             this.labelX2.TabIndex = 3;
-            this.labelX2.Text = "labelX2";
+            this.labelX2.Text = "部门";
             // 
             // dataGridViewX1
             // 
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 0);
@@ -131,6 +145,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "UCUserList";
             this.Size = new System.Drawing.Size(601, 507);
+            this.Load += new System.EventHandler(this.UCUserList_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.ResumeLayout(false);
@@ -145,5 +160,6 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxDeptList;
     }
 }

@@ -102,10 +102,10 @@
     <Compile Include="DataManage\UCDataManage.Designer.cs">
       <DependentUpon>UCDataManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCUserList.cs">
+    <Compile Include="UserManage\UCUserList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCUserList.Designer.cs">
+    <Compile Include="UserManage\UCUserList.Designer.cs">
       <DependentUpon>UCUserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserManage\UCUserManage.cs">
@@ -141,7 +141,7 @@
     <EmbeddedResource Include="DataManage\UCDataManage.resx">
       <DependentUpon>UCDataManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCUserList.resx">
+    <EmbeddedResource Include="UserManage\UCUserList.resx">
       <DependentUpon>UCUserList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManage\UCUserManage.resx">

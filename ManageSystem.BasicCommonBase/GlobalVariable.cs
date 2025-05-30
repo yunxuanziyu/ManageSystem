@@ -1,5 +1,4 @@
-﻿using ManageSystem.DataManage.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +9,8 @@ namespace ManageSystem.BasicCommonBase
 {
     public class GlobalVariable
     {
-        public static User LoginUser { get; set; }
-        private List<string> UserPurview=new();
+        public static object LoginUser { get; set; }
+        private List<object> UserPurview=new();
 
         public static string XmlSetPath { get; set; } = Application.StartupPath+ "\\XmlPath";
     }

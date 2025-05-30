@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManageSystem.BusinessManage
+namespace ManageSystem.BusinessManage.IService
 {
-    public interface IServiceLog:IDisposable
+    public interface IDeptService
     {
-        public Task<List<Log>> GetLogs();
-        public Task<bool> AddLog(Log log);
+        public Task<List<Department>> GetDepts();
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.DataManage
 {
-    public class UserManage
+    public class UserManage: BaseManage
     {
 
         public async Task<List<User>> GetUsers()
