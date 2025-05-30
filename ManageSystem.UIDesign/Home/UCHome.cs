@@ -10,20 +10,12 @@ using System.Windows.Forms;
 
 namespace ManageSystem.UIDesign
 {
-    public partial class UCHome : UserControl
+    public partial class UCHome : UCBaseControl
     {
 
         public UCHome()
         {
             InitializeComponent();
-        }
-
-        private static UCHome home;
-        public static UCHome Instance()
-        {
-            if (home == null)
-                home=new UCHome();
-            return home;
         }
     }
 }

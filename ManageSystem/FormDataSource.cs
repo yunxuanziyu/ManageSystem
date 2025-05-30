@@ -23,8 +23,8 @@ namespace ManageSystem
         private void buttonSave_Click(object sender, EventArgs e)
         {
             string path = textBoxPath.Text;
-            XmlLocalSetting.WriteXml<DataSourceModel>(new DataSourceModel() 
-            { DataSourceName="SqliteDataSource" , IP=path, DataSourceType = EnumDataSourceType.Sqlite }, "SqliteDataSource");
+            XmlLocalSetting.WriteXml<DataSourceModel>(new DataSourceModel()
+            { DataSourceName = "SqliteDataSource", DataSourcePath = path, DataSourceType = EnumDataSourceType.Sqlite }, "SqliteDataSource");
             MessageForm.ShowMessage("保存成功!");
         }
 

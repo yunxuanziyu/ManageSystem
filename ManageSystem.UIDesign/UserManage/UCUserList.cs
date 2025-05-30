@@ -12,7 +12,7 @@ using ManageSystem.BusinessManage.Service;
 
 namespace ManageSystem.UIDesign
 {
-    public partial class UCUserList: UserControl
+    public partial class UCUserList: UCBaseControl
     {
         public UCUserList()
         {
@@ -21,21 +21,17 @@ namespace ManageSystem.UIDesign
 
         private void buttonQuery_Click(object sender, EventArgs e)
         {
+            string DeptCode = comboBoxDeptList.SelectedValue.ToString();
+            string ChineseName = textBoxName.Text.Trim();
             using (UserService userService = new UserService())
             {
-                var lst = userService.GetUserList();
-                dataGridViewX1.DataSource = lst.Result;
-            }
-        }
-
-        private static UCUserList m_Instance;
-        public static UCUserList Instance 
-        { 
-            get 
-            {
-                if (m_Instance == null)
-                    m_Instance = new UCUserList();
-                return  m_Instance; 
+                string where = "1=1";
+                if(DeptCode!= "")
+                    where += " AND DeptCode = @DeptCode";
+                if(ChineseName != "")
+                    where += " AND ChineseName LIKE '%@ChineseName%'";
+                var lst = userService.GetUserByWhere(where, new { DeptCode, ChineseName });
+                dataGridViewX1.DataSource = lst.Result.ToDataTable();
             }
         }
 
@@ -43,8 +39,10 @@ namespace ManageSystem.UIDesign
         {
             DeptService deptService = new DeptService();
             var lst = deptService.GetDepts();
-            comboBoxDeptList.DataSource = lst.Result;
-            var dept = lst.Result.FirstOrDefault();
+            var departments = lst.Result.ToList();
+            departments.Insert(0, new DataManage.Model.Department());
+            comboBoxDeptList.DataSource = departments;
+            var dept = departments.FirstOrDefault();
             comboBoxDeptList.DisplayMember = nameof(dept.DeptName);
             comboBoxDeptList.ValueMember = nameof(dept.DeptCode);
         }

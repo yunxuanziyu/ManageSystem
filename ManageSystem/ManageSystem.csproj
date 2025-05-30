@@ -141,6 +141,7 @@
     <None Include="Resources\myNormal.png" />
     <None Include="Resources\Search.jpg" />
     <None Include="Resources\Search1.jpg" />
+    <None Include="Resources\Logout.png" />
     <Content Include="SystemMain.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

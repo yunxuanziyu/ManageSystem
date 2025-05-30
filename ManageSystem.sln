@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageSystem.BasicCommonBas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageSystem.UIDesign", "ManageSystem.UIDesign\ManageSystem.UIDesign.csproj", "{2FAA1F43-7E84-4F6F-A878-9A2687DA834D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageSystem.ControlX", "ManageSystem.ControlX\ManageSystem.ControlX.csproj", "{1BAAF380-16E6-463B-AE1C-051079CFD89C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2FAA1F43-7E84-4F6F-A878-9A2687DA834D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FAA1F43-7E84-4F6F-A878-9A2687DA834D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FAA1F43-7E84-4F6F-A878-9A2687DA834D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAAF380-16E6-463B-AE1C-051079CFD89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAAF380-16E6-463B-AE1C-051079CFD89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAAF380-16E6-463B-AE1C-051079CFD89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAAF380-16E6-463B-AE1C-051079CFD89C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

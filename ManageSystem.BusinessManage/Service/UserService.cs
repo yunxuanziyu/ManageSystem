@@ -16,10 +16,10 @@ namespace ManageSystem.BusinessManage
             
         }
 
-        public List<User> GetUserByWhere(string where, object param)
+        public async Task<List<User>> GetUserByWhere(string where, object param)
         {
             UserManage userManage = new();
-            return userManage.GetUsersByWhere(where, param).Result;
+            return await userManage.GetUsersByWhere(where, param);
         }
 
         public async Task<List<User>> GetUserList()

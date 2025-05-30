@@ -11,6 +11,6 @@ namespace ManageSystem.BusinessManage
     {
         public Task<User> GetUser(string name,string pwd);
         public Task<List<User>> GetUserList();
-        public List<User> GetUserByWhere(string where,object param);
+        public Task<List<User>> GetUserByWhere(string where,object param);
     }
 }

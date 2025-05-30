@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.buttonLogout = new System.Windows.Forms.Button();
+            this.buttonXLogout = new DevComponents.DotNetBar.ButtonX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelBody = new DevComponents.DotNetBar.PanelEx();
@@ -55,7 +55,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx1.Controls.Add(this.buttonLogout);
+            this.panelEx1.Controls.Add(this.buttonXLogout);
             this.panelEx1.Controls.Add(this.panelEx2);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -72,22 +72,20 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 5;
             // 
-            // buttonLogout
+            // buttonXLogout
             // 
-            this.buttonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLogout.FlatAppearance.BorderSize = 0;
-            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            this.buttonLogout.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogout.Image")));
-            this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonLogout.Location = new System.Drawing.Point(971, 2);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(72, 43);
-            this.buttonLogout.TabIndex = 8;
-            this.buttonLogout.Text = "退出";
-            this.buttonLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            this.buttonXLogout.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonXLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonXLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonXLogout.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonXLogout.Image = global::ManageSystem.Properties.Resources.Logout;
+            this.buttonXLogout.Location = new System.Drawing.Point(994, 7);
+            this.buttonXLogout.Name = "buttonXLogout";
+            this.buttonXLogout.Shape = new DevComponents.DotNetBar.EllipticalShapeDescriptor();
+            this.buttonXLogout.Size = new System.Drawing.Size(35, 35);
+            this.buttonXLogout.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.buttonXLogout.TabIndex = 12;
+            this.buttonXLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // panelEx2
             // 
@@ -202,6 +200,7 @@
             this.labelDefine.TabIndex = 26;
             this.labelDefine.Text = "类型定义";
             this.labelDefine.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.labelDefine.Click += new System.EventHandler(this.labelDefine_Click);
             this.labelDefine.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelDefine.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
@@ -219,6 +218,7 @@
             this.labelXSet.TabIndex = 25;
             this.labelXSet.Text = "系统设置";
             this.labelXSet.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.labelXSet.Click += new System.EventHandler(this.labelXSet_Click);
             this.labelXSet.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelXSet.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
@@ -287,7 +287,6 @@
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
@@ -305,7 +304,6 @@
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevComponents.DotNetBar.PanelEx panelBody;
-        private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelBoder;
         private DevComponents.DotNetBar.LabelX labelFirstPage;
@@ -315,5 +313,6 @@
         private DevComponents.DotNetBar.Controls.Line line1;
         private System.Windows.Forms.Panel panelUCHolder;
         private DevComponents.DotNetBar.LabelX labelDefine;
+        private DevComponents.DotNetBar.ButtonX buttonXLogout;
     }
 }

@@ -68,6 +68,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.line1);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Name = "UCDataManage";
             this.Size = new System.Drawing.Size(534, 446);
             this.ResumeLayout(false);

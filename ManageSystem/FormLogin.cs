@@ -13,8 +13,6 @@ using ManageSystem.BusinessManage;
 using ManageSystem.DataManage;
 using ManageSystem.DataManage.Model;
 using ManageSystem.UIDesign;
-using System.Xml.Serialization;
-using System.Collections;
 
 namespace ManageSystem
 {

@@ -21,7 +21,7 @@
     <OutputPath>..\SystemRunDLL\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -89,6 +89,12 @@
     <Compile Include="MessageForm\MessageYesNo.Designer.cs">
       <DependentUpon>MessageYesNo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageForm\MessageYesNoCancle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageForm\MessageYesNoCancle.Designer.cs">
+      <DependentUpon>MessageYesNoCancle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Home\UCHome.cs">
       <SubType>UserControl</SubType>
@@ -101,6 +107,25 @@
     </Compile>
     <Compile Include="DataManage\UCDataManage.Designer.cs">
       <DependentUpon>UCDataManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCBaseControl.Designer.cs">
+      <DependentUpon>UCBaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCreateCreator.cs" />
+    <Compile Include="Define\UCDefine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Define\UCDefine.Designer.cs">
+      <DependentUpon>UCDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSystemSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSystemSet.Designer.cs">
+      <DependentUpon>UCSystemSet.cs</DependentUpon>
     </Compile>
     <Compile Include="UserManage\UCUserList.cs">
       <SubType>UserControl</SubType>
@@ -126,6 +151,9 @@
     <EmbeddedResource Include="MessageForm\MessageYesNo.resx">
       <DependentUpon>MessageYesNo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageForm\MessageYesNoCancle.resx">
+      <DependentUpon>MessageYesNoCancle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,6 +168,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataManage\UCDataManage.resx">
       <DependentUpon>UCDataManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCBaseControl.resx">
+      <DependentUpon>UCBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Define\UCDefine.resx">
+      <DependentUpon>UCDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSystemSet.resx">
+      <DependentUpon>UCSystemSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManage\UCUserList.resx">
       <DependentUpon>UCUserList.cs</DependentUpon>
@@ -160,5 +197,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,10 @@ namespace ManageSystem.UIDesign
 {
     public partial class MessageYesNo: FormBase
     {
+        public MessageYesNo():this("信息", "标题")
+        {
+            
+        }
         public MessageYesNo(string message):this(message, "询问")
         {
             
@@ -23,9 +27,9 @@ namespace ManageSystem.UIDesign
             this.Text = title;
         }
         
-        public static DialogResult ShowMessage(string msg)
+        public static DialogResult ShowMessage(string msg, string title = "询问")
         {
-            MessageYesNo yesNo = new MessageYesNo(msg);
+            MessageYesNo yesNo = new MessageYesNo(msg, title);
             return yesNo.ShowDialog();
         }
 

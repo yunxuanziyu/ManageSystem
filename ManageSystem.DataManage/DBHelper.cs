@@ -15,7 +15,7 @@ namespace ManageSystem.DataManage
     {
         private static Lazy<IFreeSql> sqliteLazy = new Lazy<IFreeSql>(() => new FreeSql.FreeSqlBuilder()
                                                           //.UseMonitorCommand(cmd => Trace.WriteLine(""))
-                                                          .UseConnectionString(FreeSql.DataType.Sqlite, $"Data Source={XmlLocalSetting.ReadXml<DataSourceModel>("SqliteDataSource").IP};Version=3;Encoding=UTF8")
+                                                          .UseConnectionString(FreeSql.DataType.Sqlite, XmlLocalSetting.ReadXml<DataSourceModel>("SqliteDataSource").GetConnectionString())
                                                           .UseAutoSyncStructure(false)
                                                           .Build());
         public static IFreeSql freeSql { get; set; } = sqliteLazy.Value;

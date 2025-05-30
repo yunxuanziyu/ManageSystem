@@ -93,9 +93,8 @@
         }
 
         #endregion
-
-        private DevComponents.DotNetBar.LabelX labelMsg;
         private DevComponents.DotNetBar.ButtonX buttonYes;
         private DevComponents.DotNetBar.ButtonX buttonNo;
+        public DevComponents.DotNetBar.LabelX labelMsg;
     }
 }

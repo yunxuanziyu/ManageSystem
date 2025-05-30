@@ -61,7 +61,7 @@
             this.labelUserList.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelUserList.Click += new System.EventHandler(this.labelUserList_Click);
             this.labelUserList.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
-            this.labelUserList.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
+            this.labelUserList.MouseLeave += new System.EventHandler(this.labelX_MouseLeave);
             // 
             // line1
             // 
