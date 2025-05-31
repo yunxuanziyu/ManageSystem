@@ -25,16 +25,22 @@ namespace ManageSystem.UIDesign
         {
             ShowMessage(message, "提示", false);
         }
-        public static void ShowMessage(string message, string title,bool IsCancleAutoClose)
+        public static void ShowMessage(string message, string title,bool IsCancleAutoClose,bool IsShowCheckBox=false)
         {
-            MessageForm form = new MessageForm(message, title,IsCancleAutoClose);
+            MessageForm form = new MessageForm(message, title,IsCancleAutoClose, IsShowCheckBox);
             form.ShowDialog();
         }
-
-        public MessageForm(string message, string title,bool IsCancleAutoClose)
+        
+        public static void ShowErrorMessage(string error)
+        {
+            MessageForm form = new MessageForm(error, "错误", true);
+            form.ShowDialog();
+        }
+        public MessageForm(string message, string title,bool IsCancleAutoClose,bool IsShowCheckBox=false)
         {
             InitializeComponent();
             this.Text = title;
+            checkBoxX1.Visible = IsShowCheckBox;
             labelMsg.Text = message;
             timer1.Start();
             if (IsCancleAutoClose)

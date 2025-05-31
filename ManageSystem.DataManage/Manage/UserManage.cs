@@ -9,7 +9,16 @@ namespace ManageSystem.DataManage
 {
     public class UserManage: BaseManage
     {
+        private IFreeSql _freeSql;
+        public UserManage()
+        {
+            _freeSql = DBHelper.freeSql;
+        }
 
+        public UserManage(IFreeSql freeSql)
+        {
+            _freeSql = freeSql;
+        }
         public async Task<List<User>> GetUsers()
         {
             return await DBHelper.freeSql.Select<User>().ToListAsync();

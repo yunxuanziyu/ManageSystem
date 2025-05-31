@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.BusinessManage
 {
-    public class LogService :  ILogService
+    public class LogService :ServiceBase, ILogService
     {
         private readonly IFreeSql _IFreeSql = null;
-        public LogService(IFreeSql freeSql)
+        public LogService(IFreeSql freeSql):base(freeSql)
         {
             _IFreeSql = freeSql;
         }
-        public LogService()
+        public LogService():base(DBHelper.freeSql)
         {
             
         }
@@ -26,10 +26,16 @@ namespace ManageSystem.BusinessManage
             return logManage.GetLogs();
         }
 
-        public  Task<bool> AddLog(Log log)
+        public Task<bool> AddLog(Log log)
         {
             LogManage logManage = new(_IFreeSql);
             return logManage.AddLog(log);
+        }
+
+        public Task<bool> AddLogs(List<Log> log)
+        {
+            LogManage logManage = new(_IFreeSql);
+            return logManage.AddLogs(log);
         }
 
         public void Dispose()

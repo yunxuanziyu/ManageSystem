@@ -23,43 +23,52 @@ namespace ManageSystem.UIDesign
             this.UpdateStyles();
         }
 
+        public void LoadUCPage(Panel panelUCHolder, UserControl uc)
+        {
+            if (uc == panelUCHolder.Controls.OfType<UserControl>().FirstOrDefault())
+                return;
+            uc.Dock = DockStyle.Fill;
+            if (!panelUCHolder.Controls.Contains(uc))
+                panelUCHolder.Controls.Add(uc);
+            uc.BringToFront();
+        }
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
             SetRoundRegion();
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    base.OnPaint(e);
 
-            int shadowSize = 8; // 阴影宽度
-            int radius = CornerRadius;
-            Rectangle shadowRect = new Rectangle(
-                shadowSize / 2,
-                shadowSize / 2,
-                this.Width - shadowSize,
-                this.Height - shadowSize);
+        //    int shadowSize = 8; // 阴影宽度
+        //    int radius = CornerRadius;
+        //    Rectangle shadowRect = new Rectangle(
+        //        shadowSize / 2,
+        //        shadowSize / 2,
+        //        this.Width - shadowSize,
+        //        this.Height - shadowSize);
 
-            using (GraphicsPath path = new GraphicsPath())
-            {
-                path.StartFigure();
-                path.AddArc(shadowRect.Left, shadowRect.Top, radius, radius, 180, 90);
-                path.AddArc(shadowRect.Right - radius, shadowRect.Top, radius, radius, 270, 90);
-                path.AddArc(shadowRect.Right - radius, shadowRect.Bottom - radius, radius, radius, 0, 90);
-                path.AddArc(shadowRect.Left, shadowRect.Bottom - radius, radius, radius, 90, 90);
-                path.CloseFigure();
+        //    using (GraphicsPath path = new GraphicsPath())
+        //    {
+        //        path.StartFigure();
+        //        path.AddArc(shadowRect.Left, shadowRect.Top, radius, radius, 180, 90);
+        //        path.AddArc(shadowRect.Right - radius, shadowRect.Top, radius, radius, 270, 90);
+        //        path.AddArc(shadowRect.Right - radius, shadowRect.Bottom - radius, radius, radius, 0, 90);
+        //        path.AddArc(shadowRect.Left, shadowRect.Bottom - radius, radius, radius, 90, 90);
+        //        path.CloseFigure();
 
-                // 绘制阴影
-                using (PathGradientBrush brush = new PathGradientBrush(path))
-                {
-                    brush.CenterColor = Color.FromArgb(80, Color.Black); // 阴影中心色
-                    brush.SurroundColors = new Color[] { Color.Transparent };
-                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    e.Graphics.FillPath(brush, path);
-                }
-            }
-        }
+        //        // 绘制阴影
+        //        using (PathGradientBrush brush = new PathGradientBrush(path))
+        //        {
+        //            brush.CenterColor = Color.FromArgb(80, Color.Black); // 阴影中心色
+        //            brush.SurroundColors = new Color[] { Color.Transparent };
+        //            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+        //            e.Graphics.FillPath(brush, path);
+        //        }
+        //    }
+        //}
 
         public int CornerRadius { get; set; } = 50;
         private void SetRoundRegion()
@@ -87,30 +96,6 @@ namespace ManageSystem.UIDesign
         {
             LabelX lbl = sender as LabelX;
             lbl.BackColor = Color.Transparent;
-        }
-        
-    }
-
-    public static class ListExtensions
-    {
-        public static DataTable ToDataTable<T>(this List<T> data)
-        {
-            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
-            DataTable table = new DataTable();
-            foreach (PropertyDescriptor prop in properties)
-            {
-                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-            }
-            foreach (T item in data)
-            {
-                DataRow row = table.NewRow();
-                foreach (PropertyDescriptor prop in properties)
-                {
-                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
-                }
-                table.Rows.Add(row);
-            }
-            return table;
         }
     }
 }

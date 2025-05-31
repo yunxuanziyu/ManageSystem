@@ -9,88 +9,38 @@ namespace ManageSystem.DataManage
 {
     public class BaseManage
     {
-        public virtual async Task<List<ModelBase>> GetEntityList<T>() where T : ModelBase
+        private IFreeSql _freeSql { get; set; }
+        public BaseManage(IFreeSql freeSql)
         {
-            // Explicitly cast the result to List<ModelBase> to resolve the type mismatch
-            return (await DBHelper.freeSql.Select<T>().ToListAsync()).Cast<ModelBase>().ToList();
+            _freeSql = freeSql;
+        }
+        public BaseManage()
+        {
+            _freeSql = DBHelper.freeSql;
         }
 
-        public virtual async Task<bool> AddEntity(ModelBase modelBase)
+        public virtual async Task<List<T>> GetEntityList<T>() where T : class, new()
         {
-            try
-            {
-                await DBHelper.freeSql.Insert(modelBase).ExecuteAffrowsAsync();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return (await _freeSql.Select<T>().ToListAsync()).ToList();
+        }
+        public virtual async Task<List<ModelBase>> GetEntityListByCondition<T>(string condition, object param) where T : class, new()
+        {
+            return (await _freeSql.Select<T>().Where(condition, param).ToListAsync()).Cast<ModelBase>().ToList();
         }
 
-        public virtual async Task<bool> AddEntityList(List<ModelBase> modelBaseList)
+        public async Task Update<T>(List<ModelBase> entities) where T : class, new()
         {
-            try
-            {
-                await DBHelper.freeSql.Insert<ModelBase>().AppendData(modelBaseList).ExecuteAffrowsAsync();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+            List<ModelBase> UpdateEntities = entities.Where(x => x.EditState == EnumEditState.eUpdate).ToList();
+            List<ModelBase> AddEntities = entities.Where(x => x.EditState == EnumEditState.eInsert).ToList();
+            List<ModelBase> DeleteEntities = entities.Where(x => x.EditState == EnumEditState.eDelete).ToList();
 
-        public virtual async Task<bool> UpdateEntity(ModelBase modelBase)
-        {
-            try
-            {
-                await DBHelper.freeSql.Update<ModelBase>().SetSource(modelBase).ExecuteAffrowsAsync();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public virtual async Task<bool> UpdateEntityList(List<ModelBase> modelBaseList)
-        {
-            try
-            {
-                await DBHelper.freeSql.Update<ModelBase>().SetSource(modelBaseList).ExecuteAffrowsAsync();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public virtual async Task<bool> DeleteEntity(ModelBase modelBase)
-        {
-            try
-            {
-                await DBHelper.freeSql.Delete<ModelBase>().Where(a => a.ID == modelBase.ID).ExecuteAffrowsAsync();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public virtual async Task<bool> DeleteEntityList(List<ModelBase> modelBaseList)
-        {
-            try
-            {
-                await DBHelper.freeSql.Delete<ModelBase>().Where(a => modelBaseList.Select(b => b.ID).Contains(a.ID)).ExecuteAffrowsAsync();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            List<Task> tasks =
+            [
+                _freeSql.Insert(AddEntities).ExecuteAffrowsAsync(),
+                _freeSql.Update<T>(UpdateEntities).ExecuteAffrowsAsync(),
+                _freeSql.Delete<T>(DeleteEntities).ExecuteAffrowsAsync(),
+            ];
+            await Task.WhenAll(tasks);
         }
     }
 }

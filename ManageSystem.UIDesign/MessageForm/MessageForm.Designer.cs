@@ -83,6 +83,7 @@
             this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX1.TabIndex = 2;
             this.checkBoxX1.Text = "不再提示";
+            this.checkBoxX1.Visible = false;
             // 
             // MessageForm
             // 

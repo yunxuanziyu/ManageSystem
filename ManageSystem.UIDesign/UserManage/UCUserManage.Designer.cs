@@ -32,11 +32,13 @@
             this.labelUserList = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panelBody = new System.Windows.Forms.Panel();
+            this.labelXDept = new DevComponents.DotNetBar.LabelX();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelXDept);
             this.panel1.Controls.Add(this.labelUserList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -60,8 +62,6 @@
             this.labelUserList.Text = "用户列表";
             this.labelUserList.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelUserList.Click += new System.EventHandler(this.labelUserList_Click);
-            this.labelUserList.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
-            this.labelUserList.MouseLeave += new System.EventHandler(this.labelX_MouseLeave);
             // 
             // line1
             // 
@@ -85,6 +85,22 @@
             this.panelBody.Size = new System.Drawing.Size(667, 479);
             this.panelBody.TabIndex = 22;
             // 
+            // labelXDept
+            // 
+            this.labelXDept.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelXDept.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelXDept.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelXDept.Location = new System.Drawing.Point(0, 52);
+            this.labelXDept.Name = "labelXDept";
+            this.labelXDept.Size = new System.Drawing.Size(114, 37);
+            this.labelXDept.TabIndex = 21;
+            this.labelXDept.Text = "部门列表";
+            this.labelXDept.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.labelXDept.Click += new System.EventHandler(this.labelXDept_Click);
+            // 
             // UCUserManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -105,5 +121,6 @@
         private DevComponents.DotNetBar.LabelX labelUserList;
         private DevComponents.DotNetBar.Controls.Line line1;
         private System.Windows.Forms.Panel panelBody;
+        private DevComponents.DotNetBar.LabelX labelXDept;
     }
 }

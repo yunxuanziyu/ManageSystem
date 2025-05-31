@@ -34,5 +34,18 @@ namespace ManageSystem.DataManage
                 return false;
             }
         }
+
+        public async Task<bool> AddLogs(List<Log> log)
+        {
+            try
+            {
+                await _freeSql.Insert(log).ExecuteAffrowsAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

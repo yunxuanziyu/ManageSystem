@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.BusinessManage
 {
-    public interface IUserService:IDisposable
+    public interface IUserService : IDisposable
     {
-        public Task<User> GetUser(string name,string pwd);
+        public Task<User> GetUser(string name, string pwd);
         public Task<List<User>> GetUserList();
-        public Task<List<User>> GetUserByWhere(string where,object param);
+        public Task<List<User>> GetUserByWhere(string where, object param);
     }
 }

@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             this.DoubleBuffered = true;
             this.Name = "UCBaseControl";
-            this.Size = new System.Drawing.Size(345, 278);
+            this.Size = new System.Drawing.Size(511, 352);
             this.ResumeLayout(false);
 
         }

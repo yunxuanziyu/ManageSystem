@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.BusinessManage
 {
-    public interface IDeptService : IDisposable
+    public interface IServiceBase
     {
-        public Task<List<Department>> GetDepts();
+        public Task Update<T>(List<ModelBase> entities) where T : class, new();
     }
 }

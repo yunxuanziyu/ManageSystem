@@ -21,8 +21,12 @@ namespace ManageSystem.UIDesign
 
         private void labelUserList_Click(object sender, EventArgs e)
         {
-            panelBody.Controls.Clear();
-            panelBody.Controls.Add(UCCreateCreator.Create<UCUserList>());
+            LoadUCPage(panelBody, UCCreateCreator.Create<UCUserList>());
+        }
+
+        private void labelXDept_Click(object sender, EventArgs e)
+        {
+            LoadUCPage(panelBody, UCCreateCreator.Create<UCDeptManage>());
         }
     }
 }

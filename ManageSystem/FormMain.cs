@@ -47,7 +47,6 @@ namespace ManageSystem
         {
             if (uc == panelUCHolder.Controls.OfType<UserControl>().FirstOrDefault())
                 return;
-            //panelUCHolder.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             if (!panelUCHolder.Controls.Contains(uc))
                 panelUCHolder.Controls.Add(uc);

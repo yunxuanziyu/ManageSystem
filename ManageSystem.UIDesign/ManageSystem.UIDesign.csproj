@@ -52,6 +52,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SystemRunDLL\ManageSystem.DataManage.dll</HintPath>
     </Reference>
+    <Reference Include="ManageSystem.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SystemRunDLL\ManageSystem.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -121,6 +125,18 @@
     <Compile Include="Define\UCDefine.Designer.cs">
       <DependentUpon>UCDefine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Define\UCDefineManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Define\UCDefineManage.Designer.cs">
+      <DependentUpon>UCDefineManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\UCDeptManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserManage\UCDeptManage.Designer.cs">
+      <DependentUpon>UCDeptManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCSystemSet.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +155,9 @@
     <Compile Include="UserManage\UCUserManage.Designer.cs">
       <DependentUpon>UCUserManage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Define\UCDefineManage.resx">
+      <DependentUpon>UCDefineManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +194,9 @@
     <EmbeddedResource Include="Define\UCDefine.resx">
       <DependentUpon>UCDefine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserManage\UCDeptManage.resx">
+      <DependentUpon>UCDeptManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCSystemSet.resx">
       <DependentUpon>UCSystemSet.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +219,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ManageSystem.ControlX\ManageSystem.ControlX.csproj">
+      <Project>{1BAAF380-16E6-463B-AE1C-051079CFD89C}</Project>
+      <Name>ManageSystem.ControlX</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

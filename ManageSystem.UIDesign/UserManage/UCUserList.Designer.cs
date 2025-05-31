@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonSave = new DevComponents.DotNetBar.ButtonX();
             this.comboBoxDeptList = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.buttonQuery = new DevComponents.DotNetBar.ButtonX();
             this.textBoxName = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -44,6 +45,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.buttonSave);
             this.panel3.Controls.Add(this.comboBoxDeptList);
             this.panel3.Controls.Add(this.buttonQuery);
             this.panel3.Controls.Add(this.textBoxName);
@@ -54,6 +56,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(184, 507);
             this.panel3.TabIndex = 5;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonSave.Location = new System.Drawing.Point(95, 474);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonSave.TabIndex = 8;
+            this.buttonSave.Text = "保  存";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // comboBoxDeptList
             // 
@@ -72,7 +87,7 @@
             this.buttonQuery.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonQuery.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonQuery.Location = new System.Drawing.Point(95, 470);
+            this.buttonQuery.Location = new System.Drawing.Point(95, 442);
             this.buttonQuery.Name = "buttonQuery";
             this.buttonQuery.Size = new System.Drawing.Size(75, 23);
             this.buttonQuery.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -122,15 +137,17 @@
             // 
             // dataGridViewX1
             // 
+            this.dataGridViewX1.AllowUserToAddRows = false;
+            this.dataGridViewX1.AllowUserToDeleteRows = false;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(10, 10);
@@ -138,6 +155,7 @@
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.Size = new System.Drawing.Size(397, 487);
             this.dataGridViewX1.TabIndex = 6;
+            this.dataGridViewX1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellValueChanged);
             // 
             // panel1
             // 
@@ -175,5 +193,6 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxDeptList;
         private System.Windows.Forms.Panel panel1;
+        private DevComponents.DotNetBar.ButtonX buttonSave;
     }
 }

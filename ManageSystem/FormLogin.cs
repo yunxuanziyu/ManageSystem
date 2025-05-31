@@ -81,7 +81,7 @@ namespace ManageSystem
                     MessageForm.ShowMessage("系统到期，请尽快续费！", "提示", true);
                 else if (DateTime.Parse(Lifespen).Subtract(DateTime.Now).Days < 20 && CloseMsg == "0")
                 {
-                    MessageForm.ShowMessage("系统即将到期，请尽快续费！", "提示", true);
+                    MessageForm.ShowMessage("系统即将到期，请尽快续费！", "提示", true,true);
                     bool NoPromptAgain = MessageForm.NoPromptAgain;
                     if (NoPromptAgain)
                     {
