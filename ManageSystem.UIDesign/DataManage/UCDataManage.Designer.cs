@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelUCHolder = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelMenu
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(112, 446);
-            this.panel1.TabIndex = 0;
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(112, 446);
+            this.panelMenu.TabIndex = 0;
             // 
             // line1
             // 
@@ -52,33 +52,33 @@
             this.line1.Text = "line1";
             this.line1.VerticalLine = true;
             // 
-            // panel2
+            // panelUCHolder
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(122, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(412, 446);
-            this.panel2.TabIndex = 2;
+            this.panelUCHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelUCHolder.Location = new System.Drawing.Point(122, 0);
+            this.panelUCHolder.Name = "panelUCHolder";
+            this.panelUCHolder.Padding = new System.Windows.Forms.Padding(10);
+            this.panelUCHolder.Size = new System.Drawing.Size(412, 446);
+            this.panelUCHolder.TabIndex = 2;
             // 
             // UCDataManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelUCHolder);
             this.Controls.Add(this.line1);
-            this.Controls.Add(this.panel1);
-            this.DoubleBuffered = true;
+            this.Controls.Add(this.panelMenu);
             this.Name = "UCDataManage";
             this.Size = new System.Drawing.Size(534, 446);
+            this.Load += new System.EventHandler(this.UCDataManage_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelMenu;
         private DevComponents.DotNetBar.Controls.Line line1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelUCHolder;
     }
 }

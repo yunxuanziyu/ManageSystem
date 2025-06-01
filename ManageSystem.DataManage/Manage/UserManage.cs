@@ -33,5 +33,17 @@ namespace ManageSystem.DataManage
             return await DBHelper.freeSql.Select<User>().Where(where,param).ToListAsync();
         }
 
+        public async Task Update(List<User> entities)
+        {
+            List<User> UpdateEntities = entities.Where(x => x.EditState == EnumEditState.eUpdate).ToList();
+            UpdateEntities.ForEach(user => user.UpdatedDate = DateTime.Now);
+            List<User> AddEntities = entities.Where(x => x.EditState == EnumEditState.eInsert).ToList();
+            AddEntities.ForEach(user => user.CreatedDate = DateTime.Now);
+            List<User> DeleteEntities = entities.Where(x => x.EditState == EnumEditState.eDelete).ToList();
+
+            var res1 = await _freeSql.Insert(AddEntities).ExecuteAffrowsAsync();
+            var res2 = await _freeSql.Update<User>().SetSource(UpdateEntities).ExecuteAffrowsAsync();
+            var res3 = await _freeSql.Delete<User>().Where(a => DeleteEntities.Select(b => b.Name).Contains(a.Name)).ExecuteAffrowsAsync();
+        }
     }
 }

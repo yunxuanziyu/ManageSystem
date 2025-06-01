@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ManageSystem.UIDesign
 {
-    public partial class UCDataManage: UCBaseControl
+    public partial class UCSetting1: UCBaseControl
     {
-        public UCDataManage()
+        public UCSetting1()
         {
             InitializeComponent();
-        }
-
-        private void UCDataManage_Load(object sender, EventArgs e)
-        {
-            LabelXBindingEvent(this.panelMenu);
         }
     }
 }

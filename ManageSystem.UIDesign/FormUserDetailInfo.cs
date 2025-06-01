@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManageSystem.DataManage.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace ManageSystem.UIDesign
 {
     public partial class FormUserDetailInfo: FormBase
     {
-        public FormUserDetailInfo()
+        public FormUserDetailInfo(User user)
         {
             InitializeComponent();
+
         }
     }
 }

@@ -201,6 +201,7 @@
             this.labelDefine.Text = "类型定义";
             this.labelDefine.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelDefine.Click += new System.EventHandler(this.labelDefine_Click);
+            this.labelDefine.MouseClick += new System.Windows.Forms.MouseEventHandler(this.labelMenu_MouseClick);
             this.labelDefine.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelDefine.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
@@ -219,6 +220,7 @@
             this.labelXSet.Text = "系统设置";
             this.labelXSet.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelXSet.Click += new System.EventHandler(this.labelXSet_Click);
+            this.labelXSet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.labelMenu_MouseClick);
             this.labelXSet.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelXSet.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
@@ -237,6 +239,7 @@
             this.labelXUserManage.Text = "用户管理";
             this.labelXUserManage.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelXUserManage.Click += new System.EventHandler(this.labelXUserManage_Click);
+            this.labelXUserManage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.labelMenu_MouseClick);
             this.labelXUserManage.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelXUserManage.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
@@ -255,6 +258,7 @@
             this.labelXDataManage.Text = "数据管理";
             this.labelXDataManage.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelXDataManage.Click += new System.EventHandler(this.labelXDataManage_Click);
+            this.labelXDataManage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.labelMenu_MouseClick);
             this.labelXDataManage.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelXDataManage.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
@@ -273,6 +277,7 @@
             this.labelFirstPage.Text = "首    页";
             this.labelFirstPage.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelFirstPage.Click += new System.EventHandler(this.labelFirstPage_Click);
+            this.labelFirstPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.labelMenu_MouseClick);
             this.labelFirstPage.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelFirstPage.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 

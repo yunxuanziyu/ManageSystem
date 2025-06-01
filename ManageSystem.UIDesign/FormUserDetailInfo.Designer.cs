@@ -29,7 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserDetailInfo));
+            this.ucBaseControl1 = new ManageSystem.UIDesign.UCBaseControl();
             this.SuspendLayout();
+            // 
+            // ucBaseControl1
+            // 
+            this.ucBaseControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.ucBaseControl1.CornerRadius = 50;
+            this.ucBaseControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucBaseControl1.Location = new System.Drawing.Point(10, 10);
+            this.ucBaseControl1.Name = "ucBaseControl1";
+            this.ucBaseControl1.Size = new System.Drawing.Size(654, 440);
+            this.ucBaseControl1.TabIndex = 0;
             // 
             // FormUserDetailInfo
             // 
@@ -37,13 +48,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(653, 391);
+            this.ClientSize = new System.Drawing.Size(674, 460);
+            this.Controls.Add(this.ucBaseControl1);
             this.Name = "FormUserDetailInfo";
-            this.Text = "FormUserDetailInfo";
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Text = "用户信息";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private UCBaseControl ucBaseControl1;
     }
 }

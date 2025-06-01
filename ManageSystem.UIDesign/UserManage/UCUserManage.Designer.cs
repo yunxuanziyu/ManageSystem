@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelXDept = new DevComponents.DotNetBar.LabelX();
             this.labelUserList = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.labelXDept = new DevComponents.DotNetBar.LabelX();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,24 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.panel1.Size = new System.Drawing.Size(114, 479);
             this.panel1.TabIndex = 0;
+            // 
+            // labelXDept
+            // 
+            this.labelXDept.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelXDept.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelXDept.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelXDept.Location = new System.Drawing.Point(0, 52);
+            this.labelXDept.Name = "labelXDept";
+            this.labelXDept.Size = new System.Drawing.Size(114, 37);
+            this.labelXDept.TabIndex = 21;
+            this.labelXDept.Text = "部门列表";
+            this.labelXDept.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.labelXDept.Click += new System.EventHandler(this.labelXDept_Click);
+            this.labelXDept.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
+            this.labelXDept.MouseLeave += new System.EventHandler(this.labelX_MouseLeave);
             // 
             // labelUserList
             // 
@@ -62,6 +80,8 @@
             this.labelUserList.Text = "用户列表";
             this.labelUserList.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelUserList.Click += new System.EventHandler(this.labelUserList_Click);
+            this.labelUserList.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
+            this.labelUserList.MouseLeave += new System.EventHandler(this.labelX_MouseLeave);
             // 
             // line1
             // 
@@ -84,22 +104,6 @@
             this.panelBody.Padding = new System.Windows.Forms.Padding(5);
             this.panelBody.Size = new System.Drawing.Size(667, 479);
             this.panelBody.TabIndex = 22;
-            // 
-            // labelXDept
-            // 
-            this.labelXDept.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelXDept.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelXDept.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelXDept.Location = new System.Drawing.Point(0, 52);
-            this.labelXDept.Name = "labelXDept";
-            this.labelXDept.Size = new System.Drawing.Size(114, 37);
-            this.labelXDept.TabIndex = 21;
-            this.labelXDept.Text = "部门列表";
-            this.labelXDept.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.labelXDept.Click += new System.EventHandler(this.labelXDept_Click);
             // 
             // UCUserManage
             // 

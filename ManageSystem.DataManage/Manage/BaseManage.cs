@@ -30,17 +30,7 @@ namespace ManageSystem.DataManage
 
         public async Task Update<T>(List<ModelBase> entities) where T : class, new()
         {
-            List<ModelBase> UpdateEntities = entities.Where(x => x.EditState == EnumEditState.eUpdate).ToList();
-            List<ModelBase> AddEntities = entities.Where(x => x.EditState == EnumEditState.eInsert).ToList();
-            List<ModelBase> DeleteEntities = entities.Where(x => x.EditState == EnumEditState.eDelete).ToList();
-
-            List<Task> tasks =
-            [
-                _freeSql.Insert(AddEntities).ExecuteAffrowsAsync(),
-                _freeSql.Update<T>(UpdateEntities).ExecuteAffrowsAsync(),
-                _freeSql.Delete<T>(DeleteEntities).ExecuteAffrowsAsync(),
-            ];
-            await Task.WhenAll(tasks);
+            
         }
     }
 }

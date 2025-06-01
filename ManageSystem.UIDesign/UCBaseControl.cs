@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using DevComponents.WinForms.Drawing;
 using System.Drawing.Drawing2D;
+using DevComponents.DotNetBar.Controls;
 
 namespace ManageSystem.UIDesign
 {
@@ -23,6 +24,53 @@ namespace ManageSystem.UIDesign
             this.UpdateStyles();
         }
 
+        private Panel _panel;
+        public void LabelXBindingEvent(Panel panel)
+        {
+            _panel = panel;
+            foreach (LabelX l in panel.Controls.OfType<LabelX>())
+            {
+                l.MouseEnter+=labelX_MouseEnter;
+                l.MouseLeave+=labelX_MouseLeave;
+                l.MouseClick += labelSet_MouseClick;
+            }
+            _panel = null;
+        }
+        public void labelX_MouseEnter(object sender, EventArgs e)
+        {
+            LabelX lbl = sender as LabelX;
+            lbl.BackColor = Color.White;
+        }
+
+        public void labelX_MouseLeave(object sender, EventArgs e)
+        {
+            LabelX lbl = sender as LabelX;
+            lbl.BackColor = Color.Transparent;
+        }
+        private void labelSet_MouseClick(object sender, MouseEventArgs e)
+        {
+            _panel.Controls.OfType<LabelX>().ToList().ForEach(c => c.BackColor = ((c.Name == (sender as LabelX).Name) ? Color.FromArgb(226, 230, 235) : Color.Transparent));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dataGridViewX1"></param>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        public List<int> GetSelectedRows(DataGridView dataGridViewX1,string columnName = "ID")
+        {
+            var selectedIndexes = new List<int>();
+            for (int i = 0; i < dataGridViewX1.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(dataGridViewX1.Rows[i].Cells[0].Value))
+                {
+                    int rowID = Convert.ToInt32(dataGridViewX1.Rows[i].Cells[columnName].Value);
+                    selectedIndexes.Add(rowID);
+                }
+            }
+            return selectedIndexes;
+        }
         public void LoadUCPage(Panel panelUCHolder, UserControl uc)
         {
             if (uc == panelUCHolder.Controls.OfType<UserControl>().FirstOrDefault())
@@ -31,6 +79,8 @@ namespace ManageSystem.UIDesign
             if (!panelUCHolder.Controls.Contains(uc))
                 panelUCHolder.Controls.Add(uc);
             uc.BringToFront();
+            foreach(var c in panelUCHolder.Controls.OfType<UserControl>())
+                c.Visible = c == uc;
         }
         protected override void OnResize(EventArgs e)
         {
@@ -84,18 +134,6 @@ namespace ManageSystem.UIDesign
                 path.CloseFigure();
                 this.Region = new Region(path);
             }
-        }
-
-        public void labelX_MouseEnter(object sender, EventArgs e)
-        {
-            LabelX lbl = sender as LabelX;
-            lbl.BackColor = Color.White;
-        }
-
-        public void labelX_MouseLeave(object sender, EventArgs e)
-        {
-            LabelX lbl = sender as LabelX;
-            lbl.BackColor = Color.Transparent;
         }
     }
 }

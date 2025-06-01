@@ -83,12 +83,16 @@ namespace ManageSystem
 
         private void labelDefine_Click(object sender, EventArgs e)
         {
-            
+            LoadUCPage(UCCreateCreator.Create<UCDefineManage>());
         }
 
         private void labelXSet_Click(object sender, EventArgs e)
         {
             LoadUCPage(UCCreateCreator.Create<UCSystemSet>());
+        }
+        private void labelMenu_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.panelMenu.Controls.OfType<LabelX>().ToList().ForEach(c => c.BackColor = ((c.Name == (sender as LabelX).Name) ? Color.FromArgb(226, 230, 235) : Color.Transparent));
         }
     }
 }
