@@ -86,6 +86,7 @@
     <Compile Include="DBHelper.cs" />
     <Compile Include="Manage\BaseManage.cs" />
     <Compile Include="Manage\DeptManage.cs" />
+    <Compile Include="Manage\EnumerationManage.cs" />
     <Compile Include="Manage\LogManage.cs" />
     <Compile Include="Model\DataSourceModel.cs" />
     <Compile Include="Model\Department.cs" />
