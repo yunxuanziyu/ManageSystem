@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.labelXDept = new DevComponents.DotNetBar.LabelX();
             this.labelUserList = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panelBody = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelMenu
             // 
-            this.panel1.Controls.Add(this.labelXDept);
-            this.panel1.Controls.Add(this.labelUserList);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(114, 479);
-            this.panel1.TabIndex = 0;
+            this.panelMenu.Controls.Add(this.labelXDept);
+            this.panelMenu.Controls.Add(this.labelUserList);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.panelMenu.Size = new System.Drawing.Size(114, 479);
+            this.panelMenu.TabIndex = 0;
             // 
             // labelXDept
             // 
@@ -62,8 +62,6 @@
             this.labelXDept.Text = "部门列表";
             this.labelXDept.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelXDept.Click += new System.EventHandler(this.labelXDept_Click);
-            this.labelXDept.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
-            this.labelXDept.MouseLeave += new System.EventHandler(this.labelX_MouseLeave);
             // 
             // labelUserList
             // 
@@ -80,8 +78,6 @@
             this.labelUserList.Text = "用户列表";
             this.labelUserList.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelUserList.Click += new System.EventHandler(this.labelUserList_Click);
-            this.labelUserList.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
-            this.labelUserList.MouseLeave += new System.EventHandler(this.labelX_MouseLeave);
             // 
             // line1
             // 
@@ -111,17 +107,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelBody);
             this.Controls.Add(this.line1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelMenu);
             this.Name = "UCUserManage";
             this.Size = new System.Drawing.Size(791, 479);
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.UCUserManage_Load);
+            this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelMenu;
         private DevComponents.DotNetBar.LabelX labelUserList;
         private DevComponents.DotNetBar.Controls.Line line1;
         private System.Windows.Forms.Panel panelBody;

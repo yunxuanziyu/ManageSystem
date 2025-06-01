@@ -29,13 +29,15 @@ namespace ManageSystem
         private void labelX_MouseEnter(object sender, EventArgs e)
         {
             LabelX lbl = sender as LabelX;
-            lbl.BackColor = Color.White;
+            if (lbl.BackColor == Color.Transparent)
+                lbl.BackColor = Color.White;
         }
 
         private void labelXSet_MouseLeave(object sender, EventArgs e)
         {
             LabelX lbl = sender as LabelX;
-            lbl.BackColor = Color.Transparent;
+            if (lbl.BackColor == Color.White)
+                lbl.BackColor = Color.Transparent;
         }
 
         private void labelFirstPage_Click(object sender, EventArgs e)

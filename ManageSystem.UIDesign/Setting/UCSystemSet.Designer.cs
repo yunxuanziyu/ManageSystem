@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.labelXSave = new DevComponents.DotNetBar.LabelX();
             this.labelSet2 = new DevComponents.DotNetBar.LabelX();
             this.labelSet1 = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
@@ -39,6 +40,7 @@
             // 
             // panelmenu
             // 
+            this.panelmenu.Controls.Add(this.labelXSave);
             this.panelmenu.Controls.Add(this.labelSet2);
             this.panelmenu.Controls.Add(this.labelSet1);
             this.panelmenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -47,6 +49,30 @@
             this.panelmenu.Padding = new System.Windows.Forms.Padding(8, 10, 8, 0);
             this.panelmenu.Size = new System.Drawing.Size(114, 359);
             this.panelmenu.TabIndex = 1;
+            // 
+            // labelXSave
+            // 
+            this.labelXSave.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelXSave.BackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarCaptionInactiveText;
+            this.labelXSave.BackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.DockSiteBackColor2;
+            this.labelXSave.BackgroundStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.labelXSave.BackgroundStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.labelXSave.BackgroundStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.labelXSave.BackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.labelXSave.BackgroundStyle.CornerDiameter = 20;
+            this.labelXSave.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.labelXSave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelXSave.Location = new System.Drawing.Point(8, 84);
+            this.labelXSave.Name = "labelXSave";
+            this.labelXSave.Size = new System.Drawing.Size(98, 37);
+            this.labelXSave.Symbol = "";
+            this.labelXSave.SymbolColor = System.Drawing.Color.Blue;
+            this.labelXSave.TabIndex = 23;
+            this.labelXSave.Text = "保存";
+            this.labelXSave.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // labelSet2
             // 
@@ -134,5 +160,6 @@
         private DevComponents.DotNetBar.LabelX labelSet1;
         private DevComponents.DotNetBar.Controls.Line line1;
         private ControlX.PanelX panelXHolder;
+        private DevComponents.DotNetBar.LabelX labelXSave;
     }
 }

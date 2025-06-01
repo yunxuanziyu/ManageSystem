@@ -133,6 +133,7 @@ namespace ManageSystem.UIDesign
                 int rowIndex = dataGridViewX1.CurrentRow.Index;
                 User modifiedUser = userList[rowIndex];
                 FormUserDetailInfo f = FormBase.CreateForm<FormUserDetailInfo>(new object[] { modifiedUser }) as FormUserDetailInfo;
+                f.BindingUser(modifiedUser);
                 f.Show();
             }
         }

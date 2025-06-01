@@ -24,32 +24,64 @@ namespace ManageSystem.UIDesign
             this.UpdateStyles();
         }
 
-        private Panel _panel;
-        public void LabelXBindingEvent(Panel panel)
+        /// <summary>
+        /// LabelX的事件绑定,
+        /// UC的Menu可通用
+        /// </summary>
+        /// <param name="panel"></param>
+        public void LabelXBindingEvent(Panel panel,bool BindScroll = false)
         {
-            _panel = panel;
-            foreach (LabelX l in panel.Controls.OfType<LabelX>())
+            foreach (Control l in panel.Controls.Cast<Control>().Where(c=>c is LabelX || c is Label))
             {
-                l.MouseEnter+=labelX_MouseEnter;
-                l.MouseLeave+=labelX_MouseLeave;
+                l.MouseEnter += labelX_MouseEnter;
+                l.MouseLeave += labelX_MouseLeave;
                 l.MouseClick += labelSet_MouseClick;
+                if (BindScroll)
+                    l.Click += labelScroll_Click;
             }
-            _panel = null;
         }
+        private void labelScroll_Click(object sender, EventArgs e)
+        {
+            Control label = sender as Control;
+            Control FindControl = label;
+            Control parentControl = null;
+            //寻找Menu的LabelX所在的最外层UC
+            do
+            {
+                parentControl = FindControl.Parent;
+                FindControl = parentControl;
+            } while (!(parentControl is UserControl));
+            //父UC里所有的子UC(存放实际内容的UC)
+            var targetControl = parentControl.Controls.Cast<Control>()
+                .SelectMany(c => new[] { c }.Concat(GetAllChildren(c)))
+                .FirstOrDefault(c => c.Name == "UC_"+label.Name);
+            //实际需要的UC的父Panel
+            Panel UCparentPanel = targetControl?.Parent as Panel;
+            // 计算相对位置
+            Point targetPosition = targetControl.Parent.PointToScreen(targetControl.Location);
+            Point panelPosition = UCparentPanel.PointToScreen(Point.Empty);
+            int relativeY = targetPosition.Y - panelPosition.Y;
+            // 执行滚动
+            UCparentPanel.AutoScrollPosition = new Point(0, relativeY);
+        }
+
         public void labelX_MouseEnter(object sender, EventArgs e)
         {
             LabelX lbl = sender as LabelX;
-            lbl.BackColor = Color.White;
+            if (lbl.BackColor == Color.Transparent)
+                lbl.BackColor = Color.White;
         }
 
         public void labelX_MouseLeave(object sender, EventArgs e)
         {
             LabelX lbl = sender as LabelX;
-            lbl.BackColor = Color.Transparent;
+            if (lbl.BackColor == Color.White)
+                lbl.BackColor = Color.Transparent;
         }
         private void labelSet_MouseClick(object sender, MouseEventArgs e)
         {
-            _panel.Controls.OfType<LabelX>().ToList().ForEach(c => c.BackColor = ((c.Name == (sender as LabelX).Name) ? Color.FromArgb(226, 230, 235) : Color.Transparent));
+            Panel _panel = (sender as Control).Parent as Panel;
+            _panel.Controls.Cast<Control>().Where(c => c is LabelX || c is Label).ToList().ForEach(c => c.BackColor = ((c.Name == (sender as Control).Name) ? Color.FromArgb(226, 230, 235) : Color.Transparent));
         }
 
         /// <summary>
@@ -135,5 +167,8 @@ namespace ManageSystem.UIDesign
                 this.Region = new Region(path);
             }
         }
+
+        IEnumerable<Control> GetAllChildren(Control parent) =>
+            parent.Controls.Cast<Control>().SelectMany(c => new[] { c }.Concat(GetAllChildren(c)));
     }
 }
