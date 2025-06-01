@@ -28,5 +28,16 @@ namespace ManageSystem.UIDesign
         {
             LoadUCPage(panelBody, UCCreateCreator.Create<UCDeptManage>());
         }
+        public void labelX_MouseEnter(object sender, EventArgs e)
+        {
+            LabelX lbl = sender as LabelX;
+            lbl.BackColor = Color.White;
+        }
+
+        public void labelX_MouseLeave(object sender, EventArgs e)
+        {
+            LabelX lbl = sender as LabelX;
+            lbl.BackColor = Color.Transparent;
+        }
     }
 }

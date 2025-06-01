@@ -45,10 +45,8 @@ namespace ManageSystem.BusinessManage.Service
 
         public async Task Update(List<Department> lst)
         {
-            DepartmentList list = new DepartmentList();
-            lst.ForEach(x => list.Add(x));
             DeptManage manage = new DeptManage();
-            await manage.Update<Department>(list);
+            await manage.Update(lst);
         }
     }
 }

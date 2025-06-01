@@ -83,7 +83,7 @@ namespace ManageSystem
 
         private void labelDefine_Click(object sender, EventArgs e)
         {
-            
+            LoadUCPage(UCCreateCreator.Create<UCDefineManage>());
         }
 
         private void labelXSet_Click(object sender, EventArgs e)

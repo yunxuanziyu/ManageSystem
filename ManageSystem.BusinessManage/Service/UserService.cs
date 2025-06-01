@@ -42,10 +42,8 @@ namespace ManageSystem.BusinessManage
 
         public async Task Update(List<User> lst)
         {
-            DeptManage manage = new DeptManage();
-            UserList userList = new UserList();
-            lst.ForEach(x => userList.Add(x));
-            await manage.Update<User>(userList);
+            UserManage manage = new UserManage();
+            await manage.Update(lst);
         }
 
         public void Dispose()

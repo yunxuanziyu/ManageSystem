@@ -11,12 +11,13 @@ using DevComponents.DotNetBar;
 
 namespace ManageSystem.UIDesign
 {
-    public partial class UCDefineManage: UCBaseControl
+    public partial class UCSystemSet: UCBaseControl
     {
-        public UCDefineManage()
+        public UCSystemSet()
         {
             InitializeComponent();
         }
+
         public void labelX_MouseEnter(object sender, EventArgs e)
         {
             LabelX lbl = sender as LabelX;
@@ -29,27 +30,24 @@ namespace ManageSystem.UIDesign
             lbl.BackColor = Color.Transparent;
         }
 
-        private void labelDept_Click(object sender, EventArgs e)
+        private void LoadUC(UserControl uc,object param = null)
+        {
+            Panel p = new Panel() { Height = 10, BackColor = Color.Transparent };
+            this.panelXHolder.Controls.Add(p);
+            uc.Dock = DockStyle.Top;
+            this.panelXHolder.Controls.Add(uc);
+        }
+
+        private void UCSystemSet_Load(object sender, EventArgs e)
+        {
+            LoadUC(new UCSaveSetting());
+            LoadUC(new UCSetting2());
+            LoadUC(new UCSetting1());
+        }
+
+        private void labelSetCheck_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void labelX1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// 加载控件
-        /// 靠前的后加载(写下面)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UCDefineManage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

@@ -53,5 +53,13 @@ namespace ManageSystem.UIDesign
             _isDragging = false;
             this.Cursor = Cursors.Default;
         }
+
+        private static Dictionary<Type,Form> _formCache = new Dictionary<Type, Form>();
+        public static Form CreateForm<T>(object[] param = null) where T : Form
+        {
+            if (!_formCache.ContainsKey(typeof(T)))
+                _formCache.Add(typeof(T), Activator.CreateInstance(typeof(T), param) as T);
+            return _formCache[typeof(T)];
+        }
     }
 }

@@ -1,9 +1,8 @@
-﻿using ManageSystem.DataManage.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +10,11 @@ using System.Windows.Forms;
 
 namespace ManageSystem.UIDesign
 {
-    public partial class FormUserDetailInfo: FormBase
+    public partial class UCSetting2 : UCBaseControl
     {
-        public FormUserDetailInfo(User user)
+        public UCSetting2()
         {
             InitializeComponent();
-
         }
     }
 }

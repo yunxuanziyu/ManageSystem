@@ -112,6 +112,12 @@
     <Compile Include="DataManage\UCDataManage.Designer.cs">
       <DependentUpon>UCDataManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setting\UCSetting2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\UCSetting2.Designer.cs">
+      <DependentUpon>UCSetting2.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCBaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,11 +125,11 @@
       <DependentUpon>UCBaseControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UCCreateCreator.cs" />
-    <Compile Include="Define\UCDefine.cs">
+    <Compile Include="Define\UCDeptDefine.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Define\UCDefine.Designer.cs">
-      <DependentUpon>UCDefine.cs</DependentUpon>
+    <Compile Include="Define\UCDeptDefine.Designer.cs">
+      <DependentUpon>UCDeptDefine.cs</DependentUpon>
     </Compile>
     <Compile Include="Define\UCDefineManage.cs">
       <SubType>UserControl</SubType>
@@ -131,16 +137,34 @@
     <Compile Include="Define\UCDefineManage.Designer.cs">
       <DependentUpon>UCDefineManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Define\UCGoodsDefine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Define\UCGoodsDefine.Designer.cs">
+      <DependentUpon>UCGoodsDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\UCSetting1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\UCSetting1.Designer.cs">
+      <DependentUpon>UCSetting1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\UCSaveSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\UCSaveSetting.Designer.cs">
+      <DependentUpon>UCSaveSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserManage\UCDeptManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserManage\UCDeptManage.Designer.cs">
       <DependentUpon>UCDeptManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCSystemSet.cs">
+    <Compile Include="Setting\UCSystemSet.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCSystemSet.Designer.cs">
+    <Compile Include="Setting\UCSystemSet.Designer.cs">
       <DependentUpon>UCSystemSet.cs</DependentUpon>
     </Compile>
     <Compile Include="UserManage\UCUserList.cs">
@@ -188,16 +212,28 @@
     <EmbeddedResource Include="DataManage\UCDataManage.resx">
       <DependentUpon>UCDataManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Setting\UCSaveSetting.resx">
+      <DependentUpon>UCSaveSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\UCSetting2.resx">
+      <DependentUpon>UCSetting2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCBaseControl.resx">
       <DependentUpon>UCBaseControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Define\UCDefine.resx">
-      <DependentUpon>UCDefine.cs</DependentUpon>
+    <EmbeddedResource Include="Define\UCDeptDefine.resx">
+      <DependentUpon>UCDeptDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Define\UCGoodsDefine.resx">
+      <DependentUpon>UCGoodsDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\UCSetting1.resx">
+      <DependentUpon>UCSetting1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManage\UCDeptManage.resx">
       <DependentUpon>UCDeptManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCSystemSet.resx">
+    <EmbeddedResource Include="Setting\UCSystemSet.resx">
       <DependentUpon>UCSystemSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManage\UCUserList.resx">
