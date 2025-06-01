@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.ControlX
 {
-    public class TextBoxEx:TextBoxX
+    public partial class TextBoxEx:TextBoxX
     {
         public TextBoxEx()
         {

@@ -11,6 +11,9 @@ using DevComponents.DotNetBar;
 using DevComponents.WinForms.Drawing;
 using System.Drawing.Drawing2D;
 using DevComponents.DotNetBar.Controls;
+using ManageSystem.DataManage.Model;
+using System.Linq.Expressions;
+using ManageSystem.ControlX;
 
 namespace ManageSystem.UIDesign
 {
@@ -23,6 +26,26 @@ namespace ManageSystem.UIDesign
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
         }
+
+        public void BindingData<T>(object data,UserControl uc)where T : class
+        {
+            T obj = (T)data;
+            //TODO:Binding Data
+            foreach(var c in uc.Controls.OfType<Control>())
+            {
+                switch (c)
+                {
+                    case ComboBoxX cbx:
+                        break;
+                    case PictureBoxX pbx:
+                        break;
+                    case TextBoxEx tbx:
+                        break;
+                }
+            }
+        }
+
+
 
         /// <summary>
         /// LabelX的事件绑定,

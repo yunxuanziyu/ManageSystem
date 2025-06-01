@@ -1,19 +1,20 @@
-﻿using System;
+﻿using DevComponents.DotNetBar.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ManageSystem.ControlX
 {
-    public partial class PictureBoxX : PictureBox
+    public class ComboTreeX:ComboTree
     {
-        public PictureBoxX()
+        public ComboTreeX()
         {
-
+            
         }
+
         private string _BindField;
 
         [Category("扩展属性")]
@@ -24,6 +25,21 @@ namespace ManageSystem.ControlX
             set
             {
                 _BindField = value;
+                // 这里可以添加刷新显示的逻辑
+                this.Invalidate();
+            }
+        }
+
+        private string _EnumBindField;
+
+        [Category("扩展属性")]
+        [Description("枚举绑定字段，用于绑定枚举。")]
+        public string EnumBindField
+        {
+            get { return _EnumBindField; }
+            set
+            {
+                _EnumBindField = value;
                 // 这里可以添加刷新显示的逻辑
                 this.Invalidate();
             }

@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.ControlX
 {
-    class ComboBoxX:ComboBoxEx
+    public partial class ComboBoxX:ComboBoxEx
     {
         public ComboBoxX()
         {
 
         }
+
+
 
         private string _BindField;
 
@@ -25,6 +27,21 @@ namespace ManageSystem.ControlX
             set
             {
                 _BindField = value;
+                // 这里可以添加刷新显示的逻辑
+                this.Invalidate();
+            }
+        }
+
+        private string _EnumBindField;
+
+        [Category("扩展属性")]
+        [Description("枚举绑定字段，用于绑定枚举。")]
+        public string EnumBindField
+        {
+            get { return _EnumBindField; }
+            set
+            {
+                _EnumBindField = value;
                 // 这里可以添加刷新显示的逻辑
                 this.Invalidate();
             }

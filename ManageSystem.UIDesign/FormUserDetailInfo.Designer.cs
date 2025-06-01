@@ -31,8 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserDetailInfo));
             this.UCBaseControl1 = new ManageSystem.UIDesign.UCBaseControl();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxEx1 = new ManageSystem.ControlX.TextBoxEx();
             this.pictureBoxX1 = new ManageSystem.ControlX.PictureBoxX();
+            this.textBoxEx1 = new ManageSystem.ControlX.TextBoxEx();
+            this.columnHeader1 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader2 = new DevComponents.AdvTree.ColumnHeader();
+            this.columnHeader3 = new DevComponents.AdvTree.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxX1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +61,17 @@
             this.labelX1.TabIndex = 3;
             this.labelX1.Text = "姓名";
             // 
+            // pictureBoxX1
+            // 
+            this.pictureBoxX1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxX1.BackgroundImage")));
+            this.pictureBoxX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxX1.BindField = null;
+            this.pictureBoxX1.Location = new System.Drawing.Point(443, 34);
+            this.pictureBoxX1.Name = "pictureBoxX1";
+            this.pictureBoxX1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBoxX1.TabIndex = 5;
+            this.pictureBoxX1.TabStop = false;
+            // 
             // textBoxEx1
             // 
             this.textBoxEx1.BindField = null;
@@ -72,16 +86,23 @@
             this.textBoxEx1.Size = new System.Drawing.Size(100, 21);
             this.textBoxEx1.TabIndex = 4;
             // 
-            // pictureBoxX1
+            // columnHeader1
             // 
-            this.pictureBoxX1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxX1.BackgroundImage")));
-            this.pictureBoxX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxX1.BindField = null;
-            this.pictureBoxX1.Location = new System.Drawing.Point(443, 34);
-            this.pictureBoxX1.Name = "pictureBoxX1";
-            this.pictureBoxX1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBoxX1.TabIndex = 5;
-            this.pictureBoxX1.TabStop = false;
+            this.columnHeader1.Name = "columnHeader1";
+            this.columnHeader1.Text = "Column";
+            this.columnHeader1.Width.Absolute = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Name = "columnHeader2";
+            this.columnHeader2.Text = "Column";
+            this.columnHeader2.Width.Absolute = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Name = "columnHeader3";
+            this.columnHeader3.Text = "Column";
+            this.columnHeader3.Width.Absolute = 150;
             // 
             // FormUserDetailInfo
             // 
@@ -108,5 +129,8 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private ControlX.TextBoxEx textBoxEx1;
         private ControlX.PictureBoxX pictureBoxX1;
+        private DevComponents.AdvTree.ColumnHeader columnHeader1;
+        private DevComponents.AdvTree.ColumnHeader columnHeader2;
+        private DevComponents.AdvTree.ColumnHeader columnHeader3;
     }
 }

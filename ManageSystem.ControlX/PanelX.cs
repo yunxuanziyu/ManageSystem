@@ -13,7 +13,9 @@ namespace ManageSystem.ControlX
     {    
         public PanelX()
         {
-            InitializeComponent();
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            this.UpdateStyles();
         }
 
         public PanelX(IContainer container)

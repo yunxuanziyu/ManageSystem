@@ -54,7 +54,7 @@
     <Compile Include="ComboBoxX.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DoubleBufferedPanel.cs">
+    <Compile Include="ComboTreeX.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="LoadingCircle.cs">

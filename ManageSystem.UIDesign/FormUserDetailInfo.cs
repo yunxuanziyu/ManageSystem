@@ -16,16 +16,7 @@ namespace ManageSystem.UIDesign
         public FormUserDetailInfo(User user)
         {
             InitializeComponent();
-        }
-
-        public void BindingUser(User user)
-        {
-            //txtUserName.Text = user.UserName;
-            //txtRealName.Text = user.RealName;
-            //txtEmail.Text = user.Email;
-            //txtPhone.Text = user.Phone;
-            //txtAddress.Text = user.Address;
-            //txtRemark.Text = user.Remark;
+            this.UCBaseControl1.BindingData<User>(user);
         }
     }
 }
