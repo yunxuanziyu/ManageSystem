@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonDelete = new DevComponents.DotNetBar.ButtonX();
             this.buttonXDetail = new DevComponents.DotNetBar.ButtonX();
             this.loadingCircle1 = new ManageSystem.ControlX.DesignPatternTest.LoadingCircle();
             this.buttonSave = new DevComponents.DotNetBar.ButtonX();
-            this.comboBoxDeptList = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.buttonQuery = new DevComponents.DotNetBar.ButtonX();
             this.textBoxName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.Check = new DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,8 @@
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxX1 = new ManageSystem.ControlX.ComboBoxX();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -57,11 +57,11 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.comboBoxX1);
             this.panel3.Controls.Add(this.buttonDelete);
             this.panel3.Controls.Add(this.buttonXDetail);
             this.panel3.Controls.Add(this.loadingCircle1);
             this.panel3.Controls.Add(this.buttonSave);
-            this.panel3.Controls.Add(this.comboBoxDeptList);
             this.panel3.Controls.Add(this.buttonQuery);
             this.panel3.Controls.Add(this.textBoxName);
             this.panel3.Controls.Add(this.labelX1);
@@ -129,18 +129,6 @@
             this.buttonSave.TabIndex = 8;
             this.buttonSave.Text = "保  存";
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // comboBoxDeptList
-            // 
-            this.comboBoxDeptList.DisplayMember = "Text";
-            this.comboBoxDeptList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxDeptList.FormattingEnabled = true;
-            this.comboBoxDeptList.ItemHeight = 15;
-            this.comboBoxDeptList.Location = new System.Drawing.Point(14, 103);
-            this.comboBoxDeptList.Name = "comboBoxDeptList";
-            this.comboBoxDeptList.Size = new System.Drawing.Size(156, 21);
-            this.comboBoxDeptList.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxDeptList.TabIndex = 7;
             // 
             // buttonQuery
             // 
@@ -210,14 +198,14 @@
             this.Sex,
             this.Remark,
             this.ID});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(10, 10);
@@ -226,16 +214,6 @@
             this.dataGridViewX1.Size = new System.Drawing.Size(397, 487);
             this.dataGridViewX1.TabIndex = 6;
             this.dataGridViewX1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellValueChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridViewX1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(417, 507);
-            this.panel1.TabIndex = 7;
             // 
             // Check
             // 
@@ -299,13 +277,37 @@
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridViewX1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(417, 507);
+            this.panel1.TabIndex = 7;
+            // 
+            // comboBoxX1
+            // 
+            this.comboBoxX1.BindField = null;
+            this.comboBoxX1.DisplayMember = "Text";
+            this.comboBoxX1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxX1.EnumBindField = "Department";
+            this.comboBoxX1.FormattingEnabled = true;
+            this.comboBoxX1.ItemHeight = 15;
+            this.comboBoxX1.Location = new System.Drawing.Point(14, 103);
+            this.comboBoxX1.Name = "comboBoxX1";
+            this.comboBoxX1.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxX1.TabIndex = 12;
+            // 
             // UCUserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = null;
+            this.Name = "UCUserList";
             this.Size = new System.Drawing.Size(601, 507);
             this.Load += new System.EventHandler(this.UCUserList_Load);
             this.VisibleChanged += new System.EventHandler(this.UCUserList_VisibleChanged);
@@ -324,7 +326,6 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxDeptList;
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.ButtonX buttonSave;
         private ControlX.DesignPatternTest.LoadingCircle loadingCircle1;
@@ -339,5 +340,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
         private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private ControlX.ComboBoxX comboBoxX1;
     }
 }

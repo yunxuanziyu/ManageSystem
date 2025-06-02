@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,9 +63,30 @@ namespace ManageSystem.DataManage.Model
         [Column(Name = "DeptCode")]
         public string DeptCode { get; set { field = value; OnPropertyChanged(nameof(DeptCode)); }}
 
-        [DisplayName("部门")]
-        [Navigate (nameof(Department.DeptCode))]
-        public Department Department { get; set; }
+        [Browsable(false)]
+        [Column(Name = "Photo",MapType = typeof(byte[]))]
+        public byte[] Photo { get; set { field = value; OnPropertyChanged(nameof(Photo)); } }
+        public Image Image
+        {
+
+            get
+            {
+                if(Photo == null || Photo.Length == 0)
+                    return null;
+                using (var ms = new MemoryStream(Photo))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            set
+            {
+                using (var ms = new MemoryStream())
+                {
+                    value.Save(ms, value.RawFormat);
+                    Photo = ms.ToArray();
+                };
+            }
+        }
     }
 
     public class UserList : List<ModelBase>

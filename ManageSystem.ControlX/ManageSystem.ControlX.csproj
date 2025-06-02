@@ -58,7 +58,19 @@
     <Compile Include="ComboBoxX.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ComboBoxX.Designer.cs">
+      <DependentUpon>ComboBoxX.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComboTreeX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DateTimeInputX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DoubleInputX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IntegetInputX.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="LoadingCircle.cs">

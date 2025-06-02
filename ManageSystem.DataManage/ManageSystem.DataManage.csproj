@@ -89,7 +89,6 @@
     <Compile Include="Manage\EnumerationManage.cs" />
     <Compile Include="Manage\LogManage.cs" />
     <Compile Include="Model\DataSourceModel.cs" />
-    <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Enumeration.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\ModelBase.cs" />

@@ -29,67 +29,182 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserDetailInfo));
-            this.UCBaseControl1 = new ManageSystem.UIDesign.UCBaseControl();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.columnHeader1 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader2 = new DevComponents.AdvTree.ColumnHeader();
-            this.columnHeader3 = new DevComponents.AdvTree.ColumnHeader();
-            this.pictureBoxX1 = new ManageSystem.ControlX.PictureBoxX();
-            this.textBoxEx1 = new ManageSystem.ControlX.TextBoxEx();
             this.buttonXSave = new DevComponents.DotNetBar.ButtonX();
-            this.textBoxEx2 = new ManageSystem.ControlX.TextBoxEx();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.ucBaseControl1 = new ManageSystem.UIDesign.UCBaseControl();
             this.comboBoxX1 = new ManageSystem.ControlX.ComboBoxX();
+            this.dateTimeInputX1 = new ManageSystem.ControlX.DateTimeInputX();
+            this.textBoxEx2 = new ManageSystem.ControlX.TextBoxEx();
+            this.pictureBoxX1 = new ManageSystem.ControlX.PictureBoxX();
+            this.textBoxEx1 = new ManageSystem.ControlX.TextBoxEx();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxEx3 = new ManageSystem.ControlX.TextBoxEx();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxEx4 = new ManageSystem.ControlX.TextBoxEx();
+            this.textBoxEx5 = new ManageSystem.ControlX.TextBoxEx();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.comboBoxX2 = new ManageSystem.ControlX.ComboBoxX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInputX1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxX1)).BeginInit();
             this.SuspendLayout();
             // 
-            // UCBaseControl1
-            // 
-            this.UCBaseControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
-            this.UCBaseControl1.CornerRadius = 50;
-            this.UCBaseControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UCBaseControl1.Location = new System.Drawing.Point(10, 10);
-            this.UCBaseControl1.Name = "UCBaseControl1";
-            this.UCBaseControl1.Size = new System.Drawing.Size(654, 440);
-            this.UCBaseControl1.TabIndex = 0;
-            // 
             // labelX1
             // 
+            this.labelX1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             // 
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Location = new System.Drawing.Point(31, 34);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(52, 23);
+            this.labelX1.Size = new System.Drawing.Size(46, 23);
             this.labelX1.TabIndex = 3;
             this.labelX1.Text = "用户名";
             // 
-            // columnHeader1
+            // buttonXSave
             // 
-            this.columnHeader1.Name = "columnHeader1";
-            this.columnHeader1.Text = "Column";
-            this.columnHeader1.Width.Absolute = 150;
+            this.buttonXSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonXSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonXSave.Location = new System.Drawing.Point(550, 399);
+            this.buttonXSave.Name = "buttonXSave";
+            this.buttonXSave.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(15);
+            this.buttonXSave.Size = new System.Drawing.Size(93, 34);
+            this.buttonXSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonXSave.TabIndex = 6;
+            this.buttonXSave.Text = "保存";
             // 
-            // columnHeader2
+            // labelX2
             // 
-            this.columnHeader2.Name = "columnHeader2";
-            this.columnHeader2.Text = "Column";
-            this.columnHeader2.Width.Absolute = 150;
+            this.labelX2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             // 
-            // columnHeader3
             // 
-            this.columnHeader3.Name = "columnHeader3";
-            this.columnHeader3.Text = "Column";
-            this.columnHeader3.Width.Absolute = 150;
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(31, 63);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(39, 23);
+            this.labelX2.TabIndex = 7;
+            this.labelX2.Text = "姓名";
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(31, 94);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(37, 23);
+            this.labelX3.TabIndex = 9;
+            this.labelX3.Text = "性别";
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(31, 126);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(37, 23);
+            this.labelX4.TabIndex = 12;
+            this.labelX4.Text = "生日";
+            // 
+            // ucBaseControl1
+            // 
+            this.ucBaseControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.ucBaseControl1.CornerRadius = 50;
+            this.ucBaseControl1.Location = new System.Drawing.Point(31, 4);
+            this.ucBaseControl1.Name = "ucBaseControl1";
+            this.ucBaseControl1.Size = new System.Drawing.Size(13, 12);
+            this.ucBaseControl1.TabIndex = 13;
+            // 
+            // comboBoxX1
+            // 
+            this.comboBoxX1.BindField = "Sex";
+            this.comboBoxX1.DisplayMember = "Text";
+            this.comboBoxX1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxX1.EnumBindField = "Sex";
+            this.comboBoxX1.FormattingEnabled = true;
+            this.comboBoxX1.ItemHeight = 15;
+            this.comboBoxX1.Location = new System.Drawing.Point(76, 92);
+            this.comboBoxX1.Name = "comboBoxX1";
+            this.comboBoxX1.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxX1.TabIndex = 14;
+            // 
+            // dateTimeInputX1
+            // 
+            // 
+            // 
+            // 
+            this.dateTimeInputX1.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateTimeInputX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dateTimeInputX1.BindField = "Birtdate";
+            this.dateTimeInputX1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateTimeInputX1.ButtonDropDown.Visible = true;
+            this.dateTimeInputX1.IsPopupCalendarOpen = false;
+            this.dateTimeInputX1.Location = new System.Drawing.Point(76, 125);
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.dateTimeInputX1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dateTimeInputX1.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dateTimeInputX1.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateTimeInputX1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateTimeInputX1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInputX1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateTimeInputX1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateTimeInputX1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateTimeInputX1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateTimeInputX1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dateTimeInputX1.MonthCalendar.DisplayMonth = new System.DateTime(2025, 6, 1, 0, 0, 0, 0);
+            this.dateTimeInputX1.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
+            // 
+            // 
+            // 
+            this.dateTimeInputX1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateTimeInputX1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInputX1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateTimeInputX1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dateTimeInputX1.MonthCalendar.TodayButtonVisible = true;
+            this.dateTimeInputX1.Name = "dateTimeInputX1";
+            this.dateTimeInputX1.Size = new System.Drawing.Size(100, 21);
+            this.dateTimeInputX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dateTimeInputX1.TabIndex = 10;
+            // 
+            // textBoxEx2
+            // 
+            this.textBoxEx2.BindField = "ChineseName";
+            // 
+            // 
+            // 
+            this.textBoxEx2.Border.Class = "TextBoxBorder";
+            this.textBoxEx2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxEx2.Location = new System.Drawing.Point(76, 63);
+            this.textBoxEx2.Name = "textBoxEx2";
+            this.textBoxEx2.PreventEnterBeep = true;
+            this.textBoxEx2.Size = new System.Drawing.Size(100, 21);
+            this.textBoxEx2.TabIndex = 8;
             // 
             // pictureBoxX1
             // 
             this.pictureBoxX1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxX1.BackgroundImage")));
             this.pictureBoxX1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxX1.BindField = null;
-            this.pictureBoxX1.Location = new System.Drawing.Point(443, 34);
+            this.pictureBoxX1.BindField = "Image";
+            this.pictureBoxX1.Location = new System.Drawing.Point(461, 13);
             this.pictureBoxX1.Name = "pictureBoxX1";
             this.pictureBoxX1.Size = new System.Drawing.Size(200, 200);
             this.pictureBoxX1.TabIndex = 5;
@@ -110,79 +225,135 @@
             this.textBoxEx1.Size = new System.Drawing.Size(100, 21);
             this.textBoxEx1.TabIndex = 4;
             // 
-            // buttonXSave
+            // labelX5
             // 
-            this.buttonXSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonXSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonXSave.Location = new System.Drawing.Point(550, 399);
-            this.buttonXSave.Name = "buttonXSave";
-            this.buttonXSave.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(15);
-            this.buttonXSave.Size = new System.Drawing.Size(93, 34);
-            this.buttonXSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonXSave.TabIndex = 6;
-            this.buttonXSave.Text = "保存";
-            // 
-            // textBoxEx2
-            // 
-            this.textBoxEx2.BindField = "ChineseName";
+            this.labelX5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             // 
             // 
             // 
-            this.textBoxEx2.Border.Class = "TextBoxBorder";
-            this.textBoxEx2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxEx2.Location = new System.Drawing.Point(76, 63);
-            this.textBoxEx2.Name = "textBoxEx2";
-            this.textBoxEx2.PreventEnterBeep = true;
-            this.textBoxEx2.ReadOnly = true;
-            this.textBoxEx2.Size = new System.Drawing.Size(100, 21);
-            this.textBoxEx2.TabIndex = 8;
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Location = new System.Drawing.Point(208, 126);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(37, 23);
+            this.labelX5.TabIndex = 15;
+            this.labelX5.Text = "年龄";
             // 
-            // labelX2
+            // textBoxEx3
             // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(31, 63);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(52, 23);
-            this.labelX2.TabIndex = 7;
-            this.labelX2.Text = "姓名";
-            // 
-            // labelX3
+            this.textBoxEx3.BindField = "Age";
             // 
             // 
             // 
+            this.textBoxEx3.Border.Class = "TextBoxBorder";
+            this.textBoxEx3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxEx3.Location = new System.Drawing.Point(251, 126);
+            this.textBoxEx3.Name = "textBoxEx3";
+            this.textBoxEx3.PreventEnterBeep = true;
+            this.textBoxEx3.ReadOnly = true;
+            this.textBoxEx3.Size = new System.Drawing.Size(100, 21);
+            this.textBoxEx3.TabIndex = 16;
             // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(31, 92);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(52, 23);
-            this.labelX3.TabIndex = 9;
-            this.labelX3.Text = "姓名";
+            // labelX6
             // 
-            // comboBoxX1
+            this.labelX6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             // 
-            this.comboBoxX1.BindField = "Sex";
-            this.comboBoxX1.DisplayMember = "Text";
-            this.comboBoxX1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxX1.EnumBindField = "Sex";
-            this.comboBoxX1.FormattingEnabled = true;
-            this.comboBoxX1.ItemHeight = 15;
-            this.comboBoxX1.Location = new System.Drawing.Point(76, 92);
-            this.comboBoxX1.Name = "comboBoxX1";
-            this.comboBoxX1.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxX1.TabIndex = 10;
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Location = new System.Drawing.Point(31, 332);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(37, 23);
+            this.labelX6.TabIndex = 17;
+            this.labelX6.Text = "备注";
+            // 
+            // textBoxEx4
+            // 
+            this.textBoxEx4.BindField = "Remark";
+            // 
+            // 
+            // 
+            this.textBoxEx4.Border.Class = "TextBoxBorder";
+            this.textBoxEx4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxEx4.Location = new System.Drawing.Point(31, 361);
+            this.textBoxEx4.Multiline = true;
+            this.textBoxEx4.Name = "textBoxEx4";
+            this.textBoxEx4.PreventEnterBeep = true;
+            this.textBoxEx4.Size = new System.Drawing.Size(320, 86);
+            this.textBoxEx4.TabIndex = 18;
+            // 
+            // textBoxEx5
+            // 
+            this.textBoxEx5.BindField = "Phone";
+            // 
+            // 
+            // 
+            this.textBoxEx5.Border.Class = "TextBoxBorder";
+            this.textBoxEx5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxEx5.Location = new System.Drawing.Point(76, 154);
+            this.textBoxEx5.MaxLength = 11;
+            this.textBoxEx5.Name = "textBoxEx5";
+            this.textBoxEx5.PreventEnterBeep = true;
+            this.textBoxEx5.Size = new System.Drawing.Size(100, 21);
+            this.textBoxEx5.TabIndex = 20;
+            // 
+            // labelX7
+            // 
+            this.labelX7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Location = new System.Drawing.Point(31, 154);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(39, 23);
+            this.labelX7.TabIndex = 19;
+            this.labelX7.Text = "电话";
+            // 
+            // comboBoxX2
+            // 
+            this.comboBoxX2.BindField = "Sex";
+            this.comboBoxX2.DisplayMember = "Text";
+            this.comboBoxX2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxX2.EnumBindField = "Sex";
+            this.comboBoxX2.FormattingEnabled = true;
+            this.comboBoxX2.ItemHeight = 15;
+            this.comboBoxX2.Location = new System.Drawing.Point(251, 154);
+            this.comboBoxX2.Name = "comboBoxX2";
+            this.comboBoxX2.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxX2.TabIndex = 22;
+            // 
+            // labelX8
+            // 
+            this.labelX8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            // 
+            // 
+            // 
+            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Location = new System.Drawing.Point(206, 156);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(37, 23);
+            this.labelX8.TabIndex = 21;
+            this.labelX8.Text = "性别";
             // 
             // FormUserDetailInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 460);
+            this.Controls.Add(this.comboBoxX2);
+            this.Controls.Add(this.labelX8);
+            this.Controls.Add(this.textBoxEx5);
+            this.Controls.Add(this.labelX7);
+            this.Controls.Add(this.textBoxEx4);
+            this.Controls.Add(this.labelX6);
+            this.Controls.Add(this.textBoxEx3);
+            this.Controls.Add(this.labelX5);
             this.Controls.Add(this.comboBoxX1);
+            this.Controls.Add(this.ucBaseControl1);
+            this.Controls.Add(this.labelX4);
+            this.Controls.Add(this.dateTimeInputX1);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.textBoxEx2);
             this.Controls.Add(this.labelX2);
@@ -190,28 +361,34 @@
             this.Controls.Add(this.pictureBoxX1);
             this.Controls.Add(this.textBoxEx1);
             this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.UCBaseControl1);
             this.Name = "FormUserDetailInfo";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "用户信息";
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInputX1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxX1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private UCBaseControl UCBaseControl1;
         private DevComponents.DotNetBar.LabelX labelX1;
         private ControlX.TextBoxEx textBoxEx1;
         private ControlX.PictureBoxX pictureBoxX1;
-        private DevComponents.AdvTree.ColumnHeader columnHeader1;
-        private DevComponents.AdvTree.ColumnHeader columnHeader2;
-        private DevComponents.AdvTree.ColumnHeader columnHeader3;
         private DevComponents.DotNetBar.ButtonX buttonXSave;
         private ControlX.TextBoxEx textBoxEx2;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX3;
+        private ControlX.DateTimeInputX dateTimeInputX1;
+        private DevComponents.DotNetBar.LabelX labelX4;
+        private UCBaseControl ucBaseControl1;
         private ControlX.ComboBoxX comboBoxX1;
+        private DevComponents.DotNetBar.LabelX labelX5;
+        private ControlX.TextBoxEx textBoxEx3;
+        private DevComponents.DotNetBar.LabelX labelX6;
+        private ControlX.TextBoxEx textBoxEx4;
+        private ControlX.TextBoxEx textBoxEx5;
+        private DevComponents.DotNetBar.LabelX labelX7;
+        private ControlX.ComboBoxX comboBoxX2;
+        private DevComponents.DotNetBar.LabelX labelX8;
     }
 }

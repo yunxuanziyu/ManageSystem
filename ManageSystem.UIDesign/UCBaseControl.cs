@@ -27,25 +27,36 @@ namespace ManageSystem.UIDesign
             this.UpdateStyles();
         }
 
-        public void WriteData<T>(object data,UserControl uc)where T : class
+        public void WriteData<T>(object data,Control p)where T : class
         {
             T obj = (T)data;
             //TODO:Binding Data
-            foreach (var c in uc.Controls.OfType<Control>())
+            foreach (var c in p.Controls)
             {
                 switch (c)
                 {
                     case ComboBoxX cbx:
-                        cbx.Text = typeof(T).GetProperty(cbx.BindField).GetValue(obj, null).ToString();
+                        if (!string.IsNullOrEmpty(cbx.BindField))
+                            cbx.Text = typeof(T).GetProperty(cbx.BindField)?.GetValue(obj, null)?.ToString();
                         break;
                     case PictureBoxX pbx:
-                        pbx.BackgroundImage = (Image)typeof(T).GetProperty(pbx.BindField).GetValue(obj, null);
+                        if(!string.IsNullOrEmpty(pbx.BindField))
+                        {
+                            Image img = (Image)typeof(T).GetProperty(pbx.BindField)?.GetValue(obj, null);
+                            if (img != null) pbx.BackgroundImage = img;
+                        }
                         break;
                     case TextBoxEx tbx:
-                        tbx.Text = typeof(T).GetProperty(tbx.BindField).GetValue(obj, null).ToString();
+                        if (!string.IsNullOrEmpty(tbx.BindField))
+                            tbx.Text = typeof(T).GetProperty(tbx.BindField)?.GetValue(obj, null)?.ToString();
                         break;
                     case ComboTreeX comboTree:
-                        comboTree.SelectedValue = typeof(T).GetProperty(comboTree.BindField).GetValue(obj, null).ToString();
+                        if (!string.IsNullOrEmpty(comboTree.BindField))
+                            comboTree.SelectedValue = typeof(T).GetProperty(comboTree.BindField)?.GetValue(obj, null)?.ToString();
+                        break;
+                    case DateTimeInputX dtx:
+                        if (!string.IsNullOrEmpty(dtx.BindField))
+                            dtx.Value = (DateTime)typeof(T).GetProperty(dtx.BindField)?.GetValue(obj, null);
                         break;
                 }
             }
@@ -60,16 +71,24 @@ namespace ManageSystem.UIDesign
                 switch (c)
                 {
                     case ComboBoxX cbx:
-                        typeof(T).GetProperty(cbx.BindField).SetValue(obj, cbx.Text);
+                        if (!string.IsNullOrEmpty(cbx.BindField))
+                            typeof(T).GetProperty(cbx.BindField).SetValue(obj, cbx.Text);
                         break;
                     case PictureBoxX pbx:
-                        typeof(T).GetProperty(pbx.BindField).SetValue(obj, pbx.BackgroundImage);
+                        if (!string.IsNullOrEmpty(pbx.BindField) && pbx.BackgroundImage != null)
+                            typeof(T).GetProperty(pbx.BindField).SetValue(obj, pbx.BackgroundImage);
                         break;
                     case TextBoxEx tbx:
-                        typeof(T).GetProperty(tbx.BindField).SetValue(obj, tbx.Text);
+                        if (!string.IsNullOrEmpty(tbx.BindField))
+                            typeof(T).GetProperty(tbx.BindField).SetValue(obj, tbx.Text);
                         break;
                     case ComboTreeX comboTree:
-                        typeof(T).GetProperty(comboTree.BindField).SetValue(obj, comboTree.SelectedValue);
+                        if (!string.IsNullOrEmpty(comboTree.BindField))
+                            typeof(T).GetProperty(comboTree.BindField).SetValue(obj, comboTree.SelectedValue);
+                        break;
+                    case DateTimeInputX dtx:
+                        if (!string.IsNullOrEmpty(dtx.BindField))
+                            typeof(T).GetProperty(dtx.BindField).SetValue(obj, dtx.Value);
                         break;
                 }
             }

@@ -1,51 +1,46 @@
 ﻿using DevComponents.DotNetBar.Controls;
+using ManageSystem.BusinessManage.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ManageSystem.BusinessManage;
-using ManageSystem.BusinessManage.Service;
 using System.Windows.Forms;
 
 namespace ManageSystem.ControlX
 {
-    public partial class ComboBoxX:ComboBoxEx
+    public partial class ComboBoxX: ComboBoxEx
     {
         ToolTip _toolTip = new ToolTip();
         public ComboBoxX()
         {
-            this.MouseHover+=ComboBoxX_MouseHover;
-            LoadEnumData();
+            this.MouseHover += ComboBoxX_MouseHover;
         }
-
         private void ComboBoxX_MouseHover(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.Text)) return;
             _toolTip.SetToolTip(this, this.Text);
         }
-
         private void LoadEnumData()
         {
             if (string.IsNullOrEmpty(EnumBindField)) return;
-            using(EnumerationService service = new EnumerationService())
+            using (EnumerationService service = new EnumerationService())
             {
-                var data = service.GetEnumerationByType(EnumBindField).Result;
+                var data = service?.GetEnumerationByType(EnumBindField).Result;
                 this.Items.Clear();
                 this.DisplayMember = "DisplayName";
                 this.ValueMember = "Value";
-                this.Items.Add("--请选择--");
                 foreach (var item in data)
                 {
                     this.Items.Add(new ItemNode() { Name = item.Name, Value = item.Value });
                 }
             }
         }
-
         class ItemNode
         {
-            public string DisplayName { get { return $"[{Value}]{Name}"; }}
+            public string DisplayName { get { return $"[{Value}]{Name}"; } }
             public string Name { get; set; }
             public string Value { get; set; }
         }
@@ -75,6 +70,8 @@ namespace ManageSystem.ControlX
             set
             {
                 _EnumBindField = value;
+                if (!this.DesignMode)
+                    LoadEnumData();
                 // 这里可以添加刷新显示的逻辑
                 this.Invalidate();
             }

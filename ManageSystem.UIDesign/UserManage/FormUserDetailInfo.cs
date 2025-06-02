@@ -16,7 +16,12 @@ namespace ManageSystem.UIDesign
         public FormUserDetailInfo(User user)
         {
             InitializeComponent();
-            this.UCBaseControl1.WriteData<User>(user, UCBaseControl1);
+            BindingUser(user);
+        }
+
+        public void BindingUser(User user)
+        {
+            this.ucBaseControl1.WriteData<User>(user, this);
         }
     }
 }
