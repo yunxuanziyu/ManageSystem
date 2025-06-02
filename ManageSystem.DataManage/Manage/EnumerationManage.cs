@@ -22,7 +22,7 @@ namespace ManageSystem.DataManage.Manage
 
         public async Task<List<Enumeration>> GetEnumerationByType(string type)
         {
-            return await _freeSql.Select<Enumeration>().Where(a => a.Type == type).ToListAsync();
+            return await _freeSql.Select<Enumeration>().Where(a => a.Type == type && a.State == 1).ToListAsync();
         }
 
         public async Task<List<string>> GetTypes()

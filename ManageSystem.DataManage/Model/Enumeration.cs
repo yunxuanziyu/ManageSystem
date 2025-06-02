@@ -22,7 +22,7 @@ namespace ManageSystem.DataManage.Model
         public string Description { get; set; }
 
         [DisplayName("状态")]
-        public bool State { get; set; }
+        public int State { get; set; }
 
         [DisplayName("类型")]
         public string Type { get; set; }

@@ -27,25 +27,53 @@ namespace ManageSystem.UIDesign
             this.UpdateStyles();
         }
 
-        public void BindingData<T>(object data,UserControl uc)where T : class
+        public void WriteData<T>(object data,UserControl uc)where T : class
         {
             T obj = (T)data;
             //TODO:Binding Data
-            foreach(var c in uc.Controls.OfType<Control>())
+            foreach (var c in uc.Controls.OfType<Control>())
             {
                 switch (c)
                 {
                     case ComboBoxX cbx:
+                        cbx.Text = typeof(T).GetProperty(cbx.BindField).GetValue(obj, null).ToString();
                         break;
                     case PictureBoxX pbx:
+                        pbx.BackgroundImage = (Image)typeof(T).GetProperty(pbx.BindField).GetValue(obj, null);
                         break;
                     case TextBoxEx tbx:
+                        tbx.Text = typeof(T).GetProperty(tbx.BindField).GetValue(obj, null).ToString();
+                        break;
+                    case ComboTreeX comboTree:
+                        comboTree.SelectedValue = typeof(T).GetProperty(comboTree.BindField).GetValue(obj, null).ToString();
                         break;
                 }
             }
         }
 
-
+        public void ReadData<T>(object data, UserControl uc) where T : class
+        {
+            T obj = (T)data;
+            //TODO:Binding Data
+            foreach (var c in uc.Controls.OfType<Control>())
+            {
+                switch (c)
+                {
+                    case ComboBoxX cbx:
+                        typeof(T).GetProperty(cbx.BindField).SetValue(obj, cbx.Text);
+                        break;
+                    case PictureBoxX pbx:
+                        typeof(T).GetProperty(pbx.BindField).SetValue(obj, pbx.BackgroundImage);
+                        break;
+                    case TextBoxEx tbx:
+                        typeof(T).GetProperty(tbx.BindField).SetValue(obj, tbx.Text);
+                        break;
+                    case ComboTreeX comboTree:
+                        typeof(T).GetProperty(comboTree.BindField).SetValue(obj, comboTree.SelectedValue);
+                        break;
+                }
+            }
+        }
 
         /// <summary>
         /// LabelX的事件绑定,

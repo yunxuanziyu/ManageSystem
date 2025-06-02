@@ -75,10 +75,10 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUserDetailInfo.cs">
+    <Compile Include="UserManage\FormUserDetailInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUserDetailInfo.Designer.cs">
+    <Compile Include="UserManage\FormUserDetailInfo.Designer.cs">
       <DependentUpon>FormUserDetailInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageForm\MessageForm.cs">
@@ -185,7 +185,7 @@
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUserDetailInfo.resx">
+    <EmbeddedResource Include="UserManage\FormUserDetailInfo.resx">
       <DependentUpon>FormUserDetailInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageForm\MessageForm.resx">

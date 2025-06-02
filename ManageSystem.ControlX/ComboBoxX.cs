@@ -5,17 +5,50 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ManageSystem.BusinessManage;
+using ManageSystem.BusinessManage.Service;
+using System.Windows.Forms;
 
 namespace ManageSystem.ControlX
 {
     public partial class ComboBoxX:ComboBoxEx
     {
+        ToolTip _toolTip = new ToolTip();
         public ComboBoxX()
         {
-
+            this.MouseHover+=ComboBoxX_MouseHover;
+            LoadEnumData();
         }
 
+        private void ComboBoxX_MouseHover(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.Text)) return;
+            _toolTip.SetToolTip(this, this.Text);
+        }
 
+        private void LoadEnumData()
+        {
+            if (string.IsNullOrEmpty(EnumBindField)) return;
+            using(EnumerationService service = new EnumerationService())
+            {
+                var data = service.GetEnumerationByType(EnumBindField).Result;
+                this.Items.Clear();
+                this.DisplayMember = "DisplayName";
+                this.ValueMember = "Value";
+                this.Items.Add("--请选择--");
+                foreach (var item in data)
+                {
+                    this.Items.Add(new ItemNode() { Name = item.Name, Value = item.Value });
+                }
+            }
+        }
+
+        class ItemNode
+        {
+            public string DisplayName { get { return $"[{Value}]{Name}"; }}
+            public string Name { get; set; }
+            public string Value { get; set; }
+        }
 
         private string _BindField;
 
