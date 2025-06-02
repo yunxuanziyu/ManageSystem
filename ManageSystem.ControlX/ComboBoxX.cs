@@ -1,4 +1,5 @@
-﻿using DevComponents.DotNetBar.Controls;
+﻿using DevComponents.AdvTree;
+using DevComponents.DotNetBar.Controls;
 using ManageSystem.BusinessManage.Service;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace ManageSystem.ControlX
                 }
             }
         }
-        class ItemNode
+        public class ItemNode
         {
             public string DisplayName { get { return $"[{Value}]{Name}"; } }
             public string Name { get; set; }

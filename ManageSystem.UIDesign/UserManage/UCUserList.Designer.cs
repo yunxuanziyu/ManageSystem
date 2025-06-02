@@ -32,7 +32,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonDelete = new DevComponents.DotNetBar.ButtonX();
             this.buttonXDetail = new DevComponents.DotNetBar.ButtonX();
-            this.loadingCircle1 = new ManageSystem.ControlX.DesignPatternTest.LoadingCircle();
             this.buttonSave = new DevComponents.DotNetBar.ButtonX();
             this.buttonQuery = new DevComponents.DotNetBar.ButtonX();
             this.textBoxName = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -50,6 +49,8 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxX1 = new ManageSystem.ControlX.ComboBoxX();
+            this.loadingCircle1 = new ManageSystem.ControlX.DesignPatternTest.LoadingCircle();
+            this.comboBoxXDept = new ManageSystem.ControlX.ComboBoxX();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.comboBoxXDept);
             this.panel3.Controls.Add(this.comboBoxX1);
             this.panel3.Controls.Add(this.buttonDelete);
             this.panel3.Controls.Add(this.buttonXDetail);
@@ -97,25 +99,6 @@
             this.buttonXDetail.TabIndex = 10;
             this.buttonXDetail.Text = "详  情";
             this.buttonXDetail.Click += new System.EventHandler(this.buttonXDetail_Click);
-            // 
-            // loadingCircle1
-            // 
-            this.loadingCircle1.Active = false;
-            this.loadingCircle1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.Red;
-            this.loadingCircle1.InnerCircleRadius = 5;
-            this.loadingCircle1.Location = new System.Drawing.Point(14, 404);
-            this.loadingCircle1.Name = "loadingCircle1";
-            this.loadingCircle1.NumberSpoke = 12;
-            this.loadingCircle1.OuterCircleRadius = 11;
-            this.loadingCircle1.RotationSpeed = 100;
-            this.loadingCircle1.Size = new System.Drawing.Size(31, 31);
-            this.loadingCircle1.SpokeThickness = 2;
-            this.loadingCircle1.StylePreset = ManageSystem.ControlX.DesignPatternTest.LoadingCircle.StylePresets.MacOSX;
-            this.loadingCircle1.TabIndex = 9;
-            this.loadingCircle1.Text = "loadingCircle1";
-            this.loadingCircle1.Visible = false;
             // 
             // buttonSave
             // 
@@ -301,13 +284,45 @@
             this.comboBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxX1.TabIndex = 12;
             // 
+            // loadingCircle1
+            // 
+            this.loadingCircle1.Active = false;
+            this.loadingCircle1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
+            this.loadingCircle1.Color = System.Drawing.Color.Red;
+            this.loadingCircle1.InnerCircleRadius = 5;
+            this.loadingCircle1.Location = new System.Drawing.Point(14, 404);
+            this.loadingCircle1.Name = "loadingCircle1";
+            this.loadingCircle1.NumberSpoke = 12;
+            this.loadingCircle1.OuterCircleRadius = 11;
+            this.loadingCircle1.RotationSpeed = 100;
+            this.loadingCircle1.Size = new System.Drawing.Size(31, 31);
+            this.loadingCircle1.SpokeThickness = 2;
+            this.loadingCircle1.StylePreset = ManageSystem.ControlX.DesignPatternTest.LoadingCircle.StylePresets.MacOSX;
+            this.loadingCircle1.TabIndex = 9;
+            this.loadingCircle1.Text = "loadingCircle1";
+            this.loadingCircle1.Visible = false;
+            // 
+            // comboBoxXDept
+            // 
+            this.comboBoxXDept.BindField = null;
+            this.comboBoxXDept.DisplayMember = "Text";
+            this.comboBoxXDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxXDept.EnumBindField = "Department";
+            this.comboBoxXDept.FormattingEnabled = true;
+            this.comboBoxXDept.ItemHeight = 15;
+            this.comboBoxXDept.Location = new System.Drawing.Point(14, 103);
+            this.comboBoxXDept.Name = "comboBoxXDept";
+            this.comboBoxXDept.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxXDept.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxXDept.TabIndex = 13;
+            // 
             // UCUserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "UCUserList";
             this.Size = new System.Drawing.Size(601, 507);
             this.Load += new System.EventHandler(this.UCUserList_Load);
             this.VisibleChanged += new System.EventHandler(this.UCUserList_VisibleChanged);
@@ -341,5 +356,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Remark;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private ControlX.ComboBoxX comboBoxX1;
+        private ControlX.ComboBoxX comboBoxXDept;
     }
 }

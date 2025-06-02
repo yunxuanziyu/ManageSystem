@@ -66,6 +66,8 @@ namespace ManageSystem.DataManage.Model
         [Browsable(false)]
         [Column(Name = "Photo",MapType = typeof(byte[]))]
         public byte[] Photo { get; set { field = value; OnPropertyChanged(nameof(Photo)); } }
+
+        [Browsable(false)]
         public Image Image
         {
 

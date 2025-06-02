@@ -119,7 +119,6 @@
             this.buttonQuery.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonQuery.TabIndex = 7;
             this.buttonQuery.Text = "查  询";
-            this.buttonQuery.Click += new System.EventHandler(this.buttonQuery_Click);
             // 
             // buttonSave
             // 

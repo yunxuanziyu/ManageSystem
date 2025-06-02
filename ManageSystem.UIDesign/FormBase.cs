@@ -59,6 +59,8 @@ namespace ManageSystem.UIDesign
         {
             if (!_formCache.ContainsKey(typeof(T)))
                 _formCache.Add(typeof(T), Activator.CreateInstance(typeof(T), param) as T);
+            if (_formCache[typeof(T)] == null || _formCache[typeof(T)].IsDisposed)
+                _formCache[typeof(T)] = Activator.CreateInstance(typeof(T), param) as T;
             return _formCache[typeof(T)];
         }
     }

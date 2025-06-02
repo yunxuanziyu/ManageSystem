@@ -14,6 +14,8 @@ using DevComponents.DotNetBar.Controls;
 using ManageSystem.DataManage.Model;
 using System.Linq.Expressions;
 using ManageSystem.ControlX;
+using static ManageSystem.ControlX.ComboBoxX;
+using static ManageSystem.ControlX.ComboTreeX;
 
 namespace ManageSystem.UIDesign
 {
@@ -37,7 +39,10 @@ namespace ManageSystem.UIDesign
                 {
                     case ComboBoxX cbx:
                         if (!string.IsNullOrEmpty(cbx.BindField))
-                            cbx.Text = typeof(T).GetProperty(cbx.BindField)?.GetValue(obj, null)?.ToString();
+                        {
+                            string bindValue = typeof(T).GetProperty(cbx.BindField)?.GetValue(obj, null)?.ToString();
+                            cbx.SelectedItem = cbx.Items.Cast<ItemNode>().FirstOrDefault(item => item.Value.ToString() == bindValue);
+                        }
                         break;
                     case PictureBoxX pbx:
                         if(!string.IsNullOrEmpty(pbx.BindField))
@@ -52,7 +57,10 @@ namespace ManageSystem.UIDesign
                         break;
                     case ComboTreeX comboTree:
                         if (!string.IsNullOrEmpty(comboTree.BindField))
-                            comboTree.SelectedValue = typeof(T).GetProperty(comboTree.BindField)?.GetValue(obj, null)?.ToString();
+                        {
+                           string bindValue = typeof(T).GetProperty(comboTree.BindField)?.GetValue(obj, null)?.ToString();
+                            comboTree.SelectedNode = comboTree.Nodes.Cast<EnumerationNode>().FirstOrDefault(node => node.Value.ToString() == bindValue);
+                        }
                         break;
                     case DateTimeInputX dtx:
                         if (!string.IsNullOrEmpty(dtx.BindField))
@@ -72,7 +80,7 @@ namespace ManageSystem.UIDesign
                 {
                     case ComboBoxX cbx:
                         if (!string.IsNullOrEmpty(cbx.BindField))
-                            typeof(T).GetProperty(cbx.BindField).SetValue(obj, cbx.Text);
+                            typeof(T).GetProperty(cbx.BindField).SetValue(obj, (cbx.SelectedItem as ItemNode).Value);
                         break;
                     case PictureBoxX pbx:
                         if (!string.IsNullOrEmpty(pbx.BindField) && pbx.BackgroundImage != null)
@@ -84,7 +92,7 @@ namespace ManageSystem.UIDesign
                         break;
                     case ComboTreeX comboTree:
                         if (!string.IsNullOrEmpty(comboTree.BindField))
-                            typeof(T).GetProperty(comboTree.BindField).SetValue(obj, comboTree.SelectedValue);
+                            typeof(T).GetProperty(comboTree.BindField).SetValue(obj, (comboTree.SelectedNode as EnumerationNode).Value);
                         break;
                     case DateTimeInputX dtx:
                         if (!string.IsNullOrEmpty(dtx.BindField))

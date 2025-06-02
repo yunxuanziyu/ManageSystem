@@ -13,6 +13,7 @@ using ManageSystem.Extensions;
 using ManageSystem.DataManage.Model;
 using DevComponents.DotNetBar.Controls;
 using ManageSystem.BasicCommonBase;
+using static ManageSystem.ControlX.ComboBoxX;
 
 namespace ManageSystem.UIDesign
 {
@@ -31,7 +32,7 @@ namespace ManageSystem.UIDesign
             {
                 buttonQuery.Enabled = false;
                 loadingCircle1.Active = loadingCircle1.Visible = true;
-                string DeptCode = comboBoxDeptList.SelectedValue?.ToString();
+                string DeptCode = (comboBoxXDept.SelectedItem as ItemNode)?.Value.ToString();
                 string ChineseName = textBoxName.Text.Trim();
                 using (UserService userService = new UserService())
                 {
@@ -58,16 +59,7 @@ namespace ManageSystem.UIDesign
 
         private void UCUserList_Load(object sender, EventArgs e)
         {
-            using (DeptService deptService = new DeptService())
-            {
-                var lst = deptService.GetDepts();
-                var departments = lst.Result.ToList();
-                departments.Insert(0, new DataManage.Model.Department() { DeptName = "", DeptCode = "" });
-                comboBoxDeptList.DataSource = departments;
-                var dept = departments.FirstOrDefault();
-                comboBoxDeptList.DisplayMember = nameof(dept.DeptName);
-                comboBoxDeptList.ValueMember = nameof(dept.DeptCode);
-            }
+            
         }
 
         private void dataGridViewX1_CellValueChanged(object sender, DataGridViewCellEventArgs e)

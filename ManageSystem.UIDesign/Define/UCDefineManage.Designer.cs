@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelDept = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panelXHolder = new ManageSystem.ControlX.PanelX(this.components);
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelX2);
             this.panel1.Controls.Add(this.labelX1);
-            this.panel1.Controls.Add(this.labelDept);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -56,33 +56,15 @@
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelX1.Location = new System.Drawing.Point(8, 47);
+            this.labelX1.Location = new System.Drawing.Point(8, 10);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(98, 37);
-            this.labelX1.Symbol = "";
+            this.labelX1.Symbol = "";
             this.labelX1.SymbolColor = System.Drawing.Color.Blue;
             this.labelX1.TabIndex = 22;
             this.labelX1.Text = "物品定义";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelX1.Click += new System.EventHandler(this.labelX1_Click);
-            // 
-            // labelDept
-            // 
-            this.labelDept.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelDept.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelDept.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDept.Location = new System.Drawing.Point(8, 10);
-            this.labelDept.Name = "labelDept";
-            this.labelDept.Size = new System.Drawing.Size(98, 37);
-            this.labelDept.Symbol = "";
-            this.labelDept.SymbolColor = System.Drawing.Color.Blue;
-            this.labelDept.TabIndex = 21;
-            this.labelDept.Text = "部门定义";
-            this.labelDept.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.labelDept.Click += new System.EventHandler(this.labelDept_Click);
             // 
             // line1
             // 
@@ -107,6 +89,23 @@
             this.panelXHolder.Size = new System.Drawing.Size(635, 401);
             this.panelXHolder.TabIndex = 23;
             // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelX2.Location = new System.Drawing.Point(8, 47);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(98, 37);
+            this.labelX2.Symbol = "";
+            this.labelX2.SymbolColor = System.Drawing.Color.Blue;
+            this.labelX2.TabIndex = 23;
+            this.labelX2.Text = "枚举定义";
+            this.labelX2.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // UCDefineManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -126,8 +125,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.Controls.Line line1;
-        private DevComponents.DotNetBar.LabelX labelDept;
         private DevComponents.DotNetBar.LabelX labelX1;
         private ControlX.PanelX panelXHolder;
+        private DevComponents.DotNetBar.LabelX labelX2;
     }
 }
