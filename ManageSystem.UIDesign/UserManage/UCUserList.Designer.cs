@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxXDept = new ManageSystem.ControlX.ComboBoxX();
+            this.comboBoxX1 = new ManageSystem.ControlX.ComboBoxX();
             this.buttonDelete = new DevComponents.DotNetBar.ButtonX();
             this.buttonXDetail = new DevComponents.DotNetBar.ButtonX();
+            this.loadingCircle1 = new ManageSystem.ControlX.DesignPatternTest.LoadingCircle();
             this.buttonSave = new DevComponents.DotNetBar.ButtonX();
             this.buttonQuery = new DevComponents.DotNetBar.ButtonX();
             this.textBoxName = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -48,12 +52,14 @@
             this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxX1 = new ManageSystem.ControlX.ComboBoxX();
-            this.loadingCircle1 = new ManageSystem.ControlX.DesignPatternTest.LoadingCircle();
-            this.comboBoxXDept = new ManageSystem.ControlX.ComboBoxX();
+            this.Hometown = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.全选ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.取消全选ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -73,6 +79,34 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(184, 507);
             this.panel3.TabIndex = 5;
+            // 
+            // comboBoxXDept
+            // 
+            this.comboBoxXDept.BindField = null;
+            this.comboBoxXDept.DisplayMember = "Text";
+            this.comboBoxXDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxXDept.EnumBindField = "Department";
+            this.comboBoxXDept.FormattingEnabled = true;
+            this.comboBoxXDept.ItemHeight = 15;
+            this.comboBoxXDept.Location = new System.Drawing.Point(14, 103);
+            this.comboBoxXDept.Name = "comboBoxXDept";
+            this.comboBoxXDept.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxXDept.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxXDept.TabIndex = 13;
+            // 
+            // comboBoxX1
+            // 
+            this.comboBoxX1.BindField = null;
+            this.comboBoxX1.DisplayMember = "Text";
+            this.comboBoxX1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxX1.EnumBindField = "Department";
+            this.comboBoxX1.FormattingEnabled = true;
+            this.comboBoxX1.ItemHeight = 15;
+            this.comboBoxX1.Location = new System.Drawing.Point(14, 103);
+            this.comboBoxX1.Name = "comboBoxX1";
+            this.comboBoxX1.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxX1.TabIndex = 12;
             // 
             // buttonDelete
             // 
@@ -99,6 +133,25 @@
             this.buttonXDetail.TabIndex = 10;
             this.buttonXDetail.Text = "详  情";
             this.buttonXDetail.Click += new System.EventHandler(this.buttonXDetail_Click);
+            // 
+            // loadingCircle1
+            // 
+            this.loadingCircle1.Active = false;
+            this.loadingCircle1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
+            this.loadingCircle1.Color = System.Drawing.Color.Red;
+            this.loadingCircle1.InnerCircleRadius = 5;
+            this.loadingCircle1.Location = new System.Drawing.Point(14, 404);
+            this.loadingCircle1.Name = "loadingCircle1";
+            this.loadingCircle1.NumberSpoke = 12;
+            this.loadingCircle1.OuterCircleRadius = 11;
+            this.loadingCircle1.RotationSpeed = 100;
+            this.loadingCircle1.Size = new System.Drawing.Size(31, 31);
+            this.loadingCircle1.SpokeThickness = 2;
+            this.loadingCircle1.StylePreset = ManageSystem.ControlX.DesignPatternTest.LoadingCircle.StylePresets.MacOSX;
+            this.loadingCircle1.TabIndex = 9;
+            this.loadingCircle1.Text = "loadingCircle1";
+            this.loadingCircle1.Visible = false;
             // 
             // buttonSave
             // 
@@ -180,18 +233,21 @@
             this.Age,
             this.Sex,
             this.Remark,
-            this.ID});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ID,
+            this.Hometown});
+            this.dataGridViewX1.ContextMenuStrip = this.contextMenuStrip1;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(10, 10);
+            this.dataGridViewX1.MultiSelect = false;
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.Size = new System.Drawing.Size(397, 487);
@@ -270,52 +326,32 @@
             this.panel1.Size = new System.Drawing.Size(417, 507);
             this.panel1.TabIndex = 7;
             // 
-            // comboBoxX1
+            // Hometown
             // 
-            this.comboBoxX1.BindField = null;
-            this.comboBoxX1.DisplayMember = "Text";
-            this.comboBoxX1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxX1.EnumBindField = "Department";
-            this.comboBoxX1.FormattingEnabled = true;
-            this.comboBoxX1.ItemHeight = 15;
-            this.comboBoxX1.Location = new System.Drawing.Point(14, 103);
-            this.comboBoxX1.Name = "comboBoxX1";
-            this.comboBoxX1.Size = new System.Drawing.Size(156, 21);
-            this.comboBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxX1.TabIndex = 12;
+            this.Hometown.HeaderText = "籍贯";
+            this.Hometown.Name = "Hometown";
             // 
-            // loadingCircle1
+            // contextMenuStrip1
             // 
-            this.loadingCircle1.Active = false;
-            this.loadingCircle1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.loadingCircle1.BackColor = System.Drawing.Color.Transparent;
-            this.loadingCircle1.Color = System.Drawing.Color.Red;
-            this.loadingCircle1.InnerCircleRadius = 5;
-            this.loadingCircle1.Location = new System.Drawing.Point(14, 404);
-            this.loadingCircle1.Name = "loadingCircle1";
-            this.loadingCircle1.NumberSpoke = 12;
-            this.loadingCircle1.OuterCircleRadius = 11;
-            this.loadingCircle1.RotationSpeed = 100;
-            this.loadingCircle1.Size = new System.Drawing.Size(31, 31);
-            this.loadingCircle1.SpokeThickness = 2;
-            this.loadingCircle1.StylePreset = ManageSystem.ControlX.DesignPatternTest.LoadingCircle.StylePresets.MacOSX;
-            this.loadingCircle1.TabIndex = 9;
-            this.loadingCircle1.Text = "loadingCircle1";
-            this.loadingCircle1.Visible = false;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.全选ToolStripMenuItem,
+            this.取消全选ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 48);
             // 
-            // comboBoxXDept
+            // 全选ToolStripMenuItem
             // 
-            this.comboBoxXDept.BindField = null;
-            this.comboBoxXDept.DisplayMember = "Text";
-            this.comboBoxXDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxXDept.EnumBindField = "Department";
-            this.comboBoxXDept.FormattingEnabled = true;
-            this.comboBoxXDept.ItemHeight = 15;
-            this.comboBoxXDept.Location = new System.Drawing.Point(14, 103);
-            this.comboBoxXDept.Name = "comboBoxXDept";
-            this.comboBoxXDept.Size = new System.Drawing.Size(156, 21);
-            this.comboBoxXDept.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxXDept.TabIndex = 13;
+            this.全选ToolStripMenuItem.Name = "全选ToolStripMenuItem";
+            this.全选ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.全选ToolStripMenuItem.Text = "全选";
+            this.全选ToolStripMenuItem.Click += new System.EventHandler(this.全选ToolStripMenuItem_Click);
+            // 
+            // 取消全选ToolStripMenuItem
+            // 
+            this.取消全选ToolStripMenuItem.Name = "取消全选ToolStripMenuItem";
+            this.取消全选ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.取消全选ToolStripMenuItem.Text = "取消全选";
+            this.取消全选ToolStripMenuItem.Click += new System.EventHandler(this.取消全选ToolStripMenuItem_Click);
             // 
             // UCUserList
             // 
@@ -323,12 +359,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Name = "UCUserList";
             this.Size = new System.Drawing.Size(601, 507);
             this.Load += new System.EventHandler(this.UCUserList_Load);
             this.VisibleChanged += new System.EventHandler(this.UCUserList_VisibleChanged);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -357,5 +395,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private ControlX.ComboBoxX comboBoxX1;
         private ControlX.ComboBoxX comboBoxXDept;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hometown;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 全选ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 取消全选ToolStripMenuItem;
     }
 }

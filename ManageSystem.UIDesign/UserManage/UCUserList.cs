@@ -157,5 +157,21 @@ namespace ManageSystem.UIDesign
                 }
             }
         }
+
+        private void 全选ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.dataGridViewX1.Rows)
+            {
+                row.Cells[0].Value = true;
+            }
+        }
+
+        private void 取消全选ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.dataGridViewX1.Rows)
+            {
+                row.Cells[0].Value = false;
+            }
+        }
     }
 }

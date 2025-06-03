@@ -205,6 +205,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Home\UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
@@ -260,6 +261,9 @@
       <Project>{1BAAF380-16E6-463B-AE1C-051079CFD89C}</Project>
       <Name>ManageSystem.ControlX</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ截图20211231150004.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

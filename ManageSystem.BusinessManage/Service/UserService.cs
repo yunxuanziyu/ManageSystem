@@ -46,6 +46,12 @@ namespace ManageSystem.BusinessManage
             await manage.Update(lst);
         }
 
+        public async Task Update(User user)
+        {
+            UserManage manage = new UserManage();
+            await this.Update(new List<User> { user });
+        }
+
         public void Dispose()
         {
             

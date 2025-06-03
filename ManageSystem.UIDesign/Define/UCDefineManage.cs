@@ -28,10 +28,14 @@ namespace ManageSystem.UIDesign
 
         }
 
-
         private void UCDefineManage_Load(object sender, EventArgs e)
         {
             LabelXBindingEvent(panel1);
+        }
+
+        private void labelXEnum_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

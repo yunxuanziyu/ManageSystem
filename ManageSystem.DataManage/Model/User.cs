@@ -1,4 +1,5 @@
 ﻿using FreeSql.DataAnnotations;
+using ManageSystem.BasicCommonBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace ManageSystem.DataManage.Model
         
         [DisplayName("密码")]
         [Browsable(false)]
-        public string Password { get; set { field = value; OnPropertyChanged(nameof(Password)); } }
+        public string Password { get { return GlobalMethod.AESDecrypt(field); } set { field = GlobalMethod.AESEncrypt(value); OnPropertyChanged(nameof(Password)); } }
         
         [DisplayName("手机号")]
         public string Phone { get; set { field = value; OnPropertyChanged(nameof(Phone)); } }
@@ -41,7 +42,10 @@ namespace ManageSystem.DataManage.Model
         
         [DisplayName("生日")]
         public DateTime Birtdate { get; set { field = value; OnPropertyChanged(nameof(Birtdate)); } }
-        
+
+        [DisplayName("身份证号")]
+        public string IDCard { get { return GlobalMethod.AESDecrypt(field); } set { field = GlobalMethod.AESEncrypt(value); OnPropertyChanged(nameof(IDCard)); } }
+
         [DisplayName("姓名")]
         public string ChineseName { get; set { field = value; OnPropertyChanged(nameof(ChineseName)); } }
         
@@ -50,13 +54,16 @@ namespace ManageSystem.DataManage.Model
         public int Age { get { var today = DateTime.Today;
                 int age = today.Year - Birtdate.Year;
                 if (Birtdate > today.AddYears(-age)) age--;
-                return age; ; } }
+                return age; } }
         
         [DisplayName("性别")]
         public string Sex { get; set { field = value; OnPropertyChanged(nameof(Sex)); } }
         
         [DisplayName("备注")]
         public string Remark { get; set { field = value; OnPropertyChanged(nameof(Remark)); } }
+        
+        [DisplayName("籍贯")]
+        public string Hometown { get; set { field = value; OnPropertyChanged(nameof(Remark)); } }
 
         [DisplayName("部门代码")]
         [Browsable(false)]
@@ -70,7 +77,6 @@ namespace ManageSystem.DataManage.Model
         [Browsable(false)]
         public Image Image
         {
-
             get
             {
                 if(Photo == null || Photo.Length == 0)

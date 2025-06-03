@@ -1,4 +1,5 @@
-﻿using ManageSystem.DataManage.Model;
+﻿using ManageSystem.BusinessManage;
+using ManageSystem.DataManage.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace ManageSystem.UIDesign
 {
     public partial class FormUserDetailInfo: FormBase
     {
+        private User _user;
         public FormUserDetailInfo(User user)
         {
             InitializeComponent();
@@ -21,7 +23,23 @@ namespace ManageSystem.UIDesign
 
         public void BindingUser(User user)
         {
+            _user = user;
             this.ucBaseControl1.WriteData<User>(user, this);
+        }
+
+        private void buttonXSave_Click(object sender, EventArgs e)
+        {
+            UpdateUser();
+        }
+
+        private async void UpdateUser()
+        {
+            this.ucBaseControl1.WriteData<User>(_user, this);
+            using (var service = new UserService())
+            {
+                await service.Update(_user);
+                MessageForm.ShowMessage("修改成功！");
+            }
         }
     }
 }
