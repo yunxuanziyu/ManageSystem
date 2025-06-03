@@ -31,5 +31,14 @@ namespace ManageSystem.UIDesign
                 MessageForm.ShowErrorMessage("保存失败:"+ex.Message);
             }
         }
+
+        private void buttonQuery_Click(object sender, EventArgs e)
+        {
+            using(var service = new DepartmentService())
+            {
+                var deptList = service.GetDepartmentByCondition(textBoxName.Text, textBoxCode.Text).Result;
+                this.dataGridViewXDept.DataSource = deptList.ToDataTable();
+            }
+        }
     }
 }

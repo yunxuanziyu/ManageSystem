@@ -46,7 +46,5 @@ namespace ManageSystem.UIDesign
             //LoadUC(new UCSetting2() { Name = "UC_"+labelSet2.Name });
             //LoadUC(new UCSetting1() { Name = "UC_"+labelSet1.Name });
         }
-
-
     }
 }

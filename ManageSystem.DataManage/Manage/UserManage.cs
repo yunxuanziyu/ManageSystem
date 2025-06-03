@@ -21,16 +21,22 @@ namespace ManageSystem.DataManage
         }
         public async Task<List<User>> GetUsers()
         {
-            return await DBHelper.freeSql.Select<User>().ToListAsync();
+            return await DBHelper.freeSql.Select<User>()
+                .LeftJoin(user => user.DeptCode == user.Department.DeptCode)
+                .ToListAsync();
         }
         public async Task<User> GetUser(string name, string password)
         {
-            return await DBHelper.freeSql.Select<User>().Where(a => a.Name == name && a.Password == password).FirstAsync();
+            return await DBHelper.freeSql.Select<User>()
+                .LeftJoin(user => user.DeptCode == user.Department.DeptCode)
+                .Where(a => a.Name == name && a.Password == password).FirstAsync();
         }
 
         public async Task<List<User>> GetUsersByWhere(string where,object param = null)
         {
-            return await DBHelper.freeSql.Select<User>().Where(where,param).ToListAsync();
+            return await DBHelper.freeSql.Select<User>()
+                .LeftJoin(user=>user.DeptCode == user.Department.DeptCode)
+                .Where(where,param).ToListAsync();
         }
 
         public async Task Update(List<User> entities)

@@ -74,5 +74,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManageSystem.DataManage\ManageSystem.DataManage.csproj">
+      <Project>{BEEA4676-FFCF-484D-950A-80679980C155}</Project>
+      <Name>ManageSystem.DataManage</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

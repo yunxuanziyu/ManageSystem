@@ -38,11 +38,13 @@
             this.panelUCHolder = new System.Windows.Forms.Panel();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.labelXLog = new DevComponents.DotNetBar.LabelX();
             this.labelDefine = new DevComponents.DotNetBar.LabelX();
             this.labelXSet = new DevComponents.DotNetBar.LabelX();
             this.labelXUserManage = new DevComponents.DotNetBar.LabelX();
             this.labelXDataManage = new DevComponents.DotNetBar.LabelX();
             this.labelFirstPage = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +57,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Controls.Add(this.buttonXLogout);
             this.panelEx1.Controls.Add(this.panelEx2);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
@@ -174,6 +177,7 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.Controls.Add(this.labelXLog);
             this.panelMenu.Controls.Add(this.labelDefine);
             this.panelMenu.Controls.Add(this.labelXSet);
             this.panelMenu.Controls.Add(this.labelXUserManage);
@@ -185,6 +189,25 @@
             this.panelMenu.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
             this.panelMenu.Size = new System.Drawing.Size(119, 559);
             this.panelMenu.TabIndex = 4;
+            // 
+            // labelXLog
+            // 
+            this.labelXLog.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelXLog.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelXLog.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelXLog.Location = new System.Drawing.Point(0, 201);
+            this.labelXLog.Name = "labelXLog";
+            this.labelXLog.Size = new System.Drawing.Size(119, 37);
+            this.labelXLog.TabIndex = 27;
+            this.labelXLog.Text = "系统日志";
+            this.labelXLog.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.labelXLog.Click += new System.EventHandler(this.labelXLog_Click);
+            this.labelXLog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.labelMenu_MouseClick);
+            this.labelXLog.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
+            this.labelXLog.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
             // labelDefine
             // 
@@ -281,6 +304,19 @@
             this.labelFirstPage.MouseEnter += new System.EventHandler(this.labelX_MouseEnter);
             this.labelFirstPage.MouseLeave += new System.EventHandler(this.labelXSet_MouseLeave);
             // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX1.Location = new System.Drawing.Point(65, 7);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(163, 35);
+            this.labelX1.TabIndex = 16;
+            this.labelX1.Text = "火萤管理系统";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -319,5 +355,7 @@
         private System.Windows.Forms.Panel panelUCHolder;
         private DevComponents.DotNetBar.LabelX labelDefine;
         private DevComponents.DotNetBar.ButtonX buttonXLogout;
+        private DevComponents.DotNetBar.LabelX labelXLog;
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }

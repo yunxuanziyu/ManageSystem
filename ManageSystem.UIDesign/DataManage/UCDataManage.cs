@@ -21,5 +21,15 @@ namespace ManageSystem.UIDesign
         {
             LabelXBindingEvent(this.panelMenu);
         }
+
+        private void labelXCargoIn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelXCargoOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

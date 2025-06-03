@@ -13,6 +13,11 @@ namespace ManageSystem.DataManage.Model
     {
         [Column(IsIgnore = true)]
         [Browsable(false)]
+        [DisplayName("实体名称")]
+        public virtual string EntityName { get; set; }
+
+        [Column(IsIgnore = true)]
+        [Browsable(false)]
         [DisplayName("编辑状态")]
         public EnumEditState EditState { get; set; } = EnumEditState.eNoEdit;
 

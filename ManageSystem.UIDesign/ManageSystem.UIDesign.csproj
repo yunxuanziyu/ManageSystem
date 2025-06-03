@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,24 @@
     </Compile>
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Define\UCEnumDefine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Define\UCEnumDefine.Designer.cs">
+      <DependentUpon>UCEnumDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\UCPurviewSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\UCPurviewSetting.Designer.cs">
+      <DependentUpon>UCPurviewSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManage\UCLogList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataManage\UCLogList.Designer.cs">
+      <DependentUpon>UCLogList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserManage\FormUserDetailInfo.cs">
       <SubType>Form</SubType>
@@ -137,11 +156,11 @@
     <Compile Include="Define\UCDefineManage.Designer.cs">
       <DependentUpon>UCDefineManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Define\UCGoodsDefine.cs">
+    <Compile Include="Define\UCCargoDefine.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Define\UCGoodsDefine.Designer.cs">
-      <DependentUpon>UCGoodsDefine.cs</DependentUpon>
+    <Compile Include="Define\UCCargoDefine.Designer.cs">
+      <DependentUpon>UCCargoDefine.cs</DependentUpon>
     </Compile>
     <Compile Include="Setting\UCSetting1.cs">
       <SubType>UserControl</SubType>
@@ -179,11 +198,20 @@
     <Compile Include="UserManage\UCUserManage.Designer.cs">
       <DependentUpon>UCUserManage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DataManage\UCLogList.resx">
+      <DependentUpon>UCLogList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Define\UCDefineManage.resx">
       <DependentUpon>UCDefineManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Define\UCEnumDefine.resx">
+      <DependentUpon>UCEnumDefine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\UCPurviewSetting.resx">
+      <DependentUpon>UCPurviewSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManage\FormUserDetailInfo.resx">
       <DependentUpon>FormUserDetailInfo.cs</DependentUpon>
@@ -225,8 +253,8 @@
     <EmbeddedResource Include="Define\UCDeptDefine.resx">
       <DependentUpon>UCDeptDefine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Define\UCGoodsDefine.resx">
-      <DependentUpon>UCGoodsDefine.cs</DependentUpon>
+    <EmbeddedResource Include="Define\UCCargoDefine.resx">
+      <DependentUpon>UCCargoDefine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting\UCSetting1.resx">
       <DependentUpon>UCSetting1.cs</DependentUpon>

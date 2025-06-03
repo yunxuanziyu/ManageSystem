@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelXEnum = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelXCargoDefine = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panelXHolder = new ManageSystem.ControlX.PanelX(this.components);
             this.panel1.SuspendLayout();
@@ -40,7 +40,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.labelXEnum);
-            this.panel1.Controls.Add(this.labelX1);
+            this.panel1.Controls.Add(this.labelXCargoDefine);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -66,23 +66,23 @@
             this.labelXEnum.TextAlignment = System.Drawing.StringAlignment.Center;
             this.labelXEnum.Click += new System.EventHandler(this.labelXEnum_Click);
             // 
-            // labelX1
+            // labelXCargoDefine
             // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            this.labelXCargoDefine.BackColor = System.Drawing.Color.Transparent;
             // 
             // 
             // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelX1.Location = new System.Drawing.Point(8, 10);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(98, 37);
-            this.labelX1.Symbol = "";
-            this.labelX1.SymbolColor = System.Drawing.Color.Blue;
-            this.labelX1.TabIndex = 22;
-            this.labelX1.Text = "物品定义";
-            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.labelX1.Click += new System.EventHandler(this.labelX1_Click);
+            this.labelXCargoDefine.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelXCargoDefine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelXCargoDefine.Location = new System.Drawing.Point(8, 10);
+            this.labelXCargoDefine.Name = "labelXCargoDefine";
+            this.labelXCargoDefine.Size = new System.Drawing.Size(98, 37);
+            this.labelXCargoDefine.Symbol = "";
+            this.labelXCargoDefine.SymbolColor = System.Drawing.Color.Blue;
+            this.labelXCargoDefine.TabIndex = 22;
+            this.labelXCargoDefine.Text = "物品定义";
+            this.labelXCargoDefine.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.labelXCargoDefine.Click += new System.EventHandler(this.labelXCargoDefine_Click);
             // 
             // line1
             // 
@@ -126,7 +126,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.Controls.Line line1;
-        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.LabelX labelXCargoDefine;
         private ControlX.PanelX panelXHolder;
         private DevComponents.DotNetBar.LabelX labelXEnum;
     }

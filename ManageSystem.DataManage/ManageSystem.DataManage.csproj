@@ -85,11 +85,17 @@
     <Compile Include="ContextBase.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="Manage\BaseManage.cs" />
+    <Compile Include="Manage\CargoManage.cs" />
+    <Compile Include="Manage\DepartmentManage.cs" />
     <Compile Include="Manage\EnumerationManage.cs" />
     <Compile Include="Manage\LogManage.cs" />
+    <Compile Include="Model\Cargo.cs" />
+    <Compile Include="Model\CargoInOut.cs" />
     <Compile Include="Model\DataSourceModel.cs" />
+    <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Enumeration.cs" />
     <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\Merchant.cs" />
     <Compile Include="Model\ModelBase.cs" />
     <Compile Include="Model\Role.cs" />
     <Compile Include="Model\User.cs" />

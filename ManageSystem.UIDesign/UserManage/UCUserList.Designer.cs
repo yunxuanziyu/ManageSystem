@@ -51,15 +51,15 @@
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.Hometown = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.全选ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.取消全选ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -85,7 +85,7 @@
             this.comboBoxXDept.BindField = null;
             this.comboBoxXDept.DisplayMember = "Text";
             this.comboBoxXDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxXDept.EnumBindField = "Department";
+            this.comboBoxXDept.EnumBindField = "";
             this.comboBoxXDept.FormattingEnabled = true;
             this.comboBoxXDept.ItemHeight = 15;
             this.comboBoxXDept.Location = new System.Drawing.Point(14, 103);
@@ -316,16 +316,6 @@
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridViewX1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(417, 507);
-            this.panel1.TabIndex = 7;
-            // 
             // Hometown
             // 
             this.Hometown.HeaderText = "籍贯";
@@ -353,20 +343,29 @@
             this.取消全选ToolStripMenuItem.Text = "取消全选";
             this.取消全选ToolStripMenuItem.Click += new System.EventHandler(this.取消全选ToolStripMenuItem_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridViewX1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(417, 507);
+            this.panel1.TabIndex = 7;
+            // 
             // UCUserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "UCUserList";
             this.Size = new System.Drawing.Size(601, 507);
             this.Load += new System.EventHandler(this.UCUserList_Load);
             this.VisibleChanged += new System.EventHandler(this.UCUserList_VisibleChanged);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -385,7 +384,7 @@
         private DevComponents.DotNetBar.ButtonX buttonXDetail;
         private DevComponents.DotNetBar.ButtonX buttonDelete;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn Check;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Birtdate;

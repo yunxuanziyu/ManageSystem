@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ManageSystem.UIDesign
 {
-    public partial class UCGoodsDefine: UCBaseControl
+    public partial class UCPurviewSetting: UCBaseControl
     {
-        public UCGoodsDefine()
+        public UCPurviewSetting()
         {
             InitializeComponent();
         }

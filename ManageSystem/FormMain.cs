@@ -96,5 +96,10 @@ namespace ManageSystem
         {
             this.panelMenu.Controls.OfType<LabelX>().ToList().ForEach(c => c.BackColor = ((c.Name == (sender as LabelX).Name) ? Color.FromArgb(226, 230, 235) : Color.Transparent));
         }
+
+        private void labelXLog_Click(object sender, EventArgs e)
+        {
+            LoadUCPage(UCCreateCreator.Create<UCLogList>());
+        }
     }
 }

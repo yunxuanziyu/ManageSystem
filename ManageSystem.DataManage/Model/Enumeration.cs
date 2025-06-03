@@ -11,11 +11,17 @@ namespace ManageSystem.DataManage.Model
     [Table(Name = "Enumeration")]
     public class Enumeration:ModelBase
     {
+        [Column(IsIgnore = true)]
+        [Browsable(false)]
+        [DisplayName("实体名称")]
+        public override string EntityName => Name ?? Value;
+
         [Browsable(false)]
         [Column(IsIdentity = true, IsPrimary = true)]
         public int ID { get; set; }
 
         [DisplayName("名称")]
+        []
         public string Name { get; set; }
 
         [DisplayName("描述")]
@@ -27,8 +33,11 @@ namespace ManageSystem.DataManage.Model
         [DisplayName("类型")]
         public string Type { get; set; }
 
+        [DisplayName("类型名称")]
+        public string TypeName { get; set; }
+
         [DisplayName("父级枚举值")]
-        public string ParentValue { get; set; }
+        public string ParentValue { get; set; } = "0";
 
         [DisplayName("枚举值")]
         public string Value { get; set; }

@@ -1,4 +1,5 @@
 ﻿using ManageSystem.BusinessManage;
+using ManageSystem.BusinessManage.Service;
 using ManageSystem.DataManage.Model;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ManageSystem.ControlX.ComboBoxX;
 
 namespace ManageSystem.UIDesign
 {
@@ -39,6 +41,17 @@ namespace ManageSystem.UIDesign
             {
                 await service.Update(_user);
                 MessageForm.ShowMessage("修改成功！");
+            }
+        }
+
+        private void FormUserDetailInfo_Load(object sender, EventArgs e)
+        {
+            using (var Service = new DepartmentService())
+            {
+                var lst = Service.GetDepartmentList().Result;
+                lst.ForEach(d => comboBoxXDept.Items.Add(new ItemNode() { Name = d.DeptName, Value = d.DeptCode }));
+                comboBoxXDept.DisplayMember = "DisplayName";
+                comboBoxXDept.ValueMember = "Value";
             }
         }
     }

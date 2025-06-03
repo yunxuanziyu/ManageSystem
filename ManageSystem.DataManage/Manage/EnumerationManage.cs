@@ -30,6 +30,11 @@ namespace ManageSystem.DataManage.Manage
             return await _freeSql.Select<Enumeration>().Distinct().ToListAsync(s=>s.Type);
         }
 
+        public async Task<List<Enumeration>> GetEnumerations()
+        {
+            return await _freeSql.Select<Enumeration>().ToListAsync();
+        }
+
         public async Task Update(List<Enumeration> entities)
         {
             List<Enumeration> UpdateEntities = entities.Where(x => x.EditState == EnumEditState.eUpdate).ToList();

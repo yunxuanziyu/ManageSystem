@@ -52,6 +52,8 @@
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.textBoxEx7 = new ManageSystem.ControlX.TextBoxEx();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.comboBoxXDept = new ManageSystem.ControlX.ComboBoxX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInputX1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxX1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             // 
             this.buttonXSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonXSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonXSave.Location = new System.Drawing.Point(550, 399);
+            this.buttonXSave.Location = new System.Drawing.Point(568, 413);
             this.buttonXSave.Name = "buttonXSave";
             this.buttonXSave.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(15);
             this.buttonXSave.Size = new System.Drawing.Size(93, 34);
@@ -398,12 +400,40 @@
             this.labelX10.TabIndex = 25;
             this.labelX10.Text = "籍贯";
             // 
+            // comboBoxXDept
+            // 
+            this.comboBoxXDept.BindField = "DeptCode";
+            this.comboBoxXDept.DisplayMember = "Text";
+            this.comboBoxXDept.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxXDept.EnumBindField = null;
+            this.comboBoxXDept.FormattingEnabled = true;
+            this.comboBoxXDept.ItemHeight = 15;
+            this.comboBoxXDept.Location = new System.Drawing.Point(280, 63);
+            this.comboBoxXDept.Name = "comboBoxXDept";
+            this.comboBoxXDept.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxXDept.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboBoxXDept.TabIndex = 27;
+            // 
+            // labelX11
+            // 
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Location = new System.Drawing.Point(228, 63);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(46, 23);
+            this.labelX11.TabIndex = 28;
+            this.labelX11.Text = "部门";
+            // 
             // FormUserDetailInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 460);
+            this.Controls.Add(this.labelX11);
+            this.Controls.Add(this.comboBoxXDept);
             this.Controls.Add(this.textBoxEx7);
             this.Controls.Add(this.labelX10);
             this.Controls.Add(this.textBoxEx6);
@@ -427,9 +457,11 @@
             this.Controls.Add(this.pictureBoxX1);
             this.Controls.Add(this.textBoxEx1);
             this.Controls.Add(this.labelX1);
+            this.EnableGlass = false;
             this.Name = "FormUserDetailInfo";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "用户信息";
+            this.Load += new System.EventHandler(this.FormUserDetailInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInputX1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxX1)).EndInit();
             this.ResumeLayout(false);
@@ -460,5 +492,7 @@
         private DevComponents.DotNetBar.LabelX labelX9;
         private ControlX.TextBoxEx textBoxEx7;
         private DevComponents.DotNetBar.LabelX labelX10;
+        private ControlX.ComboBoxX comboBoxXDept;
+        private DevComponents.DotNetBar.LabelX labelX11;
     }
 }

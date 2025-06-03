@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.BusinessManage
 {
-    public interface IServiceBase
+    public interface IDepartmentService : IDisposable
     {
-
+        public Task<List<Department>> GetDepartmentList();
     }
 }

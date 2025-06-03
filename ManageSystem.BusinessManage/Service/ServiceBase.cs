@@ -10,10 +10,10 @@ namespace ManageSystem.BusinessManage
 {
     public class ServiceBase : IServiceBase
     {
-        private IFreeSql _freeSql;
-        public ServiceBase(IFreeSql freeSql)
+        private IFreeSql _freeSql { get; set; }
+        public ServiceBase(IFreeSql freeSql = null)
         {
-            _freeSql = freeSql;
+            _freeSql = freeSql??DBHelper.freeSql;
         }
 
         public async Task Update<T>(List<ModelBase> entities) where T : class, new()
@@ -21,7 +21,5 @@ namespace ManageSystem.BusinessManage
             BaseManage baseManage = new BaseManage(_freeSql);
             await baseManage.Update<T>(entities);
         }
-
-
     }
 }

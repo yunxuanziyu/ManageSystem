@@ -59,7 +59,13 @@ namespace ManageSystem.UIDesign
 
         private void UCUserList_Load(object sender, EventArgs e)
         {
-            
+            using (var Service = new DepartmentService())
+            {
+                var lst = Service.GetDepartmentList().Result;
+                lst.ForEach(d => comboBoxXDept.Items.Add(new ItemNode() { Name  = d.DeptName, Value = d.DeptCode }));
+                comboBoxXDept.DisplayMember = "DisplayName";
+                comboBoxXDept.ValueMember = "Value";
+            }
         }
 
         private void dataGridViewX1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -73,7 +79,7 @@ namespace ManageSystem.UIDesign
                 // 获取修改后的值（可选）
                 object newValue = row.Cells[e.ColumnIndex].Value;
                 string columnName = dataGridViewX1.Columns[e.ColumnIndex].Name;
-                logs.Add(new Log() { Content = $"修改用户[{modifiedUser.Name}]的{columnName}为{newValue}", OperaTime = DateTime.Now, Operator = ((User)GlobalVariable.LoginUser).Name });
+                logs.Add(new Log() { Content = $"修改用户[{modifiedUser.Name}]的{columnName}为{newValue}" });
                 _isEditing = true;
             }
         }
@@ -82,7 +88,7 @@ namespace ManageSystem.UIDesign
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            UpdateData();
+            _ = UpdateData();
             _isEditing = false;
         }
 

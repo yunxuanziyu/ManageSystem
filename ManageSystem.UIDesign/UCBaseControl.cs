@@ -16,9 +16,12 @@ using System.Linq.Expressions;
 using ManageSystem.ControlX;
 using static ManageSystem.ControlX.ComboBoxX;
 using static ManageSystem.ControlX.ComboTreeX;
+using System.ComponentModel.Design;
 
 namespace ManageSystem.UIDesign
 {
+    [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design",
+        typeof(IDesigner))]
     public partial class UCBaseControl: UserControl
     {
         public UCBaseControl()
@@ -70,8 +73,10 @@ namespace ManageSystem.UIDesign
             }
         }
 
-        public void ReadData<T>(object data, UserControl uc) where T : class
+        public void ReadData<T>(object data, UserControl uc = null) where T : class
         {
+            if (uc == null)
+                uc = this;
             T obj = (T)data;
             //TODO:Binding Data
             foreach (var c in uc.Controls.OfType<Control>())

@@ -11,5 +11,6 @@ namespace ManageSystem.BusinessManage
     {
         public Task<List<Enumeration>> GetEnumerationByType(string type);
         public Task<List<string>> GetTypes();
+        public Task<List<(string, string)>> GetTypesWithName(string typeName);
     }
 }

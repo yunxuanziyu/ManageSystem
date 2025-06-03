@@ -49,7 +49,7 @@ namespace ManageSystem
                 XmlLocalSetting.WriteXml<LoginInfo>(new LoginInfo() { UserName = username, Password = Remreber? passwordEncrypt : "", Remreber = Remreber }, "LoginInfo");
                 using (LogService serviceLog = new LogService())
                 {
-                    _ = serviceLog.AddLog(new Log() { Content = user.ChineseName + "登录系统", OperaTime = DateTime.Now, Operator = user.Name });
+                    _ = serviceLog.AddLog(new Log() { Content = user.ChineseName + "登录系统" });
                 }
             }
         }

@@ -11,8 +11,14 @@ namespace ManageSystem.DataManage.Model
 {
     public  class Role:ModelBase
     {
+        [Column(IsIgnore = true)]
+        [Browsable(false)]
+        [DisplayName("实体名称")]
+        public override string EntityName => Name ?? Code;
         [Column(Name = "ID", IsIdentity = true, IsPrimary = true)]
         public int ID { get; set; }
+
+        public string Code { get; set; }
 
         [DisplayName("角色名称")]
         public string Name { get; set; }

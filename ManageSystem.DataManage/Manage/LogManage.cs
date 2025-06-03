@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,9 +18,17 @@ namespace ManageSystem.DataManage
             else
                 _freeSql = freeSql;
         }
+
         public async Task<List<Log>> GetLogs()
         {
             return await _freeSql.Select<Log>().ToListAsync();
+        }
+
+        public async Task<List<Log>> GetLogsByCondition(Expression<Func<Log, bool>> where)
+        {
+            return await _freeSql.Select<Log>()
+                .Where(where)
+                .ToListAsync();
         }
 
         public async Task<bool> AddLog(Log log)

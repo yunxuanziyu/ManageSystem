@@ -1,6 +1,6 @@
 ﻿namespace ManageSystem.UIDesign
 {
-    partial class UCSetting1
+    partial class UCPurviewSetting
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.SuspendLayout();
+            // 
+            // line1
+            // 
+            this.line1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.line1.Location = new System.Drawing.Point(8, 40);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(549, 10);
+            this.line1.TabIndex = 14;
+            this.line1.Text = "line1";
             // 
             // labelX5
             // 
@@ -39,38 +49,27 @@
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelX5.Location = new System.Drawing.Point(26, 19);
+            this.labelX5.Location = new System.Drawing.Point(22, 14);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(115, 23);
-            this.labelX5.TabIndex = 10;
-            this.labelX5.Text = "系统设置";
+            this.labelX5.TabIndex = 13;
+            this.labelX5.Text = "权限设置";
             // 
-            // line1
-            // 
-            this.line1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.line1.Location = new System.Drawing.Point(12, 45);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(469, 10);
-            this.line1.TabIndex = 12;
-            this.line1.Text = "line1";
-            // 
-            // UCSetting1
+            // UCPurviewSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.line1);
             this.Controls.Add(this.labelX5);
-            this.Name = "UCSetting1";
-            this.Size = new System.Drawing.Size(496, 324);
+            this.Name = "UCPurviewSetting";
+            this.Size = new System.Drawing.Size(569, 277);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.Controls.Line line1;
+        private DevComponents.DotNetBar.LabelX labelX5;
     }
 }
