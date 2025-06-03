@@ -85,8 +85,10 @@
     <Compile Include="ContextBase.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="Manage\BaseManage.cs" />
+    <Compile Include="Manage\CargoManage.cs" />
     <Compile Include="Manage\EnumerationManage.cs" />
     <Compile Include="Manage\LogManage.cs" />
+    <Compile Include="Model\Cargo.cs" />
     <Compile Include="Model\DataSourceModel.cs" />
     <Compile Include="Model\Enumeration.cs" />
     <Compile Include="Model\Log.cs" />

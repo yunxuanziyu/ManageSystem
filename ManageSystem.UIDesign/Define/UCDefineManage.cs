@@ -18,14 +18,9 @@ namespace ManageSystem.UIDesign
             InitializeComponent();
         }
 
-        private void labelDept_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void labelX1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void UCDefineManage_Load(object sender, EventArgs e)
@@ -35,7 +30,7 @@ namespace ManageSystem.UIDesign
 
         private void labelXEnum_Click(object sender, EventArgs e)
         {
-
+            LoadUCPage(panelXHolder, UCCreateCreator.Create<UCEnumDefine>());
         }
     }
 }

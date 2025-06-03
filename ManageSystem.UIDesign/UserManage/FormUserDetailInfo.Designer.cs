@@ -73,7 +73,7 @@
             // 
             this.buttonXSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonXSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonXSave.Location = new System.Drawing.Point(550, 399);
+            this.buttonXSave.Location = new System.Drawing.Point(568, 413);
             this.buttonXSave.Name = "buttonXSave";
             this.buttonXSave.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(15);
             this.buttonXSave.Size = new System.Drawing.Size(93, 34);
@@ -427,6 +427,7 @@
             this.Controls.Add(this.pictureBoxX1);
             this.Controls.Add(this.textBoxEx1);
             this.Controls.Add(this.labelX1);
+            this.EnableGlass = false;
             this.Name = "FormUserDetailInfo";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "用户信息";

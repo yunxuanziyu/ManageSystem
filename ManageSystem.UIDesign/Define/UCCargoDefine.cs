@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ManageSystem.UIDesign
 {
-    public partial class UCGoodsDefine: UCBaseControl
+    public partial class UCCargoDefine: UCBaseControl
     {
-        public UCGoodsDefine()
+        public UCCargoDefine()
         {
             InitializeComponent();
+        }
+
+        private void UCCargoDefine_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

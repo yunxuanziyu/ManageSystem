@@ -82,7 +82,7 @@ namespace ManageSystem.UIDesign
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            UpdateData();
+            _ = UpdateData();
             _isEditing = false;
         }
 

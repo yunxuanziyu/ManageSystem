@@ -27,8 +27,11 @@ namespace ManageSystem.DataManage.Model
         [DisplayName("类型")]
         public string Type { get; set; }
 
+        [DisplayName("类型名称")]
+        public string TypeName { get; set; }
+
         [DisplayName("父级枚举值")]
-        public string ParentValue { get; set; }
+        public string ParentValue { get; set; } = "0";
 
         [DisplayName("枚举值")]
         public string Value { get; set; }

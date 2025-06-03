@@ -16,9 +16,12 @@ using System.Linq.Expressions;
 using ManageSystem.ControlX;
 using static ManageSystem.ControlX.ComboBoxX;
 using static ManageSystem.ControlX.ComboTreeX;
+using System.ComponentModel.Design;
 
 namespace ManageSystem.UIDesign
 {
+    [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design",
+        typeof(IDesigner))]
     public partial class UCBaseControl: UserControl
     {
         public UCBaseControl()

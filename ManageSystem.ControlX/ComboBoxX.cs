@@ -43,7 +43,7 @@ namespace ManageSystem.ControlX
         {
             public string DisplayName { get { return $"[{Value}]{Name}"; } }
             public string Name { get; set; }
-            public string Value { get; set; }
+            public object Value { get; set; }
         }
 
         private string _BindField;

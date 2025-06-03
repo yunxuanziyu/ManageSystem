@@ -36,5 +36,29 @@ namespace ManageSystem.BusinessManage.Service
             EnumerationManage manage = new(_freeSql);
             return await manage.GetTypes();
         }
+
+        public async Task<List<(string,string)>> GetTypesWithName(string typeName="")
+        {
+            EnumerationManage manage = new(_freeSql);
+            var lst = await manage.GetEnumerations();
+            var result = lst.GroupBy(e => e.Type)
+                      .Select(g => (Type: g.Key, TypeName: g.Select(e => e.TypeName).FirstOrDefault()))
+                      .ToList();
+            if (!string.IsNullOrEmpty(typeName))
+            {
+                result = result.Where(item=>item.Type.Contains(typeName)|| item.TypeName.Contains(typeName)).ToList();
+            }
+            return result;
+        }
+
+        public async Task Update(List<Enumeration> entities)
+        {
+            EnumerationManage manage=new(_freeSql);
+            await manage.Update(entities);
+        }
+        public async Task Update(Enumeration entity)
+        {
+            await Update(new List<Enumeration>() { entity });
+        }
     }
 }

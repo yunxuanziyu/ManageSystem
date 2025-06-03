@@ -17,6 +17,7 @@ namespace ManageSystem.DataManage
             else
                 _freeSql = freeSql;
         }
+
         public async Task<List<Log>> GetLogs()
         {
             return await _freeSql.Select<Log>().ToListAsync();

@@ -31,5 +31,10 @@ namespace ManageSystem.UIDesign
                 MessageForm.ShowErrorMessage("保存失败:"+ex.Message);
             }
         }
+
+        private void buttonQuery_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

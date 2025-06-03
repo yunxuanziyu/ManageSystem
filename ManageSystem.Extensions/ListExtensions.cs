@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManageSystem.DataManage.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,13 @@ namespace ManageSystem.Extensions
             return table;
         }
 
-
+        public static T CreateNewEntity<T>(this List<T> data,bool AddEntityTiList = true) where T :ModelBase ,new ()
+        {
+            T entity = new T();
+            if (AddEntityTiList)
+                data.Add(entity);
+            entity.EditState = EnumEditState.eInsert;
+            return entity;
+        }
     }
 }

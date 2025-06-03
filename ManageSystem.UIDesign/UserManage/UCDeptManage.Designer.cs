@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxCode = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.buttonQuery = new DevComponents.DotNetBar.ButtonX();
             this.buttonSave = new DevComponents.DotNetBar.ButtonX();
+            this.buttonQuery = new DevComponents.DotNetBar.ButtonX();
+            this.textBoxCode = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelX1 = new ManageSystem.ControlX.PanelX(this.components);
             this.dataGridViewXDept = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panel1.SuspendLayout();
@@ -58,42 +58,31 @@
             this.panel1.Size = new System.Drawing.Size(184, 418);
             this.panel1.TabIndex = 0;
             // 
-            // labelX1
+            // buttonSave
             // 
+            this.buttonSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonSave.Location = new System.Drawing.Point(27, 382);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(56, 23);
+            this.buttonSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonSave.TabIndex = 8;
+            this.buttonSave.Text = "保 存";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // buttonQuery
             // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(6, 15);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "部门名称";
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(3, 101);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(75, 23);
-            this.labelX2.TabIndex = 1;
-            this.labelX2.Text = "部门编码";
-            // 
-            // textBoxName
-            // 
-            // 
-            // 
-            // 
-            this.textBoxName.Border.Class = "TextBoxBorder";
-            this.textBoxName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxName.Location = new System.Drawing.Point(6, 44);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.PreventEnterBeep = true;
-            this.textBoxName.Size = new System.Drawing.Size(161, 21);
-            this.textBoxName.TabIndex = 2;
+            this.buttonQuery.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonQuery.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonQuery.Location = new System.Drawing.Point(100, 382);
+            this.buttonQuery.Name = "buttonQuery";
+            this.buttonQuery.Size = new System.Drawing.Size(56, 23);
+            this.buttonQuery.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonQuery.TabIndex = 7;
+            this.buttonQuery.Text = "查  询";
+            this.buttonQuery.Click += new System.EventHandler(this.buttonQuery_Click);
             // 
             // textBoxCode
             // 
@@ -108,30 +97,42 @@
             this.textBoxCode.Size = new System.Drawing.Size(161, 21);
             this.textBoxCode.TabIndex = 3;
             // 
-            // buttonQuery
+            // textBoxName
             // 
-            this.buttonQuery.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonQuery.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonQuery.Location = new System.Drawing.Point(100, 382);
-            this.buttonQuery.Name = "buttonQuery";
-            this.buttonQuery.Size = new System.Drawing.Size(56, 23);
-            this.buttonQuery.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonQuery.TabIndex = 7;
-            this.buttonQuery.Text = "查  询";
             // 
-            // buttonSave
             // 
-            this.buttonSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonSave.Location = new System.Drawing.Point(27, 382);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(56, 23);
-            this.buttonSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonSave.TabIndex = 8;
-            this.buttonSave.Text = "保 存";
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            this.textBoxName.Border.Class = "TextBoxBorder";
+            this.textBoxName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxName.Location = new System.Drawing.Point(6, 44);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.PreventEnterBeep = true;
+            this.textBoxName.Size = new System.Drawing.Size(161, 21);
+            this.textBoxName.TabIndex = 2;
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(3, 101);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(75, 23);
+            this.labelX2.TabIndex = 1;
+            this.labelX2.Text = "部门编码";
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(6, 15);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "部门名称";
             // 
             // panelX1
             // 

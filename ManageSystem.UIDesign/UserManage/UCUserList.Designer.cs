@@ -359,7 +359,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "UCUserList";
             this.Size = new System.Drawing.Size(601, 507);
             this.Load += new System.EventHandler(this.UCUserList_Load);
             this.VisibleChanged += new System.EventHandler(this.UCUserList_VisibleChanged);
@@ -385,7 +384,7 @@
         private DevComponents.DotNetBar.ButtonX buttonXDetail;
         private DevComponents.DotNetBar.ButtonX buttonDelete;
         private DevComponents.DotNetBar.Controls.DataGridViewCheckBoxXColumn Check;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Birtdate;
