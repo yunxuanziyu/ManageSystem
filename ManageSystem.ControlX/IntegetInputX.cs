@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.ControlX
 {
-    public class IntegetInputX: IntegerInput
+    public partial class IntegetInputX: IntegerInput
     {
         public IntegetInputX()
         {

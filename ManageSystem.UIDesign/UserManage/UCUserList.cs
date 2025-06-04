@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ManageSystem.BusinessManage;
 using ManageSystem.BusinessManage.Service;
 using ManageSystem.Extensions;
 using ManageSystem.DataManage.Model;
-using DevComponents.DotNetBar.Controls;
-using ManageSystem.BasicCommonBase;
 using static ManageSystem.ControlX.ComboBoxX;
 
 namespace ManageSystem.UIDesign
@@ -25,7 +20,7 @@ namespace ManageSystem.UIDesign
             InitializeComponent();
         }
 
-        private List<User> SourceData;
+        private Extensions.List<User> SourceData;
         private void buttonQuery_Click(object sender, EventArgs e)
         {
             try
@@ -42,8 +37,7 @@ namespace ManageSystem.UIDesign
                     if (!string.IsNullOrEmpty(ChineseName))
                         where += " AND ChineseName LIKE '%@ChineseName%'";
                     var lst = userService.GetUserByWhere(where, new { DeptCode, ChineseName });
-                    SourceData = lst.Result.ToList();
-                    dataGridViewX1.DataSource = new BindingList<User>(SourceData);// lst.Result.ToDataTable();
+                    dataGridViewX1.DataSource = lst.Result;
                     _isEditing = false;
                 }
             }

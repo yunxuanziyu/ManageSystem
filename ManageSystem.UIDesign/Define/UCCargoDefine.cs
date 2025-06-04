@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
@@ -10,6 +9,7 @@ using System.Windows.Forms;
 using ManageSystem.DataManage.Model;
 using ManageSystem.BusinessManage;
 using ManageSystem.Extensions;
+using DevComponents.DotNetBar.Controls;
 
 namespace ManageSystem.UIDesign
 {
@@ -28,30 +28,45 @@ namespace ManageSystem.UIDesign
 
         private void buttonXSave_Click(object sender, EventArgs e)
         {
-            using (var cargoService = new CargoService())
+            try
             {
-                _ = cargoService.SaveCargos(cargos);
+                using (var cargoService = new CargoService())
+                {
+                    _ = cargoService.SaveCargos(cargos);
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
         private void buttonXAdd_Click(object sender, EventArgs e)
         {
-            var cargo = cargos.CreateNewEntity();
-            using(var cargoService = new CargoService())
+            if (cargos.Where(x => x.Code == textBoxExCode.Text).Count() > 0)
+            {
+                MessageForm.ShowErrorMessage("该[货物编码]列表中已存在，请重新输入！");
+                return;
+            }
+            using (var cargoService = new CargoService())
             {
                 var lst = cargoService.GetCargoList(textBoxExCode.Text).Result;
                 if (lst.Count > 0)
                 {
-                    MessageForm.ShowErrorMessage("该货物代码已存在，请重新输入！");
+                    MessageForm.ShowErrorMessage("该[货物编码]数据库中已存在，请重新输入！");
                     return;
                 }
             }
+            var cargo = cargos.CreateNewEntity();
             ucBaseControl1.ReadData<Cargo>(cargo);
-            dataGridViewX1.DataSource = cargos.ToDataTable();
+            dataGridViewX1.DataSource = new BindingList<Cargo>(cargos);
             ClearText();
         }
 
-        
+        private bool Valildate()
+        {
+            return true;
+        }
 
         private void ClearText()
         {
@@ -59,7 +74,7 @@ namespace ManageSystem.UIDesign
             textBoxExName.Text = "";
             textBoxExAliasName.Text = "";
             textBoxExUnit.Text = "";
-            textBoxExUnitPrice.Text = "";
+            doubleInputXUnitPrice.ValueObject = null;
             textBoxExSpecifications.Text = "";
         }
     }

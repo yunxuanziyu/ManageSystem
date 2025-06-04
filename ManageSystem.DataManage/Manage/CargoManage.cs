@@ -44,8 +44,6 @@ namespace ManageSystem.DataManage.Manage
 
         public async Task Update(List<Cargo> entities)
         {
-
-
             List<Cargo> UpdateEntities = [.. entities.Where(x => x.EditState == EnumEditState.eUpdate)];
             List<Cargo> AddEntities = [.. entities.Where(x => x.EditState == EnumEditState.eInsert)];
             List<Cargo> DeleteEntities = [.. entities.Where(x => x.EditState == EnumEditState.eDelete)];

@@ -9,7 +9,7 @@ namespace ManageSystem.UIDesign
 {
     public class UCCreateCreator
     {
-        private static readonly MemoryCache cache = new MemoryCache(null);
+        private static readonly MemoryCache cache = new MemoryCache("UCCreateCreatorCache");
         //private static Dictionary<Type, UCBaseControl> _instanceList = new Dictionary<Type, UCBaseControl>();
         public static UCBaseControl Create<T>(object[] parameter = null)
         {
@@ -25,11 +25,11 @@ namespace ManageSystem.UIDesign
             //return _instanceList[typeof(T)];
 
             Type type = typeof(T);
-            if(cache.Contains(type.ToString()))
-                return (UCBaseControl)cache.Get(type.ToString());
-            var UC = (UCBaseControl)Activator.CreateInstance(typeof(T), parameter);
+            if(cache.Contains(type.FullName))
+                return (UCBaseControl)cache.Get(type.FullName);
+            var UC = (UCBaseControl)Activator.CreateInstance(type, parameter);
             UC.Dock = System.Windows.Forms.DockStyle.Fill;
-            cache.Add(typeof(T).ToString(), UC, new DateTimeOffset().AddMinutes(10));
+            bool suc = cache.Add(type.FullName, UC, DateTimeOffset.Now.AddMinutes(10));
             return UC;
         }
 

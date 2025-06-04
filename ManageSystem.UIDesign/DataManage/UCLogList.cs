@@ -30,7 +30,7 @@ namespace ManageSystem.UIDesign
                     var logs = logService.GetLogsByCondition(textBoxXMan.Text,
                         dateTimeInputStart.LockUpdateChecked, dateTimeInputStart.Value,
                         dateTimeInputEnd.LockUpdateChecked, dateTimeInputEnd.Value).Result;
-                    dataGridViewXLog.DataSource = logs.ToDataTable();
+                    dataGridViewXLog.DataSource = logs;
                 }
             }
             catch {

@@ -2,8 +2,8 @@
 using DevComponents.DotNetBar.Controls;
 using ManageSystem.BusinessManage.Service;
 using ManageSystem.DataManage.Model;
+using ManageSystem.Extensions;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;

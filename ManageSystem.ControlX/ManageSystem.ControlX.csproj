@@ -116,6 +116,10 @@
       <Project>{BEEA4676-FFCF-484D-950A-80679980C155}</Project>
       <Name>ManageSystem.DataManage</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ManageSystem.Extensions\ManageSystem.Extensions.csproj">
+      <Project>{0FB628E1-44CA-472E-8644-5A01AD5359B8}</Project>
+      <Name>ManageSystem.Extensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -37,7 +37,7 @@ namespace ManageSystem.UIDesign
             using(var service = new DepartmentService())
             {
                 var deptList = service.GetDepartmentByCondition(textBoxName.Text, textBoxCode.Text).Result;
-                this.dataGridViewXDept.DataSource = deptList.ToDataTable();
+                this.dataGridViewXDept.DataSource = deptList;
             }
         }
     }

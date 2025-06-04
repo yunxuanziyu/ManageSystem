@@ -17,9 +17,11 @@ namespace ManageSystem.DataManage.Model
         public override string EntityName => Name ?? Code;
 
         [Browsable(false)]
+        [Column(IsIdentity = true)]
         public int ID { get; set; }
 
         [DisplayName("货物编码")]
+        [Column(IsPrimary = true)]
         [Required]
         public string Code { get; set; }
 

@@ -35,27 +35,29 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.line2 = new DevComponents.DotNetBar.Controls.Line();
+            this.ucBaseControl1 = new ManageSystem.UIDesign.UCBaseControl();
+            this.doubleInputXUnitPrice = new ManageSystem.ControlX.DoubleInputX();
+            this.textBoxExCode = new ManageSystem.ControlX.TextBoxEx();
+            this.buttonXAdd = new DevComponents.DotNetBar.ButtonX();
             this.comboBoxXCargoType = new ManageSystem.ControlX.ComboBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.buttonXSave = new DevComponents.DotNetBar.ButtonX();
             this.textBoxExSpecifications = new ManageSystem.ControlX.TextBoxEx();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxExUnit = new ManageSystem.ControlX.TextBoxEx();
-            this.textBoxExUnitPrice = new ManageSystem.ControlX.TextBoxEx();
-            this.textBoxExAliasName = new ManageSystem.ControlX.TextBoxEx();
-            this.textBoxExCode = new ManageSystem.ControlX.TextBoxEx();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.textBoxExName = new ManageSystem.ControlX.TextBoxEx();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxExUnit = new ManageSystem.ControlX.TextBoxEx();
+            this.textBoxExAliasName = new ManageSystem.ControlX.TextBoxEx();
+            this.buttonXSave = new DevComponents.DotNetBar.ButtonX();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.buttonXAdd = new DevComponents.DotNetBar.ButtonX();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ucBaseControl1 = new ManageSystem.UIDesign.UCBaseControl();
-            this.line2 = new DevComponents.DotNetBar.Controls.Line();
+            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            this.ucBaseControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.doubleInputXUnitPrice)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
-            this.ucBaseControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelX1
@@ -118,6 +120,84 @@
             this.panel1.Size = new System.Drawing.Size(194, 526);
             this.panel1.TabIndex = 8;
             // 
+            // line2
+            // 
+            this.line2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.line2.Location = new System.Drawing.Point(3, 472);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(188, 10);
+            this.line2.TabIndex = 19;
+            this.line2.Text = "line2";
+            // 
+            // ucBaseControl1
+            // 
+            this.ucBaseControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucBaseControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.ucBaseControl1.Controls.Add(this.doubleInputXUnitPrice);
+            this.ucBaseControl1.Controls.Add(this.textBoxExCode);
+            this.ucBaseControl1.Controls.Add(this.buttonXAdd);
+            this.ucBaseControl1.Controls.Add(this.labelX1);
+            this.ucBaseControl1.Controls.Add(this.comboBoxXCargoType);
+            this.ucBaseControl1.Controls.Add(this.labelX2);
+            this.ucBaseControl1.Controls.Add(this.labelX7);
+            this.ucBaseControl1.Controls.Add(this.labelX4);
+            this.ucBaseControl1.Controls.Add(this.labelX3);
+            this.ucBaseControl1.Controls.Add(this.textBoxExSpecifications);
+            this.ucBaseControl1.Controls.Add(this.textBoxExName);
+            this.ucBaseControl1.Controls.Add(this.labelX6);
+            this.ucBaseControl1.Controls.Add(this.labelX5);
+            this.ucBaseControl1.Controls.Add(this.textBoxExUnit);
+            this.ucBaseControl1.Controls.Add(this.textBoxExAliasName);
+            this.ucBaseControl1.CornerRadius = 50;
+            this.ucBaseControl1.Location = new System.Drawing.Point(6, 10);
+            this.ucBaseControl1.Name = "ucBaseControl1";
+            this.ucBaseControl1.Size = new System.Drawing.Size(185, 467);
+            this.ucBaseControl1.TabIndex = 19;
+            // 
+            // doubleInputXUnitPrice
+            // 
+            // 
+            // 
+            // 
+            this.doubleInputXUnitPrice.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.doubleInputXUnitPrice.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.doubleInputXUnitPrice.BindField = "UnitPrice";
+            this.doubleInputXUnitPrice.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
+            this.doubleInputXUnitPrice.Increment = 1D;
+            this.doubleInputXUnitPrice.Location = new System.Drawing.Point(54, 101);
+            this.doubleInputXUnitPrice.Name = "doubleInputXUnitPrice";
+            this.doubleInputXUnitPrice.Size = new System.Drawing.Size(116, 21);
+            this.doubleInputXUnitPrice.TabIndex = 19;
+            // 
+            // textBoxExCode
+            // 
+            this.textBoxExCode.BindField = "Code";
+            // 
+            // 
+            // 
+            this.textBoxExCode.Border.Class = "TextBoxBorder";
+            this.textBoxExCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxExCode.Location = new System.Drawing.Point(54, 9);
+            this.textBoxExCode.Name = "textBoxExCode";
+            this.textBoxExCode.PreventEnterBeep = true;
+            this.textBoxExCode.Size = new System.Drawing.Size(118, 21);
+            this.textBoxExCode.TabIndex = 9;
+            // 
+            // buttonXAdd
+            // 
+            this.buttonXAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonXAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonXAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonXAdd.Location = new System.Drawing.Point(95, 421);
+            this.buttonXAdd.Name = "buttonXAdd";
+            this.buttonXAdd.Size = new System.Drawing.Size(75, 33);
+            this.buttonXAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonXAdd.TabIndex = 18;
+            this.buttonXAdd.Text = "添  加";
+            this.toolTip1.SetToolTip(this.buttonXAdd, "加入左侧列表");
+            this.buttonXAdd.Click += new System.EventHandler(this.buttonXAdd_Click);
+            // 
             // comboBoxXCargoType
             // 
             this.comboBoxXCargoType.BindField = "CargoType";
@@ -144,19 +224,6 @@
             this.labelX7.TabIndex = 16;
             this.labelX7.Text = "类别";
             // 
-            // buttonXSave
-            // 
-            this.buttonXSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonXSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonXSave.Location = new System.Drawing.Point(101, 483);
-            this.buttonXSave.Name = "buttonXSave";
-            this.buttonXSave.Size = new System.Drawing.Size(75, 33);
-            this.buttonXSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonXSave.TabIndex = 15;
-            this.buttonXSave.Text = "保  存";
-            this.toolTip1.SetToolTip(this.buttonXSave, "保存数据入库");
-            this.buttonXSave.Click += new System.EventHandler(this.buttonXSave_Click);
-            // 
             // textBoxExSpecifications
             // 
             this.textBoxExSpecifications.BindField = "Specifications";
@@ -170,87 +237,6 @@
             this.textBoxExSpecifications.PreventEnterBeep = true;
             this.textBoxExSpecifications.Size = new System.Drawing.Size(118, 21);
             this.textBoxExSpecifications.TabIndex = 14;
-            // 
-            // labelX6
-            // 
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(11, 166);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(41, 23);
-            this.labelX6.TabIndex = 13;
-            this.labelX6.Tag = "";
-            this.labelX6.Text = "规格";
-            // 
-            // textBoxExUnit
-            // 
-            this.textBoxExUnit.BindField = "Unit";
-            // 
-            // 
-            // 
-            this.textBoxExUnit.Border.Class = "TextBoxBorder";
-            this.textBoxExUnit.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxExUnit.Location = new System.Drawing.Point(54, 137);
-            this.textBoxExUnit.Name = "textBoxExUnit";
-            this.textBoxExUnit.PreventEnterBeep = true;
-            this.textBoxExUnit.Size = new System.Drawing.Size(118, 21);
-            this.textBoxExUnit.TabIndex = 12;
-            // 
-            // textBoxExUnitPrice
-            // 
-            this.textBoxExUnitPrice.BindField = "UnitPrice";
-            // 
-            // 
-            // 
-            this.textBoxExUnitPrice.Border.Class = "TextBoxBorder";
-            this.textBoxExUnitPrice.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxExUnitPrice.Location = new System.Drawing.Point(54, 101);
-            this.textBoxExUnitPrice.Name = "textBoxExUnitPrice";
-            this.textBoxExUnitPrice.PreventEnterBeep = true;
-            this.textBoxExUnitPrice.Size = new System.Drawing.Size(118, 21);
-            this.textBoxExUnitPrice.TabIndex = 11;
-            // 
-            // textBoxExAliasName
-            // 
-            this.textBoxExAliasName.BindField = "AliasName";
-            // 
-            // 
-            // 
-            this.textBoxExAliasName.Border.Class = "TextBoxBorder";
-            this.textBoxExAliasName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxExAliasName.Location = new System.Drawing.Point(54, 70);
-            this.textBoxExAliasName.Name = "textBoxExAliasName";
-            this.textBoxExAliasName.PreventEnterBeep = true;
-            this.textBoxExAliasName.Size = new System.Drawing.Size(118, 21);
-            this.textBoxExAliasName.TabIndex = 10;
-            // 
-            // textBoxExCode
-            // 
-            this.textBoxExCode.BindField = "Code";
-            // 
-            // 
-            // 
-            this.textBoxExCode.Border.Class = "TextBoxBorder";
-            this.textBoxExCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxExCode.Location = new System.Drawing.Point(54, 9);
-            this.textBoxExCode.Name = "textBoxExCode";
-            this.textBoxExCode.PreventEnterBeep = true;
-            this.textBoxExCode.Size = new System.Drawing.Size(118, 21);
-            this.textBoxExCode.TabIndex = 9;
-            // 
-            // labelX5
-            // 
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(11, 9);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(41, 23);
-            this.labelX5.TabIndex = 8;
-            this.labelX5.Text = "编码";
             // 
             // textBoxExName
             // 
@@ -266,6 +252,73 @@
             this.textBoxExName.Size = new System.Drawing.Size(118, 21);
             this.textBoxExName.TabIndex = 7;
             // 
+            // labelX6
+            // 
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Location = new System.Drawing.Point(11, 166);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(41, 23);
+            this.labelX6.TabIndex = 13;
+            this.labelX6.Tag = "";
+            this.labelX6.Text = "规格";
+            // 
+            // labelX5
+            // 
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Location = new System.Drawing.Point(11, 9);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(41, 23);
+            this.labelX5.TabIndex = 8;
+            this.labelX5.Text = "编码";
+            // 
+            // textBoxExUnit
+            // 
+            this.textBoxExUnit.BindField = "Unit";
+            // 
+            // 
+            // 
+            this.textBoxExUnit.Border.Class = "TextBoxBorder";
+            this.textBoxExUnit.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxExUnit.Location = new System.Drawing.Point(54, 137);
+            this.textBoxExUnit.Name = "textBoxExUnit";
+            this.textBoxExUnit.PreventEnterBeep = true;
+            this.textBoxExUnit.Size = new System.Drawing.Size(118, 21);
+            this.textBoxExUnit.TabIndex = 12;
+            // 
+            // textBoxExAliasName
+            // 
+            this.textBoxExAliasName.BindField = "AliasName";
+            // 
+            // 
+            // 
+            this.textBoxExAliasName.Border.Class = "TextBoxBorder";
+            this.textBoxExAliasName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxExAliasName.Location = new System.Drawing.Point(54, 70);
+            this.textBoxExAliasName.Name = "textBoxExAliasName";
+            this.textBoxExAliasName.PreventEnterBeep = true;
+            this.textBoxExAliasName.Size = new System.Drawing.Size(118, 21);
+            this.textBoxExAliasName.TabIndex = 10;
+            // 
+            // buttonXSave
+            // 
+            this.buttonXSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonXSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonXSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonXSave.Location = new System.Drawing.Point(101, 483);
+            this.buttonXSave.Name = "buttonXSave";
+            this.buttonXSave.Size = new System.Drawing.Size(75, 33);
+            this.buttonXSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonXSave.TabIndex = 15;
+            this.buttonXSave.Text = "保  存";
+            this.toolTip1.SetToolTip(this.buttonXSave, "保存数据入库");
+            this.buttonXSave.Click += new System.EventHandler(this.buttonXSave_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridViewX1);
@@ -278,7 +331,10 @@
             // 
             // dataGridViewX1
             // 
+            this.dataGridViewX1.AllowUserToAddRows = false;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Code});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -295,53 +351,11 @@
             this.dataGridViewX1.Size = new System.Drawing.Size(488, 506);
             this.dataGridViewX1.TabIndex = 0;
             // 
-            // buttonXAdd
+            // Code
             // 
-            this.buttonXAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonXAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonXAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonXAdd.Location = new System.Drawing.Point(95, 421);
-            this.buttonXAdd.Name = "buttonXAdd";
-            this.buttonXAdd.Size = new System.Drawing.Size(75, 33);
-            this.buttonXAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonXAdd.TabIndex = 18;
-            this.buttonXAdd.Text = "添  加";
-            this.toolTip1.SetToolTip(this.buttonXAdd, "加入左侧列表");
-            this.buttonXAdd.Click += new System.EventHandler(this.buttonXAdd_Click);
-            // 
-            // ucBaseControl1
-            // 
-            this.ucBaseControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucBaseControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
-            this.ucBaseControl1.Controls.Add(this.textBoxExCode);
-            this.ucBaseControl1.Controls.Add(this.buttonXAdd);
-            this.ucBaseControl1.Controls.Add(this.labelX1);
-            this.ucBaseControl1.Controls.Add(this.comboBoxXCargoType);
-            this.ucBaseControl1.Controls.Add(this.labelX2);
-            this.ucBaseControl1.Controls.Add(this.labelX7);
-            this.ucBaseControl1.Controls.Add(this.labelX4);
-            this.ucBaseControl1.Controls.Add(this.labelX3);
-            this.ucBaseControl1.Controls.Add(this.textBoxExSpecifications);
-            this.ucBaseControl1.Controls.Add(this.textBoxExName);
-            this.ucBaseControl1.Controls.Add(this.labelX6);
-            this.ucBaseControl1.Controls.Add(this.labelX5);
-            this.ucBaseControl1.Controls.Add(this.textBoxExUnit);
-            this.ucBaseControl1.Controls.Add(this.textBoxExAliasName);
-            this.ucBaseControl1.Controls.Add(this.textBoxExUnitPrice);
-            this.ucBaseControl1.CornerRadius = 50;
-            this.ucBaseControl1.Location = new System.Drawing.Point(6, 10);
-            this.ucBaseControl1.Name = "ucBaseControl1";
-            this.ucBaseControl1.Size = new System.Drawing.Size(185, 467);
-            this.ucBaseControl1.TabIndex = 19;
-            // 
-            // line2
-            // 
-            this.line2.Location = new System.Drawing.Point(3, 472);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(188, 10);
-            this.line2.TabIndex = 19;
-            this.line2.Text = "line2";
+            this.Code.DataPropertyName = "Code";
+            this.Code.HeaderText = "编码";
+            this.Code.Name = "Code";
             // 
             // UCCargoDefine
             // 
@@ -354,9 +368,10 @@
             this.Size = new System.Drawing.Size(702, 526);
             this.Load += new System.EventHandler(this.UCCargoDefine_Load);
             this.panel1.ResumeLayout(false);
+            this.ucBaseControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.doubleInputXUnitPrice)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
-            this.ucBaseControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -378,12 +393,13 @@
         private ControlX.TextBoxEx textBoxExSpecifications;
         private DevComponents.DotNetBar.LabelX labelX6;
         private ControlX.TextBoxEx textBoxExUnit;
-        private ControlX.TextBoxEx textBoxExUnitPrice;
         private ControlX.ComboBoxX comboBoxXCargoType;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.ButtonX buttonXAdd;
         private System.Windows.Forms.ToolTip toolTip1;
         private UCBaseControl ucBaseControl1;
         private DevComponents.DotNetBar.Controls.Line line2;
+        private ControlX.DoubleInputX doubleInputXUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
     }
 }

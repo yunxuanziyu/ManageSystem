@@ -1,7 +1,7 @@
 ﻿using ManageSystem.DataManage;
 using ManageSystem.DataManage.Model;
+using ManageSystem.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -26,7 +26,7 @@ namespace ManageSystem.BusinessManage.Service
         public async Task<List<Department>> GetDepartmentList()
         {
             var manage = new DepartmentManage(_freeSql);
-            return await manage.GetDepartments();
+            return (await manage.GetDepartments()).ToExtensionList();
         }
 
         public async Task<List<Department>> GetDepartmentByCondition(string name,string code)
@@ -37,7 +37,7 @@ namespace ManageSystem.BusinessManage.Service
             if(!string.IsNullOrEmpty(code))
                 where = where.And(l => l.DeptCode.Contains(code));
             var manage = new DepartmentManage(_freeSql);
-            return await manage.GetDepartmentsByCondition(where);
+            return (await manage.GetDepartmentsByCondition(where)).ToExtensionList();
         }
     }
 }

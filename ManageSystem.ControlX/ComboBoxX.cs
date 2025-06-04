@@ -2,7 +2,6 @@
 using DevComponents.DotNetBar.Controls;
 using ManageSystem.BusinessManage.Service;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -29,7 +28,7 @@ namespace ManageSystem.ControlX
             if (string.IsNullOrEmpty(EnumBindField)) return;
             using (EnumerationService service = new EnumerationService())
             {
-                var data = service?.GetEnumerationByType(EnumBindField).Result;
+                var data = service.GetEnumerationByType(EnumBindField).Result;
                 this.Items.Clear();
                 this.DisplayMember = "DisplayName";
                 this.ValueMember = "Value";

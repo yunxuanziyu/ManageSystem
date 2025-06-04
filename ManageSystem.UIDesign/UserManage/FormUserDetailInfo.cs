@@ -36,11 +36,17 @@ namespace ManageSystem.UIDesign
 
         private async void UpdateUser()
         {
+            using(var service = new UserService())
+            {
+                var users = await service.GetUserByWhere("Name = @Name", new { _user.Name });
+                var user = users.FirstOrDefault();
+                _user.EditState = user == null? EnumEditState.eInsert : EnumEditState.eUpdate;
+            }
             this.ucBaseControl1.WriteData<User>(_user, this);
             using (var service = new UserService())
             {
                 await service.Update(_user);
-                MessageForm.ShowMessage("修改成功！");
+                MessageForm.ShowMessage("保存成功！");
             }
         }
 

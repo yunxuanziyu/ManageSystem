@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
@@ -17,7 +16,7 @@ namespace ManageSystem.UIDesign
     public partial class UCEnumDefine: UCBaseControl
     {
         private string _CurrentEditEnumType = "";
-        List<(string, string)> enums = null;
+        Extensions.List<(string, string)> enums = null;
         public UCEnumDefine()
         {
             InitializeComponent();

@@ -1,14 +1,12 @@
-﻿using DevComponents.Editors;
-using ManageSystem.BasicCommonBase;
+﻿using ManageSystem.BasicCommonBase;
 using ManageSystem.DataManage;
 using ManageSystem.DataManage.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using ManageSystem.Extensions;
+using System.Linq;
 
 namespace ManageSystem.BusinessManage
 {
@@ -24,13 +22,14 @@ namespace ManageSystem.BusinessManage
             
         }
 
-        public Task<List<Log>> GetLogs()
+        public async Task<Extensions.List<Log>> GetLogs()
         {
             LogManage logManage = new LogManage(_IFreeSql);
-            return logManage.GetLogs();
+            var logs = await logManage.GetLogs();
+            return logs.ToExtensionList();
         }
 
-        public Task<List<Log>> GetLogsByCondition(string Operator, bool StartTime,DateTime startTime,bool EndTime,DateTime endTime)
+        public async Task<Extensions.List<Log>> GetLogsByCondition(string Operator, bool StartTime, DateTime startTime, bool EndTime, DateTime endTime)
         {
             LogManage logManage = new LogManage(_IFreeSql);
             Expression<Func<Log, bool>> where = l => true;
@@ -40,13 +39,14 @@ namespace ManageSystem.BusinessManage
             }
             if (StartTime)
             {
-                where = where.And(l => l.OperaTime >= new DateTime(startTime.Year, startTime.Month, startTime.Day, 0, 0,0));
+                where = where.And(l => l.OperaTime >= new DateTime(startTime.Year, startTime.Month, startTime.Day, 0, 0, 0));
             }
             if (EndTime)
             {
                 where = where.And(l => l.OperaTime <= new DateTime(endTime.Year, endTime.Month, endTime.Day, 23, 59, 59));
             }
-            return logManage.GetLogsByCondition(where);
+            var logs = await logManage.GetLogsByCondition(where);
+            return logs.ToExtensionList();
         }
 
         public Task<bool> AddLog(Log log)
@@ -58,12 +58,12 @@ namespace ManageSystem.BusinessManage
             return logManage.AddLog(log);
         }
 
-        public Task<bool> AddLogs(List<Log> logs)
+        public Task<bool> AddLogs(Extensions.List<Log> logs)
         {
             User user = GlobalVariable.LoginUser as User;
             logs.ForEach(x => { x.OperaTime = DateTime.Now; x.Operator = $"[{user.Name}]{user.ChineseName}"; });
             LogManage logManage = new(_IFreeSql);
-            return logManage.AddLogs(logs);
+            return logManage.AddLogs(logs.ToList());
         }
 
         public void Dispose()

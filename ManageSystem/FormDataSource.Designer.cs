@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.buttonSave = new DevComponents.DotNetBar.ButtonX();
             this.textBoxPath = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.buttonSave = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
@@ -80,6 +80,18 @@
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonSave.Location = new System.Drawing.Point(451, 195);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 68);
+            this.buttonSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonSave.TabIndex = 2;
+            this.buttonSave.Text = "保存";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxPath
             // 
@@ -141,18 +153,6 @@
             this.tabItem2.Name = "tabItem2";
             this.tabItem2.Text = "数据源2";
             // 
-            // buttonSave
-            // 
-            this.buttonSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonSave.Location = new System.Drawing.Point(451, 195);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 68);
-            this.buttonSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "保存";
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
             // FormDataSource
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -161,6 +161,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FormDataSource";
             this.Text = "数据源配置";
+            this.Load += new System.EventHandler(this.FormDataSource_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);

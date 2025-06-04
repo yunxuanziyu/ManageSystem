@@ -1,8 +1,8 @@
 ﻿using ManageSystem.DataManage;
 using ManageSystem.DataManage.Manage;
 using ManageSystem.DataManage.Model;
+using ManageSystem.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -27,13 +27,13 @@ namespace ManageSystem.BusinessManage
             Expression<Func<Cargo, bool>> where = c => true;
             if (!string.IsNullOrEmpty(Code))
                 where = c => c.Code == Code;
-            return await cargoManage.GetCargoList(where);
+            return (await cargoManage.GetCargoList(where)).ToExtensionList();
         }
         
         public async Task SaveCargos(List<Cargo> cargos)
         {
             CargoManage cargoManage = new CargoManage(_freeSql);
-            await cargoManage.Update(cargos);
+            await cargoManage.Update(cargos.ToList());
             cargos.ForEach(c => c.EditState = EnumEditState.eNoEdit);
         }
 

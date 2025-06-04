@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ManageSystem.ControlX
 {
-    class DoubleInputX : DoubleInput
+    public partial class DoubleInputX : DoubleInput
     {
         public DoubleInputX()
         {

@@ -32,9 +32,11 @@ namespace ManageSystem.UIDesign
             this.UpdateStyles();
         }
 
-        public void WriteData<T>(object data,Control p)where T : class
+        public void WriteData<T>(object data,Control p = null)where T : class
         {
             T obj = (T)data;
+            if (p == null)
+                p = this;
             //TODO:Binding Data
             foreach (var c in p.Controls)
             {
@@ -69,11 +71,19 @@ namespace ManageSystem.UIDesign
                         if (!string.IsNullOrEmpty(dtx.BindField))
                             dtx.Value = (DateTime)typeof(T).GetProperty(dtx.BindField)?.GetValue(obj, null);
                         break;
+                        case DoubleInputX dix:
+                        if (!string.IsNullOrEmpty(dix.BindField))
+                            dix.ValueObject = (double)typeof(T).GetProperty(dix.BindField)?.GetValue(obj, null);
+                        break;
+                        case IntegetInputX iix:
+                        if (!string.IsNullOrEmpty(iix.BindField))
+                            iix.ValueObject = (int)typeof(T).GetProperty(iix.BindField)?.GetValue(obj, null);
+                        break;
                 }
             }
         }
 
-        public void ReadData<T>(object data, UserControl uc = null) where T : class
+        public void ReadData<T>(object data, Control uc = null) where T : class
         {
             if (uc == null)
                 uc = this;
@@ -102,6 +112,14 @@ namespace ManageSystem.UIDesign
                     case DateTimeInputX dtx:
                         if (!string.IsNullOrEmpty(dtx.BindField))
                             typeof(T).GetProperty(dtx.BindField).SetValue(obj, dtx.Value);
+                        break;
+                    case DoubleInputX dix:
+                        if (!string.IsNullOrEmpty(dix.BindField))
+                            typeof(T).GetProperty(dix.BindField).SetValue(obj, dix.ValueObject);
+                        break;
+                        case IntegetInputX iix:
+                        if (!string.IsNullOrEmpty(iix.BindField))
+                            typeof(T).GetProperty(iix.BindField).SetValue(obj, iix.ValueObject);
                         break;
                 }
             }

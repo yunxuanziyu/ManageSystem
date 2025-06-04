@@ -230,7 +230,6 @@
             this.textBoxEx1.Location = new System.Drawing.Point(76, 34);
             this.textBoxEx1.Name = "textBoxEx1";
             this.textBoxEx1.PreventEnterBeep = true;
-            this.textBoxEx1.ReadOnly = true;
             this.textBoxEx1.Size = new System.Drawing.Size(124, 21);
             this.textBoxEx1.TabIndex = 4;
             // 
