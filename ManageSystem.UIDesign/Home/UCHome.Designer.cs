@@ -29,7 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCHome));
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.SuspendLayout();
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelX1.Font = new System.Drawing.Font("幼圆", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX1.Location = new System.Drawing.Point(0, 0);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(725, 452);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "火萤管理系统";
+            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // UCHome
             // 
@@ -37,13 +54,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DoubleBuffered = true;
+            this.Controls.Add(this.labelX1);
             this.Name = "UCHome";
-            this.Size = new System.Drawing.Size(571, 452);
+            this.Size = new System.Drawing.Size(725, 452);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }
