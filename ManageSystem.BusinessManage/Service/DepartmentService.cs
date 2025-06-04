@@ -16,6 +16,10 @@ namespace ManageSystem.BusinessManage.Service
         {
             _freeSql = freeSql ?? DBHelper.freeSql;
         }
+        public DepartmentService()
+        {
+            _freeSql = DBHelper.freeSql;
+        }
         public void Dispose()
         {
             
