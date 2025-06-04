@@ -2,9 +2,7 @@
 using ManageSystem.DataManage.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ManageSystem.BusinessManage.Service
@@ -15,6 +13,10 @@ namespace ManageSystem.BusinessManage.Service
         public DepartmentService(IFreeSql freeSql = null)
         {
             _freeSql = freeSql ?? DBHelper.freeSql;
+        }
+        public DepartmentService()
+        {
+            _freeSql = DBHelper.freeSql;
         }
         public void Dispose()
         {
